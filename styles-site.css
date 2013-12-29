@@ -282,6 +282,16 @@ h1, h2, h3 {
 }
 #calendar td { text-align: center; }
 
+.right_text p {
+	color: #000000;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 0.8em;
+	font-weight: normal;
+	line-height: 150%;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
 .blog_h2 {
 	background-color: #FFFFFF;
 	color: #000000;
