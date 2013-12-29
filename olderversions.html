@@ -1,0 +1,171 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>吉里吉里Z / 旧バージョンのダウンロードと更新履歴</title>
+<link rel="stylesheet" href="styles-site.css" type="text/css" />
+</head>
+<body>
+<a name="top"></a>
+<div id="top_link"><a href="./index.html">Topへ</a></div>
+<div id="container">
+<div id="title-banner"><h1>吉里吉里Z 旧バージョンのダウンロードと更新履歴</h1></div>
+
+<div class="content">
+<div class="title_bar"><a name="download">ダウンロード</a></div>
+<ul>
+	<li><a href="./download/krkrz_20131224.zip">krkrz_20131224.zip (β9)</a></li>
+	<li><a href="./download/krkrz_20131216.zip">krkrz_20131216.zip (β8)</a></li>
+	<li><a href="./download/krkrz_20131210.zip">krkrz_20131210.zip (β7)</a></li>
+	<li><a href="./download/krkrz_20131203.zip">krkrz_20131203.zip (β6)</a></li>
+	<li><a href="./download/krkrz_20131126.zip">krkrz_20131126.zip (β5)</a></li>
+	<li><a href="./download/krkrz_20131119.zip">krkrz_20131119.zip (β4)</a></li>
+	<li><a href="./download/krkrz_20131111.zip">krkrz_20131111.zip (β3)</a></li>
+	<li><a href="./download/krkrz_20131107.zip">krkrz_20131107.zip (β2)</a></li>
+	<li><a href="./download/krkrz_20131102.zip">krkrz_20131102.zip (β1)</a></li>
+	<li><a href="./download/krkrz_20131009.zip">krkrz_20131009.zip (10月)</a></li>
+	<li><a href="./download/krkrz_20130903.zip">krkrz_20130903.zip ( 9月)</a></li>
+	<li><a href="./download/krkrz_20130805.zip">krkrz_20130805.zip ( 8月)</a></li>
+	<li><a href="./download/krkrz_20130702.zip">krkrz_20130702.zip ( 7月)</a></li>
+	<li><a href="./download/krkrz_20130601.zip">krkrz_20130601.zip ( 6月)</a></li>
+	<li><a href="./download/krkrz_20130501.zip">krkrz_20130501.zip ( 5月)</a></li>
+</ul>
+<br />
+<div class="title_bar"><a name="revision">更新履歴</a></div>
+<dl>
+	<dt>2013/12/24 β9 リリース</dt>
+	<dd>
+		吉里吉里ダウンロードURL変更。<br />
+		ImageFunction.drawText へ font 引数追加。<br />
+		プライマリーレイヤーのサイズがクライアント領域を超えていた場合にフルスクリーン化すると画像が伸縮していたのを、アスペクト比を維持してクリッピングされるように変更。<br />
+		Windowクラスのコンストラクタに親Windowを指定できるように対応。<br />
+		Window生成時初期ボーダースタイルを明示的に設定するように対応。<br />
+		Rect.includedPos追加。<br />
+		Windowが非表示の時メインウィンドウと連動して最小化/リストア動作を行わないように修正。<br />
+		Layerより先にBitmapを生成するとアクセス違反が発生する問題を修正。<br />
+		setMaxSizeでの判定条件が逆だったのを修正。<br />
+		Window.setZoomを呼んだ時に再描画がかからないのを修正。<br />
+		マウスのEnter/Leaveでマウスカーソル表示状態を更新するように修正。<br />
+		Window の Min Max サイズ変更時、常に両方のサイズで判定するように修正。<br />
+		Opusプラグイン修正。<br />
+		WindowクラスのParent判定方法修正。<br />
+		メニューがない時はALTキーでMouseLeaveが発生しないように修正。<br />
+		<br />
+	</dd>
+
+	<dt>2013/12/16 β8 リリース</dt>
+	<dd>
+		オプションリソースの読込みで改行コード依存していたものを依存しないように修正。<br />
+		オプションリソースで D3D オプション指定の必要がなくなったので削除。<br />
+		JSON形式のオプション詳細テキスト読込み対応。<br />
+		オプション説明を JSON 形式に変更し現状あわせ更新。<br />
+		エンジン設定機能追加。<br />
+		いくつかのイベントの shift にマウスボタン状態が入っていなかったのを修正。<br />
+		ライセンス文をリソースに移動。<br />
+		2GB 超えた XP3 ファイルで読込みで発生するエラーを修正。<br />
+		<br />
+	</dd>
+
+	<dt>2013/12/10 β7 リリース</dt>
+	<dd>
+		デバッガでパスにスペースを含む場合起動途中で止まる不具合を修正。<br />
+		Window.setInnerSize 等クライアントサイズ設定で、menu.dll を読み込んでいた場合にサイズ計算がおかしくなることがあったのを修正。<br />
+		Symbolキャラセットの時 FreeType で例外が出ていたのを修正。<br />
+		メニューでnullが渡された時、例外を出すように修正。<br />
+		クリック位置がMouseUp座標になっていたものをMouseDown座標に修正。<br />
+		文字列の描画範囲取得関数追加。<br />
+		Rect クラスにメソッド追加。<br />
+		内部的に Rect クラスを使っている箇所のメモリリーク修正。 <br />
+		例外発生時に指定エディタでスクリプトを開く機能を追加(TVP_ENABLE_EXECUTE_AT_EXCEPTION を指定しなければ無効) 。<br />
+		フルスクリーン時に画面外(黒帯)の時、座標値がおかしかったのを修正。<br />
+		TouchDown イベントが TouchUp イベントもしくは右クリックとして判定されるまで遅延していたのを修正。<br />
+		PrimaryLayer サイズとクライアント領域のサイズを別扱いするように修正。<br />
+		Storages.selectFile() のフィルタ指定が期待通り動作しなかったのを修正。 <br />
+		メインウィンドウがない時に Storages.selectFile() を実行しても機能しなかったのを修正。<br />
+		<br />
+	</dd>
+
+	<dt>2013/12/03 β6 リリース</dt>
+	<dd>
+		TJS2 定数 mbX1, mbX2 を追加。<br />
+		スクリプトデバッガでUTF-16LEとUTF-8をサポート。<br />
+		タッチパネル有無確認のための System.touchDevice を追加。<br />
+		例外発生終了時タイミングによって不正アクセスする不具合を修正。 <br />
+		GDI で文字描画するとたまに薄く描画されてしまう問題を修正。<br />
+		Window の close 処理周りの修正。<br />
+		モーダルウィンドウが後ろに回らないようにアクティブ化時に手前に移動する処理を追加。<br />
+		GDI で正しくレンダリング出来ないフォントに対処。<br />
+		シンボルキャラセットを除くフラグ fsfIgnoreSymbol を追加。<br />
+		FreeType でもできるだけ GDI と同じ位置にレンダリングするように修正。<br />
+		フォント描画位置がマイナス指定された場合、下線等でメモリ範囲外アクセスが発生していたのを修正。<br />
+		FreeType 終了処理を適切に行うように修正。<br />
+		FreeType でレンダリングできない文字の時、代替文字として描画するように対応。<br />
+		fsfSameCharSet が期待通り機能していなかったのを修正。<br />
+		フェイス名をフォントファイル名として扱うオプション Font.faceIsFileName 追加。<br />
+		フォントラスタライザ切り替えで設定が反映されないケースに対応。 <br />
+		GDI と FreeType で太字の時描画位置が大きくずれていたのを修正。 <br />
+		メニューの更新を項目によって再構築と再設定に分離。 <br />
+		System.desktop* が返す値をメインウィンドウがあるモニタの作業領域に変更。 <br />
+		Window.setSize が効かなかったのを修正。<br />
+		Window.onResize が発生しなかったのを修正。 <br />
+		フォントフェイス名をカンマで複数指定が期待通り機能していなかったのを修正。 <br />
+		<br />
+	</dd>
+
+	<dt>2013/11/26 β5 リリース</dt>
+	<dd>
+		デバッガを同梱。<br />
+		他アプリがフルスクリーン化してデバイスロスト後、再びアクティブになった時に復帰できるように修正。<br />
+		フルスクリーン時余白が描画されない問題を修正。<br />
+		吉里吉里デバッガで動かなかったのを修正<br />
+		メニューのショートカットキーに反応しない不具合修正。 <br />
+		<br />
+	</dd>
+
+	<dt>2013/11/19 β4 リリース</dt>
+	<dd>
+		KAGParser.dll での読込み文字コードをデフォルト UTF-8 とし、readencoding の設定 に従うように変更。<br />
+		フルスクリーン化処理を修正し、ウィンドウ拡大のみに変更。<br />
+		PassThroughDrawDevice を削除し BasicDrawDevice を追加しデフォルトに変更。<br />
+		描画処理を Direct3D9 のみに変更。<br />
+		コンソール出力処理を修正。<br />
+		split/replace の処理を修正。<br />
+		ALTキーのKeyDown, KeyDown での shift 値を修正。<br />
+		IME が効かなかった不具合修正。<br />
+		borderStyle の設定がおかしかったのを修正。<br />
+		<br />
+	</dd>
+
+	<dt>2013/11/11 β3 リリース</dt>
+	<dd>
+		ACCESS VIOLATION の修正。<br />
+		split の修正。<br />
+		replace の修正。<br />
+		onKeyDown のキーリピートフラグ修正。<br />
+		<br />
+	</dd>
+
+	<dt>2013/11/07 β2 リリース</dt>
+	<dd>
+		KAGParser のプロジェクトのリリースの設定で def の設定をしていなかったので追加(KAGParserが使えなかったのを修正)。<br />
+		menu.visible の設定が反転していたので修正。<br />
+		Window の初期位置を Windows 任せにするように変更。<br />
+		メニューのチェックマークなどが出なかったのを修正。<br />
+		ハードウェア例外表示に対応。<br />
+		showModal 修正(不完全)<br />
+		<br />
+	</dd>
+
+	<dt>2013/11/02 β1(2)リリース</dt>
+	<dd>
+		XP で起動できない設定になっていたので修正。<br />
+		テクスチャサイズが2の累乗サイズ限定の時期待通り描画されていなかったのを修正。<br />
+		<br />
+	</dd>
+
+	<dt>2013/11/01 β1 リリース</dt>
+</dl>
+<br />
+</div>
+</div>
+</body>
+</html>
