@@ -14,14 +14,14 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id279" name="id279">プロパティ</a>
+<h1><a id="id281" name="id281">プロパティ</a>
 </h1><div class="para"><div>
-　プロパティとは、変数と同じように扱うことができるが、実際はメソッド呼び出しと同様に、<a id="id280" name="id280" class="targanchor"><dfn>セッター</dfn></a> ( <a id="id281" name="id281" class="targanchor"><dfn>setter</dfn></a> ) と<a id="id282" name="id282" class="targanchor"><dfn>ゲッター</dfn></a> ( <a id="id283" name="id283" class="targanchor"><dfn>getter</dfn></a> ) の呼び出しを伴うものです。セッターやゲッターを、プロパティハンドラと呼ぶ場合があります。<br />
+　プロパティとは、変数と同じように扱うことができるが、実際はメソッド呼び出しと同様に、<a id="id282" name="id282" class="targanchor"><dfn>セッター</dfn></a> ( <a id="id283" name="id283" class="targanchor"><dfn>setter</dfn></a> ) と<a id="id284" name="id284" class="targanchor"><dfn>ゲッター</dfn></a> ( <a id="id285" name="id285" class="targanchor"><dfn>getter</dfn></a> ) の呼び出しを伴うものです。セッターやゲッターを、プロパティハンドラと呼ぶ場合があります。<br />
 <br />
 　構文は以下の通りです。<br />
 
 <br />
-<code class="bq"><a id="id284" name="id284" class="targanchor"><dfn>property</dfn></a>&nbsp;識別子<br />
+<code class="bq"><a id="id286" name="id286" class="targanchor"><dfn>property</dfn></a>&nbsp;識別子<br />
 {<br />
 &nbsp;&nbsp;&nbsp;&nbsp;setter(引数)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;{<br />
@@ -38,7 +38,7 @@
 <br />
 
 　setter と getter は、逆の順番で書かれていてもかまいません。 <br />
-　この property を記述したクラスや、グローバルのメンバとしてこのプロパティは登録されますが、この識別子からの値の取得はゲッター、値の設定はセッターを通して行われます。これらのセッターとゲッターは、メソッド同様に様々な内容を書くことができます。セッターは setter に続く ( ) 内に、値を受け取る変数を引数として書きます。ゲッターは <a id="id285" name="id285" class="targanchor"><dfn>return</dfn></a> ステートメントにて値を返します。<br />
+　この property を記述したクラスや、グローバルのメンバとしてこのプロパティは登録されますが、この識別子からの値の取得はゲッター、値の設定はセッターを通して行われます。これらのセッターとゲッターは、メソッド同様に様々な内容を書くことができます。セッターは setter に続く ( ) 内に、値を受け取る変数を引数として書きます。ゲッターは <a id="id287" name="id287" class="targanchor"><dfn>return</dfn></a> ステートメントにて値を返します。<br />
 <br />
 　getterのあとの () は省略できます。 <br />
 <br />
@@ -73,12 +73,12 @@
 </code>
 <br />
 
-　プロパティも変数や関数やクラス同様、<a id="id286" name="id286" class="targanchor"><dfn>オーバーライド</dfn></a>できます。<br />
+　プロパティも変数や関数やクラス同様、<a id="id288" name="id288" class="targanchor"><dfn>オーバーライド</dfn></a>できます。<br />
 </div></div>
-<h1><a id="id287" name="id287">プロパティオブジェクト</a>
+<h1><a id="id289" name="id289">プロパティオブジェクト</a>
 </h1><div class="para"><div>
 　プロパティ自身も一つのオブジェクトです。しかし、なんらかのオブジェクトに登録されている場合は、普通のアクセス方法ではプロパティハンドラが呼ばれるだけであり、プロパティオブジェクトそのものにはアクセスできません。<br />
-　プロパティオブジェクトそのものを取り出すには <code class="inlinecode"><a id="id288" name="id288" class="targanchor"><dfn>&amp;</dfn></a></code> 演算子を使います。取り出したプロパティオブジェクトはローカル変数に入れることが出来ます。<br />
+　プロパティオブジェクトそのものを取り出すには <code class="inlinecode"><a id="id290" name="id290" class="targanchor"><dfn>&amp;</dfn></a></code> 演算子を使います。取り出したプロパティオブジェクトはローカル変数に入れることが出来ます。<br />
 　また、<code class="inlinecode">&amp;</code> 演算子を使ってプロパティオブジェクトを登録することもできます。<br />
 
 <br />
@@ -98,7 +98,7 @@
 <br />
 　<code class="inlinecode">&amp;</code> 演算子を使うと、ゲッターやセッターは呼ばれずにプロパティオブジェクトそのものにアクセスする事ができます。<code class="inlinecode">&amp;</code> 演算子を使わなければ通常のプロパティへのアクセスとなります。<br />
 <br />
-　ローカル変数として取り出したプロパティオブジェクトは、オブジェクトに登録しなくとも、<code class="inlinecode"><a id="id289" name="id289" class="targanchor"><dfn>*</dfn></a></code> 演算子を用いてプロパティハンドラを呼び出すことができます。<br />
+　ローカル変数として取り出したプロパティオブジェクトは、オブジェクトに登録しなくとも、<code class="inlinecode"><a id="id291" name="id291" class="targanchor"><dfn>*</dfn></a></code> 演算子を用いてプロパティハンドラを呼び出すことができます。<br />
 <br />
 
 <br />

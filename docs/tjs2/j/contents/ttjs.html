@@ -14,35 +14,35 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id384" name="id384">tTJS とは</a>
+<h1><a id="id386" name="id386">tTJS とは</a>
 </h1><div class="para"><div>
 　TJS2 スクリプトエンジンのクラスです。このクラスのオブジェクトを通して TJS2 を操作することができます。<br />
 </div></div>
-<h1><a id="id385" name="id385">コンストラクタ</a>
+<h1><a id="id387" name="id387">コンストラクタ</a>
 </h1><div class="para"><div>
 　tTJS のコンストラクタに引数はありません。<br />
 　tTJS のオブジェクトは自動変数として作成できません。かならず new 演算子を用いて作成する必要があります。<br />
 　作成直後の 参照カウンタは 1 になっています。これはそのまま Release メソッドを呼べば tTJS のオブジェクトが解放されると言うことです。<br />
 </div></div>
-<h1><a id="id386" name="id386">デストラクタ</a>
+<h1><a id="id388" name="id388">デストラクタ</a>
 </h1><div class="para"><div>
 　tTJS のデストラクタは保護部にあり、アクセスできません。<br />
 　tTJS のオブジェクトを解放するには Release メソッドを使ってください。<br />
 　また、tTJS のオブジェクトを解放する前には Shutdown メソッドを呼ぶことが推奨されます。<br />
 </div></div>
 
-<h1><a id="id387" name="id387">AddRef</a>
+<h1><a id="id389" name="id389">AddRef</a>
 </h1><div class="para"><div>
 void tTJS::AddRef()<br />
 <br />
 　TJS2 スクリプトエンジンの参照カウンタをインクリメントします。</div></div>
-<h1><a id="id388" name="id388">Release</a>
+<h1><a id="id390" name="id390">Release</a>
 </h1><div class="para"><div>
 void tTJS::Release()<br />
 <br />
 　TJS2 スクリプトエンジンの参照カウンタをデクリメントします。<br />
 　参照カウンタが 0 になれば tTJS オブジェクトは解放されます。</div></div>
-<h1><a id="id389" name="id389">Shutdown</a>
+<h1><a id="id391" name="id391">Shutdown</a>
 </h1><div class="para"><div>
 void tTJS::Shutdown()<br />
 <br />
@@ -51,17 +51,17 @@ void tTJS::Shutdown()<br />
 　TJS2 スクリプトエンジンを解放するとき、Release メソッドの前にこのメソッドを呼ぶことを推奨します。<br />
 </div></div>
 
-<h1><a id="id390" name="id390">GetGlobal</a>
+<h1><a id="id392" name="id392">GetGlobal</a>
 </h1><div class="para"><div>
 iTJSDispatch2 * tTJS::GetGlobal()<br />
 <br />
-　<a id="id391" name="id391" class="targanchor"><dfn>global オブジェクト</dfn></a>を取得します。<a target="main" class="jump" href="interface.html">iTJSDispatch2 インターフェース</a> 型のオブジェクトが返されます。<br />
+　<a id="id393" name="id393" class="targanchor"><dfn>global オブジェクト</dfn></a>を取得します。<a target="main" class="jump" href="interface.html">iTJSDispatch2 インターフェース</a> 型のオブジェクトが返されます。<br />
 　このメソッドは global オブジェクトを返すとき、その参照カウンタをインクリメントします。<br />
 </div></div>
 
 
 
-<h1><a id="id392" name="id392">GetGlobalNoAddRef</a>
+<h1><a id="id394" name="id394">GetGlobalNoAddRef</a>
 </h1><div class="para"><div>
 iTJSDispatch2 * tTJS::GetGlobalNoAddRef()<br />
 <br />
@@ -70,35 +70,35 @@ iTJSDispatch2 * tTJS::GetGlobalNoAddRef()<br />
 
 
 
-<h1><a id="id393" name="id393">SetConsoleOutput</a>
+<h1><a id="id395" name="id395">SetConsoleOutput</a>
 </h1><div class="para"><div>
 void tTJS::SetConsoleOutput(iTJSConsoleOutput *console);<br />
 <br />
-　<a id="id394" name="id394" class="targanchor"><dfn>コンソール</dfn></a>の出力先を指定します。<br />
+　<a id="id396" name="id396" class="targanchor"><dfn>コンソール</dfn></a>の出力先を指定します。<br />
 　コンソールは、TJS2 の出すエラーメッセージなどが出力されるところです。<br />
 <br />
 以下の引数があります。<br />
 <br />
 <dl>
 <dt>console</dt>
-<dd>　コンソールの出力先を定義する、<a id="id395" name="id395" class="targanchor"><dfn>iTJSConsoleOutput</dfn></a> 型のオブジェクトを指定します。<br />
+<dd>　コンソールの出力先を定義する、<a id="id397" name="id397" class="targanchor"><dfn>iTJSConsoleOutput</dfn></a> 型のオブジェクトを指定します。<br />
 　iTJSConsoleOutput 型は tjs.h に定義されている基本抽象クラスで、以下のメソッドがあります。<br />
 <br />
 <dl>
-<dt>void iTJSConsoleOutput::<a id="id396" name="id396" class="targanchor"><dfn>ExceptionPrint</dfn></a>(const tjs_char *msg)</dt>
+<dt>void iTJSConsoleOutput::<a id="id398" name="id398" class="targanchor"><dfn>ExceptionPrint</dfn></a>(const tjs_char *msg)</dt>
 <dd>　例外に関する情報を出力するためのメソッドです。msg がメッセージを表します。</dd>
-<dt>void iTJSConsoleOutput::<a id="id397" name="id397" class="targanchor"><dfn>Print</dfn></a>(const tjs_char *msg)</dt>
+<dt>void iTJSConsoleOutput::<a id="id399" name="id399" class="targanchor"><dfn>Print</dfn></a>(const tjs_char *msg)</dt>
 <dd>　その他の情報を出力するためのメソッドです。msg がメッセージを表します。</dd></dl></dd></dl>
 </div></div>
 
-<h1><a id="id398" name="id398">GetConsoleOutput</a>
+<h1><a id="id400" name="id400">GetConsoleOutput</a>
 </h1><div class="para"><div>
 tTJSConsoleOutput * tTJS::GetConsoleOutput() const<br />
 <br />
 　コンソールの出力先を取得します。<br />
 </div></div>
 
-<h1><a id="id399" name="id399">OutputToConsole</a>
+<h1><a id="id401" name="id401">OutputToConsole</a>
 </h1><div class="para"><div>
 void tTJS::OutputToConsole(const tjs_char *msg) const<br />
 <br />
@@ -106,7 +106,7 @@ void tTJS::OutputToConsole(const tjs_char *msg) const<br />
 </div></div>
 
 
-<h1><a id="id400" name="id400">OutpuExceptionToConsole</a>
+<h1><a id="id402" name="id402">OutpuExceptionToConsole</a>
 </h1><div class="para"><div>
 void tTJS::OutpuExceptionToConsole(const tjs_char *msg) const<br />
 <br />
@@ -115,7 +115,7 @@ void tTJS::OutpuExceptionToConsole(const tjs_char *msg) const<br />
 
 
 
-<h1><a id="id401" name="id401">OutputToConsoleWithCentering</a>
+<h1><a id="id403" name="id403">OutputToConsoleWithCentering</a>
 </h1><div class="para"><div>
 void tTJS::OutputToConsoleWithCentering(const tjs_char *msg, tjs_uint width) const<br />
 <br />
@@ -127,7 +127,7 @@ void tTJS::OutputToConsoleWithCentering(const tjs_char *msg, tjs_uint width) con
 
 
 
-<h1><a id="id402" name="id402">OutputToConsoleSeparator</a>
+<h1><a id="id404" name="id404">OutputToConsoleSeparator</a>
 </h1><div class="para"><div>
 void tTJS::OutputToConsoleSeparator(const tjs_char *text, tjs_uint count) const<br />
 <br />
@@ -136,7 +136,7 @@ void tTJS::OutputToConsoleSeparator(const tjs_char *text, tjs_uint count) const<
 
 
 
-<h1><a id="id403" name="id403">Dump</a>
+<h1><a id="id405" name="id405">Dump</a>
 </h1><div class="para"><div>
 void tTJS::Dump(tjs_uint width = 80) const<br />
 <br />
@@ -145,7 +145,7 @@ void tTJS::Dump(tjs_uint width = 80) const<br />
 　width には出力する横幅を指定します。</div></div>
 
 
-<h1><a id="id404" name="id404">ExecScript</a>
+<h1><a id="id406" name="id406">ExecScript</a>
 </h1><div class="para"><div>
 void tTJS::ExecScript(<br />
 &nbsp;&nbsp;&nbsp;&nbsp;const tjs_char *script,<br />
@@ -195,7 +195,7 @@ void tTJS::ExecScript(<br />
 
 </dl></div></div>
 
-<h1><a id="id405" name="id405">EvalExpression</a>
+<h1><a id="id407" name="id407">EvalExpression</a>
 </h1><div class="para"><div>
 void tTJS::EvalExpression(<br />
 &nbsp;&nbsp;&nbsp;&nbsp;const tjs_char *expression,<br />
@@ -216,21 +216,21 @@ void tTJS::EvalExpression(<br />
 　式を評価します。<br />
 　引数については ExecScript を参照してください。<br />
 <br />
-　<a id="id406" name="id406" class="targanchor"><dfn>if 演算子</dfn></a>のように式の結果を得ることができない演算子の場合、その結果を得ようとして result に非 NULL を指定すると例外が発生します。この場合は result には NULL を指定する必要があります。</div></div>
+　<a id="id408" name="id408" class="targanchor"><dfn>if 演算子</dfn></a>のように式の結果を得ることができない演算子の場合、その結果を得ようとして result に非 NULL を指定すると例外が発生します。この場合は result には NULL を指定する必要があります。</div></div>
 
 
 
 
-<h1><a id="id407" name="id407">SetPPValue</a>
+<h1><a id="id409" name="id409">SetPPValue</a>
 </h1><div class="para"><div>
 void tTJS::SetPPValue(const tjs_char *name, const tjs_int32 value)<br />
 <br />
-　<a id="id408" name="id408" class="targanchor"><dfn>条件コンパイル</dfn></a>用の変数を設定します。name は変数の名前、value は設定する値です。<br />
+　<a id="id410" name="id410" class="targanchor"><dfn>条件コンパイル</dfn></a>用の変数を設定します。name は変数の名前、value は設定する値です。<br />
 </div></div>
 
 
 
-<h1><a id="id409" name="id409">GetPPValue</a>
+<h1><a id="id411" name="id411">GetPPValue</a>
 </h1><div class="para"><div>
 tjs_int32 tTJS::GetPPValue(const tjs_char *name)<br />
 <br />
@@ -240,11 +240,11 @@ tjs_int32 tTJS::GetPPValue(const tjs_char *name)<br />
 
 
 
-<h1><a id="id410" name="id410">DoGarbageCollection</a>
+<h1><a id="id412" name="id412">DoGarbageCollection</a>
 </h1><div class="para"><div>
 tjs_int32 tTJS::DoGarbageCollection()<br />
 <br />
-　<a id="id411" name="id411" class="targanchor"><dfn>ガベージコレクション</dfn></a>を行います。TJS2 が保持しているキャッシュをクリアしたり、未処理のクリーンアップ処理を完了させます。<br />
+　<a id="id413" name="id413" class="targanchor"><dfn>ガベージコレクション</dfn></a>を行います。TJS2 が保持しているキャッシュをクリアしたり、未処理のクリーンアップ処理を完了させます。<br />
 </div></div>
 	<script type="text/javascript" charset="Shift_JIS" src="documentid.js" ></script>
 	<script type="text/javascript" charset="Shift_JIS" src="postcontent.js" ></script>

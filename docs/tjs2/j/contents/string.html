@@ -14,16 +14,16 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id331" name="id331">文字列に対する操作</a>
+<h1><a id="id333" name="id333">文字列に対する操作</a>
 </h1><div class="para"><div>
-　TJS2 では、文字列は擬似的に <a id="id332" name="id332" class="targanchor"><dfn>String</dfn></a> クラスのオブジェクトということになっていますが、String クラスは存在していませんし、実際に String クラスのオブジェクトというわけではありません ( ただし 文字列に対して typeof 演算子を使うと &quot;String&quot; を返します )。<br />
+　TJS2 では、文字列は擬似的に <a id="id334" name="id334" class="targanchor"><dfn>String</dfn></a> クラスのオブジェクトということになっていますが、String クラスは存在していませんし、実際に String クラスのオブジェクトというわけではありません ( ただし 文字列に対して typeof 演算子を使うと &quot;String&quot; を返します )。<br />
 　しかし 文字列をオブジェクトと見立てて、いくつかのメソッドやプロパティが使用可能になっています。<br />
 </div></div>
-<h1><a id="id333" name="id333">length</a>
+<h1><a id="id335" name="id335">length</a>
 </h1><div class="para"><div>
 　length プロパティは、文字列の長さを返します。メソッドではなくてプロパティですので注意してください。ただし、このプロパティへの値の代入はできません。<br />
 <br />
-　TJS では内部的に文字をすべて <a id="id334" name="id334" class="targanchor"><dfn>UNICODE</dfn></a> で扱っていますので、全角文字も 1 文字、半角文字も 1 文字と数えられます。<br />
+　TJS では内部的に文字をすべて <a id="id336" name="id336" class="targanchor"><dfn>UNICODE</dfn></a> で扱っていますので、全角文字も 1 文字、半角文字も 1 文字と数えられます。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;str&nbsp;=&nbsp;&quot;abc漢字&quot;;<br />
@@ -33,7 +33,7 @@
 <br />
 
 </div></div>
-<h1><a id="id335" name="id335">'数値' プロパティ</a>
+<h1><a id="id337" name="id337">'数値' プロパティ</a>
 </h1><div class="para"><div>
 　数値をプロパティとして間接指定すると、その文字位置にある文字にアクセスできます。<br />
 　たとえば、str が文字列あるいは文字列を表す式だとすると、str[0] は先頭の一文字を表す文字列になります。<br />
@@ -52,7 +52,7 @@
 <br />
 
 </div></div>
-<h1><a id="id336" name="id336">charAt</a>
+<h1><a id="id338" name="id338">charAt</a>
 </h1><div class="para"><div>
 　charAt メソッドは、文字列の指定位置で指定された位置の文字を返します。 '数値' プロパティと同様の動作をしますが、範囲外の場合は常に空文字列を返します (例外を出しません)。<br />
 
@@ -68,7 +68,7 @@
 <br />
 
 </div></div>
-<h1><a id="id337" name="id337">indexOf</a>
+<h1><a id="id339" name="id339">indexOf</a>
 </h1><div class="para"><div>
 　indexOf メソッドは、部分文字列の位置を返します。<br />
 
@@ -88,7 +88,7 @@
 <br />
 
 </div></div>
-<h1><a id="id338" name="id338">toLowerCase</a>
+<h1><a id="id340" name="id340">toLowerCase</a>
 </h1><div class="para"><div>
 　このメソッドに引数はありません。<br />
 　toLowerCase は、文字列のアルファベットを小文字にした文字列を返します。<br />
@@ -105,12 +105,12 @@
 　現バージョンの TJS2 では 文字コード 0x80 未満の文字に対してのみ変換を行います。<br />
 </div><br />
 </div></div>
-<h1><a id="id339" name="id339">toUpperCase</a>
+<h1><a id="id341" name="id341">toUpperCase</a>
 </h1><div class="para"><div>
 　このメソッドは toLowerCase と逆で、小文字のアルファベットを大文字にした文字列を返します。<br />
 </div></div>
 
-<h1><a id="id340" name="id340">substring</a>
+<h1><a id="id342" name="id342">substring</a>
 </h1><div class="para"><div>
 　substring メソッドは、文字列の部分文字列を返します。<br />
 
@@ -126,11 +126,11 @@
 <br />
 
 </div></div>
-<h1><a id="id341" name="id341">substr</a>
+<h1><a id="id343" name="id343">substr</a>
 </h1><div class="para"><div>
 　substring と同じです。<br />
 </div></div>
-<h1><a id="id342" name="id342">sprintf</a>
+<h1><a id="id344" name="id344">sprintf</a>
 </h1><div class="para"><div>
 　sprintf メソッドは、文字列を書式化します。<br />
 
@@ -147,7 +147,7 @@
 
 </div></div>
 
-<h1><a id="id343" name="id343">replace</a>
+<h1><a id="id345" name="id345">replace</a>
 </h1><div class="para"><div>
 　replace メソッドは、文字列の置き換えを行います。<br />
 
@@ -158,7 +158,7 @@
 　正規表現パターンに従って文字列の置き換えを行い、置き換えを行ったあとの文字列を返します。元の文字列には影響を与えません。<br />
 　動作については <a target="main" class="jump" href="regexp.html">RegExp クラス</a> の replace メソッドを参照してください。<br />
 </div></div>
-<h1><a id="id344" name="id344">split</a>
+<h1><a id="id346" name="id346">split</a>
 </h1><div class="para"><div>
 　split メソッドは、文字列を分割します。<br />
 
@@ -170,7 +170,7 @@
 <br />
 　<a target="main" class="jump" href="array.html">Array クラス</a> の split メソッドも参照してください (引数の順番に注意してください)。<br />
 </div></div>
-<h1><a id="id345" name="id345">escape</a>
+<h1><a id="id347" name="id347">escape</a>
 </h1><div class="para"><div>
 　escape メソッドは、文字列を、TJSの文字列即値内で表現可能な形式に変換します。\ や &quot; などの記号はすべて \ 記号を用いて特殊な用途として解釈されなくされます (エスケープされます)。<br />
 
@@ -187,7 +187,7 @@
 <br />
 
 </div></div>
-<h1><a id="id346" name="id346">trim</a>
+<h1><a id="id348" name="id348">trim</a>
 </h1><div class="para"><div>
 　trim メソッドは、文字列の先頭と最後の空白を取り除いた文字列を返します。元の文字列には影響を与えません。<br />
 　先頭と最後の空白とは、文字コードがU+0001～U+0020の文字を指します。つまり、ASCII制御文字なども含まれますが、いわゆる全角の空白は含みません。<br />
@@ -206,7 +206,7 @@
 <br />
 
 </div></div>
-<h1><a id="id347" name="id347">reverse</a>
+<h1><a id="id349" name="id349">reverse</a>
 </h1><div class="para"><div>
 　reverse メソッドは、文字の並びを逆転した文字列を返します。元の文字列には影響を与えません。<br />
 　現バージョンのTJS2では、UTF-16のうちサロゲートペアを含む文字列の動作は保証しません。<br />
@@ -223,7 +223,7 @@
 <br />
 
 </div></div>
-<h1><a id="id348" name="id348">repeat</a>
+<h1><a id="id350" name="id350">repeat</a>
 </h1><div class="para"><div>
 　repeat メソッドは、指定した回数だけ文字列を繰り返した文字列を返します。元の文字列には影響を与えません。<br />
 

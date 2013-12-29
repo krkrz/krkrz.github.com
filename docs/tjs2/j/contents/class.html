@@ -14,14 +14,14 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id47" name="id47">クラス</a>
+<h1><a id="id48" name="id48">クラス</a>
 </h1><div class="para"><div>
 　クラスは、オブジェクトを作成するときの雛形となるものです。クラスに属する変数をメンバ変数、クラスに属する関数をメンバ関数、あるいはメソッドと呼び、クラスに属するプロパティはメンバプロパティと呼びます。<br />
 <br />
 　クラスは基本的には以下のようにして宣言します。<br />
 
 <br />
-<code class="bq"><a id="id48" name="id48" class="targanchor"><dfn>class</dfn></a>&nbsp;classname<br />
+<code class="bq"><a id="id49" name="id49" class="targanchor"><dfn>class</dfn></a>&nbsp;classname<br />
 {<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;メンバやメンバメソッドやメンバプロパティを記述</span><br />
 <br />
@@ -29,7 +29,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;{<br />
 &nbsp;&nbsp;&nbsp;&nbsp;}<br />
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;<a id="id49" name="id49" class="targanchor"><dfn>finalize</dfn></a>()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;<a id="id50" name="id50" class="targanchor"><dfn>finalize</dfn></a>()<br />
 &nbsp;&nbsp;&nbsp;&nbsp;{<br />
 &nbsp;&nbsp;&nbsp;&nbsp;}<br />
 }<br />
@@ -42,7 +42,7 @@
 <br />
 　クラス内には、そのクラスが作成されたときにメンバとなる変数やメソッド、プロパティを記述します。<br />
 <br />
-　クラス内には、クラスと同名のメソッドが必ず一つあり、<a id="id50" name="id50" class="targanchor"><dfn>コンストラクタ</dfn></a>と呼ばれます。これは、 <a id="id51" name="id51" class="targanchor"><dfn>new</dfn></a> 演算子を使用してオブジェクトを作成するとき、この関数が new 演算子の引数を伴って呼び出されます。<br />
+　クラス内には、クラスと同名のメソッドが必ず一つあり、<a id="id51" name="id51" class="targanchor"><dfn>コンストラクタ</dfn></a>と呼ばれます。これは、 <a id="id52" name="id52" class="targanchor"><dfn>new</dfn></a> 演算子を使用してオブジェクトを作成するとき、この関数が new 演算子の引数を伴って呼び出されます。<br />
 <br />
 　クラス内には同様に、finalize という特殊なメソッドがあります。これは、オブジェクトが消滅するときに呼ばれるメソッドで、省略可能です。書かなくてもかまいません。<br />
 <br />
@@ -82,7 +82,7 @@
 <br />
 クラスに対して instanceof 演算子を &quot;Class&quot; を伴って使用した場合は真になります(上記の例で言うと、test instanceof &quot;Class&quot; は真)。<br />
 </div></div>
-<h1><a id="id52" name="id52">オブジェクトの作成</a>
+<h1><a id="id53" name="id53">オブジェクトの作成</a>
 </h1><div class="para"><div>
 　宣言したクラスのオブジェクトを作成するには new 演算子を使います。<br />
 　new 演算子の後には、関数呼び出しと同様に、クラス名と、コンストラクタに渡す引数を指定します。<br />
@@ -146,12 +146,12 @@
 <br />
 
 </div></div>
-<h1><a id="id53" name="id53">オブジェクトの無効化</a>
+<h1><a id="id54" name="id54">オブジェクトの無効化</a>
 </h1><div class="para"><div>
-　TJS2 では、オブジェクトが削除される際、オブジェクトの<a id="id54" name="id54" class="targanchor"><dfn>無効化</dfn></a>とオブジェクトの削除、という２つの段階を踏みます。<br />
-　オブジェクトが無効化されるとき、 finalize メソッドが呼ばれ、そのオブジェクトは無効であるというマークがつけられます。以降のそのオブジェクトへのアクセスはすべて失敗し、例外が発生するようになります。オブジェクトが無効化されているかどうかは <a id="id55" name="id55" class="targanchor"><dfn>isvalid</dfn></a> 演算子で調べることができます。<br />
+　TJS2 では、オブジェクトが削除される際、オブジェクトの<a id="id55" name="id55" class="targanchor"><dfn>無効化</dfn></a>とオブジェクトの削除、という２つの段階を踏みます。<br />
+　オブジェクトが無効化されるとき、 finalize メソッドが呼ばれ、そのオブジェクトは無効であるというマークがつけられます。以降のそのオブジェクトへのアクセスはすべて失敗し、例外が発生するようになります。オブジェクトが無効化されているかどうかは <a id="id56" name="id56" class="targanchor"><dfn>isvalid</dfn></a> 演算子で調べることができます。<br />
 <br />
-　オブジェクトは <a id="id56" name="id56" class="targanchor"><dfn>invalidate</dfn></a> 演算子で無効化することができます。<br />
+　オブジェクトは <a id="id57" name="id57" class="targanchor"><dfn>invalidate</dfn></a> 演算子で無効化することができます。<br />
 <br />
 
 <br />
@@ -189,9 +189,9 @@
 　TJS2 の delete 演算子は C++ の delete 演算子と違い、メンバやローカル変数を削除するための演算子です。オブジェクト自体を無効化したり削除したりはしませんが、メンバやローカル変数を削除したことにより結果的にオブジェクトの無効化や削除を引き起こすことはあります。<br />
 </div><br />
 </div></div>
-<h1><a id="id57" name="id57">オブジェクトへのアクセス</a>
+<h1><a id="id58" name="id58">オブジェクトへのアクセス</a>
 </h1><div class="para"><div>
-　作成したオブジェクトのメンバ変数、メソッド、メンバプロパティには、<a id="id58" name="id58" class="targanchor"><dfn>.</dfn></a> (メンバ選択) 演算子 または <a id="id59" name="id59" class="targanchor"><dfn>[ ]</dfn></a> (間接メンバ選択演算子) を用いてアクセスします。<br />
+　作成したオブジェクトのメンバ変数、メソッド、メンバプロパティには、<a id="id59" name="id59" class="targanchor"><dfn>.</dfn></a> (メンバ選択) 演算子 または <a id="id60" name="id60" class="targanchor"><dfn>[ ]</dfn></a> (間接メンバ選択演算子) を用いてアクセスします。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;obj=new&nbsp;MyLayer(window,window.prmaryLayer)<br />
@@ -202,10 +202,10 @@
 <br />
 
 </div></div>
-<h1><a id="id60" name="id60">クロージャ</a>
+<h1><a id="id61" name="id61">クロージャ</a>
 </h1><div class="para"><div>
 　作成したオブジェクトのメソッドやメンバプロパティは、そのメンバがどのオブジェクトのメンバであるかの情報を持った状態でオブジェクトに登録されています。<br />
-　そのため、メソッドやメンバプロパティをオブジェクト外に持ち出して、それを使用しても、元のオブジェクトに対するアクセスを行うことになります。この機能をクロージャと呼びます。また、アクセス先のオブジェクトを<a id="id61" name="id61" class="targanchor"><dfn>コンテキスト</dfn></a>と呼びます。<br />
+　そのため、メソッドやメンバプロパティをオブジェクト外に持ち出して、それを使用しても、元のオブジェクトに対するアクセスを行うことになります。この機能をクロージャと呼びます。また、アクセス先のオブジェクトを<a id="id62" name="id62" class="targanchor"><dfn>コンテキスト</dfn></a>と呼びます。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;obj&nbsp;=&nbsp;new&nbsp;FooBarClass();&nbsp;<span class="comment">//&nbsp;オブジェクトを作成</span><br />
@@ -216,7 +216,7 @@
 <br />
 
 <br />
-　<a id="id62" name="id62" class="targanchor"><dfn>incontextof</dfn></a> 演算子は、どのオブジェクトのメンバであるか、の情報を変更し、任意のコンテキスト上でメソッドを実行するための方法を提供します。<br />
+　<a id="id63" name="id63" class="targanchor"><dfn>incontextof</dfn></a> 演算子は、どのオブジェクトのメンバであるか、の情報を変更し、任意のコンテキスト上でメソッドを実行するための方法を提供します。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;(objmethod&nbsp;incontextof&nbsp;obj2)();&nbsp;<span class="comment">//&nbsp;obj2&nbsp;に対する操作になる</span><br />
@@ -225,10 +225,10 @@
 
 </div></div>
 
-<h1><a id="id63" name="id63">継承</a>
+<h1><a id="id64" name="id64">継承</a>
 </h1><div class="para"><div>
-　キーワード <a id="id64" name="id64" class="targanchor"><dfn>extends</dfn></a> を用いると、クラスを別のクラスから継承させることができます。継承とは、継承元のクラスのメンバを引き継ぐことです。<br />
-　継承する元となるクラスのことを<a id="id65" name="id65" class="targanchor"><dfn>スーパークラス</dfn></a>、継承したクラスのことを<a id="id66" name="id66" class="targanchor"><dfn>サブクラス</dfn></a>と呼びます。<br />
+　キーワード <a id="id65" name="id65" class="targanchor"><dfn>extends</dfn></a> を用いると、クラスを別のクラスから継承させることができます。継承とは、継承元のクラスのメンバを引き継ぐことです。<br />
+　継承する元となるクラスのことを<a id="id66" name="id66" class="targanchor"><dfn>スーパークラス</dfn></a>、継承したクラスのことを<a id="id67" name="id67" class="targanchor"><dfn>サブクラス</dfn></a>と呼びます。<br />
 　以下のようにしてクラスを宣言します。<br />
 
 <br />
@@ -266,15 +266,15 @@
 </code>
 <br />
 
-　上記の例では、Class2 が Class1 を継承しています。Class2 は Class1 から<a id="id67" name="id67" class="targanchor"><dfn>派生</dfn></a>している、とも言います。<br />
+　上記の例では、Class2 が Class1 を継承しています。Class2 は Class1 から<a id="id68" name="id68" class="targanchor"><dfn>派生</dfn></a>している、とも言います。<br />
 　Class2 のコンストラクタ内では Class1 のコンストラクタを、Class2 の finalize では Class1 の finalize を呼んでいます。<em>サブクラスが、これらのメソッド内でスーパークラスの該当する同メソッドを呼び出さなかった場合の動作は未定義</em> ( というか現バージョンでは呼んだかどうかチェックしていない ) ですので、必ず記述するようにしてください。<br />
 <br />
-　サブクラスからスーパークラスを参照するためには、上記の例のようにキーワード <a id="id68" name="id68" class="targanchor"><dfn>super</dfn></a> を使用することができます。このキーワードはサブクラス内でのみ使用可能で、スーパークラスを表すものです。<br />
+　サブクラスからスーパークラスを参照するためには、上記の例のようにキーワード <a id="id69" name="id69" class="targanchor"><dfn>super</dfn></a> を使用することができます。このキーワードはサブクラス内でのみ使用可能で、スーパークラスを表すものです。<br />
 <br />
 　継承が行われている場合の、new 演算子でのオブジェクトの初期化の順序は以下の通りです。<br />
 <br />
 <ol><li>まず空のオブジェクトが作成される</li><li>メソッド、プロパティが登録される ( スーパークラスから先に、サブクラスに向かって )</li><li>メンバ変数が作成される ( スーパークラスから先に、サブクラスに向かって )</li><li>サブクラスのコンストラクタが呼ばれる</li><li>( サブクラスのコンストラクタ内から ) スーパークラスのコンストラクタが呼ばれる</li></ol></div></div>
-<h1><a id="id69" name="id69">多重継承</a>
+<h1><a id="id70" name="id70">多重継承</a>
 </h1><div class="para"><div>
 　extends の後に、スーパークラス名を複数記述すると、多重継承を行わせることができます。<br />
 
@@ -301,7 +301,7 @@
 <br />
 　多重継承が行われている場合の、new 演算子でのオブジェクトの初期化の順序は多重継承を行っていないときのそれと同じすが、スーパークラスのメソッド、プロパティの登録の順番は、extends キーワードの後に書いた順に行われます。継承元のクラス間で同名のメソッドやプロパティがあった場合は、後に書いたほうが優先されます。隠れてしまったメソッドやプロパティには、global.ClassA.hiddenMethod() のように明示的にクラス名を書いてアクセスする事ができます。<br />
 </div></div>
-<h1><a id="id70" name="id70">オーバーライド</a>
+<h1><a id="id71" name="id71">オーバーライド</a>
 </h1><div class="para"><div>
 　サブクラスでスーパークラスのメソッドやメンバプロパティと同名のものを宣言すると、スーパークラスのメソッドを隠すことができます。これをオーバーライドと呼びます。<br />
 　上記の説明の中にでてきた finalize メソッドは、スーパークラスの finalize メソッドをオーバーライドしています。<br />

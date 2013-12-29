@@ -14,13 +14,13 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id323" name="id323">ステートメントとブロック</a>
+<h1><a id="id325" name="id325">ステートメントとブロック</a>
 </h1><div class="para"><div>
 　TJS2 の大きな文法の構成要素としてステートメントとブロックがあります。<br />
 </div></div>
-<h1><a id="id324" name="id324">ステートメント</a>
+<h1><a id="id326" name="id326">ステートメント</a>
 </h1><div class="para"><div>
-　ステートメントは、<a id="id325" name="id325" class="targanchor"><dfn>;</dfn></a> (セミコロン) で終わるものです。式の後ろにそのままセミコロンがついたものもあれば、if 等の制御構文の後にセミコロンが付いたものもあります。<br />
+　ステートメントは、<a id="id327" name="id327" class="targanchor"><dfn>;</dfn></a> (セミコロン) で終わるものです。式の後ろにそのままセミコロンがついたものもあれば、if 等の制御構文の後にセミコロンが付いたものもあります。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;a++;<br />
@@ -31,9 +31,9 @@
 <br />
 
 </div></div>
-<h1><a id="id326" name="id326">ブロック</a>
+<h1><a id="id328" name="id328">ブロック</a>
 </h1><div class="para"><div>
-　ブロックは、ステートメントを <a id="id327" name="id327" class="targanchor"><dfn>{ }</dfn></a> の間に複数書き、まとめたものです。ステートメントは上から下へ実行されます。<br />
+　ブロックは、ステートメントを <a id="id329" name="id329" class="targanchor"><dfn>{ }</dfn></a> の間に複数書き、まとめたものです。ステートメントは上から下へ実行されます。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />
@@ -52,9 +52,9 @@
 <br />
 　ブロックの次には ; (セミコロン) は必要ありません。<br />
 <br />
-　また、すべてのブロックは、変数の<a id="id328" name="id328" class="targanchor"><dfn>スコープ</dfn></a>を生成します。<br />
+　また、すべてのブロックは、変数の<a id="id330" name="id330" class="targanchor"><dfn>スコープ</dfn></a>を生成します。<br />
 </div></div>
-<h1><a id="id329" name="id329">実行順序</a>
+<h1><a id="id331" name="id331">実行順序</a>
 </h1><div class="para"><div>
 　TJS では、関数、クラス、プロパティ以外の部分に書かれたステートメントは、スクリプトが実行されるとともに実行されます。関数、クラス、プロパティの中のステートメントは呼び出されるまで実行されません。<br />
 
@@ -87,7 +87,7 @@
 　違うスクリプトブロック間での関数などの呼び出しは、関数呼び出しをしようとした時点で、その対象の関数が読み込まれた状態になっていれば可能です。<br />
 　また、変数の宣言は、読み込まれた順番に処理されていくので、後方参照はできません。<br />
 </div></div>
-<h1><a id="id330" name="id330">グローバルオブジェクト</a>
+<h1><a id="id332" name="id332">グローバルオブジェクト</a>
 </h1><div class="para"><div>
 　グローバルオブジェクトは特殊なオブジェクトで、グローバルな位置(広域位置)で宣言された変数や関数、プロパティなどをメンバとして持つオブジェクトです。global キーワードでアクセスできます。<br />
 </div></div>

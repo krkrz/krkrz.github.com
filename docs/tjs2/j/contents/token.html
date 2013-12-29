@@ -14,11 +14,11 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id357" name="id357">トークン</a>
+<h1><a id="id359" name="id359">トークン</a>
 </h1><div class="para"><div>
 　スクリプトは、解釈中、すべてトークンと呼ばれる単位に分解されて処理されます。<br />
 　トークンと次のトークンの境界は、トークンの種類によって異なります。</div></div>
-<h1><a id="id358" name="id358">裸の単語</a>
+<h1><a id="id360" name="id360">裸の単語</a>
 </h1><div class="para"><div>
 　「裸の単語」とは、<code class="inlinecode">&quot;&quot;</code> や <code class="inlinecode">''</code> クオート(引用)されていない、スクリプト中に直接書かれる特定の文字の並びのことです。<br />
 　「裸の単語」は以下の規則を持っています。<br />
@@ -37,7 +37,7 @@
 <br />
 　「裸の単語」は、さらに予約語と識別子に分類されます。<br />
 </div></div>
-<h1><a id="id359" name="id359">予約語</a>
+<h1><a id="id361" name="id361">予約語</a>
 </h1><div class="para"><div>
 　予約語は以下のもので、識別子ではありません。「裸の単語」のうち、予約語ではないものはすべて識別子です。<br />
 <br />
@@ -54,12 +54,12 @@
 　これらの予約語は、スクリプトの文法を構成する重要な用途として特殊な意味をそれぞれ持っています。このうちのいくつかは、演算子として使用されるものです。<br />
 　ただし、現バージョンではこれらのすべての予約語が使用されているわけではありません。<br />
 </div></div>
-<h1><a id="id360" name="id360">識別子</a>
+<h1><a id="id362" name="id362">識別子</a>
 </h1><div class="para"><div>
 　「識別子」は、「裸の単語」のうち、予約語でないものすべてです。これらは、記述者が自由に命名することのできる変数や関数、クラス名などに用いられます。<br />
 　識別子は予約語を含んでいても、予約語そのものでなければ、予約語ではなく識別子として認識されます。<br />
 </div></div>
-<h1><a id="id361" name="id361">記号</a>
+<h1><a id="id363" name="id363">記号</a>
 </h1><div class="para"><div>
 　記号類もトークンとして分解されます。記号類には以下のものがあります。<br />
 <br />
@@ -74,7 +74,7 @@
 <br />
 　記号類は、それぞれ文法を構成する要素として重要な意味を持っています。記号のうち、いくつかは演算子として使用されるものです。<br />
 </div></div>
-<h1><a id="id362" name="id362">数値即値</a>
+<h1><a id="id364" name="id364">数値即値</a>
 </h1><div class="para"><div>
 　数値即値は、数字、あるいは <code class="inlinecode">.</code> (小数点)で始まるものです。<code class="inlinecode">TJS2</code> は、以下の形式を認識します。<br />
 　普通に数値を書けばそのまま10進の数値即値になります。<br />
@@ -88,7 +88,7 @@
 <br />
 
 <br />
-　また、10進については <code class="inlinecode">e</code> または <code class="inlinecode">E</code> を使い、10を底とする <a id="id363" name="id363" class="targanchor"><dfn>指数指定</dfn></a>をすることもできます。<code class="inlinecode">e</code> でも <code class="inlinecode">E</code> でも意味は同じです。<br />
+　また、10進については <code class="inlinecode">e</code> または <code class="inlinecode">E</code> を使い、10を底とする <a id="id365" name="id365" class="targanchor"><dfn>指数指定</dfn></a>をすることもできます。<code class="inlinecode">e</code> でも <code class="inlinecode">E</code> でも意味は同じです。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;1e-3&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;1×10<sup>-3</sup></span><br />
@@ -98,7 +98,7 @@
 <br />
 
 <br />
-　先頭に <code class="inlinecode">0x</code> または <code class="inlinecode">0X</code> をつけると <a id="id364" name="id364" class="targanchor"><dfn>16進数</dfn></a>での指定となります。<code class="inlinecode">0x</code> でも <code class="inlinecode">0X</code> でも意味は同じです。<br />
+　先頭に <code class="inlinecode">0x</code> または <code class="inlinecode">0X</code> をつけると <a id="id366" name="id366" class="targanchor"><dfn>16進数</dfn></a>での指定となります。<code class="inlinecode">0x</code> でも <code class="inlinecode">0X</code> でも意味は同じです。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;0x1234<br />
@@ -108,7 +108,7 @@
 <br />
 
 <br />
-　先頭に <code class="inlinecode">0b</code> または <code class="inlinecode">0B</code> をつけると <a id="id365" name="id365" class="targanchor"><dfn>2進数</dfn></a>での指定となります。<br />
+　先頭に <code class="inlinecode">0b</code> または <code class="inlinecode">0B</code> をつけると <a id="id367" name="id367" class="targanchor"><dfn>2進数</dfn></a>での指定となります。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;0b0100<br />
@@ -117,7 +117,7 @@
 <br />
 
 <br />
-　先頭に <code class="inlinecode">0</code> がつくと <a id="id366" name="id366" class="targanchor"><dfn>8進数</dfn></a>として扱われます。<br />
+　先頭に <code class="inlinecode">0</code> がつくと <a id="id368" name="id368" class="targanchor"><dfn>8進数</dfn></a>として扱われます。<br />
 
 <br />
 <code class="bq"><span class="weak">例:</span><br />&nbsp;&nbsp;&nbsp;&nbsp;01234<br />
@@ -139,7 +139,7 @@
 <br />
 　数値即値は、それが数値即値の構成文字である限り一つの数値即値としてあつかわれます。<br />
 </div></div>
-<h1><a id="id367" name="id367">文字列即値</a>
+<h1><a id="id369" name="id369">文字列即値</a>
 </h1><div class="para"><div>
 　文字列即値(文字列リテラル)は、<code class="inlinecode">&quot;&quot;</code> (ダブルクオーテーション) または <code class="inlinecode">''</code>(シングルクオーテーション)で囲まれるものです。ダブルクオーテーションをつかってもシングルクオーテーションを使ってもかまいません。<br />
 　ただし、<code class="inlinecode">&quot;&quot;</code> (ダブルクオーテーション) 中では '(シングルクオーテーション) を、<code class="inlinecode">''</code>(シングルクオーテーション)中では <code class="inlinecode">&quot;</code> (ダブルクオーテーション) を、<code class="inlinecode">\</code> でエスケープする必要が無くなります。<br />
@@ -152,7 +152,7 @@
 <br />
 
 <br />
-　文字列中で <code class="inlinecode"><a id="id368" name="id368" class="targanchor"><dfn>\</dfn></a></code> (円記号) は特別な意味を持ちます。 \ の後に続く文字で意味が変わります。\ に続けて特殊な指定をすることを<a id="id369" name="id369" class="targanchor"><dfn>エスケープ</dfn></a>するといいます。<br />
+　文字列中で <code class="inlinecode"><a id="id370" name="id370" class="targanchor"><dfn>\</dfn></a></code> (円記号) は特別な意味を持ちます。 \ の後に続く文字で意味が変わります。\ に続けて特殊な指定をすることを<a id="id371" name="id371" class="targanchor"><dfn>エスケープ</dfn></a>するといいます。<br />
 <br />
 
 <br />
@@ -189,7 +189,7 @@
 　文字列については <a target="main" class="jump" href="string.html">文字列に対する操作</a> も参照してください。<br />
 </div></div>
 
-<h1><a id="id370" name="id370">@ つき文字列即値</a>
+<h1><a id="id372" name="id372">@ つき文字列即値</a>
 </h1><div class="para"><div>
 　文字列即値の前に @ を置くと、その文字列即値中の &amp; から ; までの間、または ${ から } までの間を式とみなし、それを評価した結果をそこに展開するようになります (式を &amp; と ; の間や ${ と } に書けば、その結果がそこに埋め込まれます)。<br />
 　&amp; や $ を展開したくない場合は、&amp; や $ の前に \ を置くことで &amp; や $ を展開しないようにすることができます。<br />
@@ -208,7 +208,7 @@
 　ここに記述する式は、この文字列の書かれている場所からアクセス可能な範囲にある変数など (ローカル変数を含む) にアクセスできます。<br />
 </div></div>
 
-<h1><a id="id371" name="id371">オクテット列即値</a>
+<h1><a id="id373" name="id373">オクテット列即値</a>
 </h1><div class="para"><div>
 　オクテット列即値は、<code class="inlinecode">&lt;%</code> と <code class="inlinecode">%&gt;</code> で囲まれるもので、中にオクテットデータ ( バイナリデータ ) を書くことができます。<br />
 　データは二桁の16進数をスペースなどで区切り、複数指定します。<br />
@@ -222,7 +222,7 @@
 <br />
 　オクテット列については <a target="main" class="jump" href="octet.html">オクテット列に対する操作</a> も参照してください。<br />
 </div></div>
-<h1><a id="id372" name="id372">正規表現パターン</a>
+<h1><a id="id374" name="id374">正規表現パターン</a>
 </h1><div class="para"><div>
 　正規表現パターンは、<code class="inlinecode">/</code> と <code class="inlinecode">/</code> で囲まれるもので、なかに正規表現パターンを書くことができます。<br />
 　正規表現パターンの後に続けてフラグ文字を書くことができ、g は グローバルサーチフラグ ( 見つかったものをすべてにマッチ;このフラグがないと最初のものだけにマッチ )、i は英字大文字小文字を区別しないフラグ、l はローカライズされたコレーションを行うようにするフラグです。<br />

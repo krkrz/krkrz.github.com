@@ -14,11 +14,11 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id373" name="id373">例外処理</a>
+<h1><a id="id375" name="id375">例外処理</a>
 </h1><div class="para"><div>
-　<a id="id374" name="id374" class="targanchor"><dfn>例外</dfn></a>とは、通常の処理では考えられないような、いわゆる「例外」のことで、多くの場合「エラー」と同じと考えてください。<br />
+　<a id="id376" name="id376" class="targanchor"><dfn>例外</dfn></a>とは、通常の処理では考えられないような、いわゆる「例外」のことで、多くの場合「エラー」と同じと考えてください。<br />
 </div></div>
-<h1><a id="id375" name="id375">例外が発生する場所</a>
+<h1><a id="id377" name="id377">例外が発生する場所</a>
 </h1><div class="para"><div>
 　プログラム中のどこでも例外が発生する可能性があります。<br />
 　例外を発生させることを「例外を投げる(throw)」ともいいます。<br />
@@ -32,9 +32,9 @@
 <br />
 　このように 明らかに例外が発生する場合もありますが、発生するかしないかわからない場合もあります。<br />
 </div></div>
-<h1><a id="id376" name="id376">例外の捕捉</a>
+<h1><a id="id378" name="id378">例外の捕捉</a>
 </h1><div class="para"><div>
-　<code class="inlinecode"><a id="id377" name="id377" class="targanchor"><dfn>try</dfn></a></code> (試す) キーワードと、<code class="inlinecode"><a id="id378" name="id378" class="targanchor"><dfn>catch</dfn></a></code> (捕捉) キーワードを使うと、例外を捕捉できます。<br />
+　<code class="inlinecode"><a id="id379" name="id379" class="targanchor"><dfn>try</dfn></a></code> (試す) キーワードと、<code class="inlinecode"><a id="id380" name="id380" class="targanchor"><dfn>catch</dfn></a></code> (捕捉) キーワードを使うと、例外を捕捉できます。<br />
 　たとえば、上の例で発生するかもしれない例外を捕捉するために、以下のようなスクリプトを書くことができます。<br />
 <br />
 
@@ -68,9 +68,9 @@
 <br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
 通常、このような例外はエラーとして実行を中断させてしまうので、なるべくエラーが起こりそうな場所には try ... catch を書くことをおすすめします。</div><br />
 </div></div>
-<h1><a id="id379" name="id379">例外オブジェクト</a>
+<h1><a id="id381" name="id381">例外オブジェクト</a>
 </h1><div class="para"><div>
-　例外に関するさまざまな情報が、<a id="id380" name="id380" class="targanchor"><dfn>Exception</dfn></a> というクラスのオブジェクトとともに投げられてきます。このオブジェクトを例外オブジェクトと呼びます。これを、catch で受け取ることができます。<br />
+　例外に関するさまざまな情報が、<a id="id382" name="id382" class="targanchor"><dfn>Exception</dfn></a> というクラスのオブジェクトとともに投げられてきます。このオブジェクトを例外オブジェクトと呼びます。これを、catch で受け取ることができます。<br />
 　たとえば、以下のようなスクリプトを書くことができます。<br />
 
 <br />
@@ -90,9 +90,9 @@
 　このように、catch の後の丸カッコ内に受け取る変数を書き、その変数に例外オブジェクトを受け取ることができます。<br />
 　この変数のスコープは、catch の次のブロック内で始まり、このブロックとともに終わります。この変数はあらかじめ宣言されている必要はありません。<br />
 </div></div>
-<h1><a id="id381" name="id381">throw ステートメント</a>
+<h1><a id="id383" name="id383">throw ステートメント</a>
 </h1><div class="para"><div>
-　例外を投げることもできます。例外を投げるには <code class="inlinecode"><a id="id382" name="id382" class="targanchor"><dfn>throw</dfn></a></code> キーワードを使います。<br />
+　例外を投げることもできます。例外を投げるには <code class="inlinecode"><a id="id384" name="id384" class="targanchor"><dfn>throw</dfn></a></code> キーワードを使います。<br />
 　たとえば、以下のようなスクリプトを書くことができます。<br />
 
 <br />
@@ -117,7 +117,7 @@
 　<code class="inlinecode">new Exception(&quot;負の数は指定できません。&quot;)</code> についてですが、これは Exception クラスのオブジェクトを、文字列を引数にして作成しています。詳しくは Exception クラスを参照してください。そして、この新しく作成されたオブジェクトを throw キーワードで投げています。<br />
 　throw キーワードで投げることができるのは Exception クラスのオブジェクトとは限りません。数値でも文字列でも、関数への参照を投げることもできます。しかし、Exception クラス、またはそれから派生したクラスのオブジェクトを投げることが推奨されます。捕捉したときに catch のブロックで、Exception クラスのオブジェクトがくることのみを想定して書けばいいからです。<br />
 </div></div>
-<h1><a id="id383" name="id383">例外を再び投げる</a>
+<h1><a id="id385" name="id385">例外を再び投げる</a>
 </h1><div class="para"><div>
 　catch で例外を捕捉したのはいいが、まだ例外を受け取る可能性のある try がどこかに宣言されているかもしれない、そのような場合に例外を再び投げることができます。<br />
 　以下のようなスクリプトを書くことができます。<br />

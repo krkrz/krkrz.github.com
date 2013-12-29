@@ -14,7 +14,7 @@
 	<link href="index.html" target="_top" rel="Start" title="トップページ" />
 </head>
 <body>
-<h1><a id="id290" name="id290">Math.RandomGenerator クラス</a>
+<h1><a id="id292" name="id292">Math.RandomGenerator クラス</a>
 </h1><div class="para"><div>
 　Math.RandomGenerator は、<a target="_blank" class="jump" href="http://www.math.keio.ac.jp/~matumoto/emt.html">Mersenne Twister 法</a> による乱数を発生するためのクラスです。<br />
 <br />
@@ -29,32 +29,32 @@
 　コンストラクタに serialize メソッドで状態を保存した辞書配列オブジェクトを指定すると、その状態で乱数発生器を作成できます。<br />
 　コンストラクタを省略すると、現在時刻を元にした乱数値で乱数発生器が初期化されます (吉里吉里2の場合は現在時刻ではなく、環境ノイズを元にした乱数発生器からの乱数で初期化されます)。<br />
 </div></div>
-<h1><a id="id291" name="id291">randomize</a>
+<h1><a id="id293" name="id293">randomize</a>
 </h1><div class="para"><div>
 　randomize メソッドは、乱数発生器を初期化します。引数はコンストラクタに指定する物と同じです。<br />
 </div></div>
-<h1><a id="id292" name="id292">random</a>
+<h1><a id="id294" name="id294">random</a>
 </h1><div class="para"><div>
 　random メソッドは、0以上1.0未満の実数の乱数値を返します。<br />
 </div></div>
-<h1><a id="id293" name="id293">random32</a>
+<h1><a id="id295" name="id295">random32</a>
 </h1><div class="para"><div>
 　random32 メソッドは、0以上4,294,967,295以下 (0xffffffff 以下) の整数の乱数値を返します。<br />
 </div></div>
-<h1><a id="id294" name="id294">random63</a>
+<h1><a id="id296" name="id296">random63</a>
 </h1><div class="para"><div>
 　random63 メソッドは、0以上9,223,372,036,854,775,807以下(0x7fffffffffffffff 以下) の整数の乱数値を返します。<br />
 </div></div>
 
-<h1><a id="id295" name="id295">random64</a>
+<h1><a id="id297" name="id297">random64</a>
 </h1><div class="para"><div>
 　random64 メソッドは、-9,223,372,036,854,775,808以上9,223,372,036,854,775,807以下の整数の乱数値を返します。<br />
 </div></div>
-<h1><a id="id296" name="id296">serialize</a>
+<h1><a id="id298" name="id298">serialize</a>
 </h1><div class="para"><div>
 　serialize メソッドは、現在の状態を記録した辞書配列オブジェクトを返します。この辞書配列オブジェクトは、コンストラクタや randomize メソッドに渡すことで、再び現在の状態を再現できる物です。<br />
 </div></div>
-<h1><a id="id297" name="id297">Copyright notice</a>
+<h1><a id="id299" name="id299">Copyright notice</a>
 </h1><div class="para"><div>
 　Mersenne Twister法の実装には<br />
 <br />
