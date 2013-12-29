@@ -191,6 +191,38 @@
 	<p>
 		吉里吉里2 では読込み時にエラーが出ていたものを修正して 2GB 超の XP3 ファイルを読めるようにした。<br />
 	</p>
+
+	<li>Windowの再生成排除。</li>
+	<p>
+		吉里吉里2 ではフルスクリーン化時ボーダースタイル変更時に、ウィンドウが作り直されていましたが、吉里吉里Z では作り直しが行われなくなりました。<br />
+		そのため TVP_WM_DETACH と TVP_WM_ATTACH が呼ばれる機会はほとんどなくなりました。<br />
+		フルスクリーン化/ウィンドウ化のタイミングを知るために、フルスクリーン変更前に TVP_WM_FULLSCREEN_CHANGING が、変更後に TVP_WM_FULLSCREEN_CHANGED が呼ばれるようになりました。(フルスクリーンかどうか判定するものではないことに注意してください)<br />
+	</p>
+
+	<li>プラグイン公開関数の増減。</li>
+	<p>
+		以下の公開関数が追加されました。<br />
+		TVPCreateTextStreamForReadByEncoding<br />
+		TVPSetDefaultReadEncoding<br />
+		TVPGetDefaultReadEncoding<br />
+		TVPRegisterAcceleratorKey<br />
+		TVPUnregisterAcceleratorKey<br />
+		TVPDeleteAcceleratorKeyTable<br />
+		TVPEnsureDirect3DObject<br />
+		TVPGetDirect3DObjectNoAddRef<br />
+		TVPChBlurMulCopy<br />
+		TVPChBlurAddMulCopy<br />
+		TVPChBlurCopy<br />
+		<br />
+		以下の公開関数が削除されました。<br />
+		TVPMIDIOutData<br />
+		TVPEnsureDirectDrawObject<br />
+		TVPGetDirectDrawObjectNoAddRef<br />
+		TVPGetDirectDraw7ObjectNoAddRef<br />
+		TVPGetDDPrimarySurfaceNoAddRef<br />
+		TVPSetDDPrimaryClipper<br />
+		TVPReleaseDDPrimarySurface<br />
+	</p>
 </ol>
 
 
@@ -303,6 +335,8 @@
 	<li>drawGlyph を追加し外字を描画しやすくした。</li>
 	<p>
 		任意の字形を文字列に埋め込んで描画しやすくするために追加。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_drawGlyph.html">Layer.drawGlyph</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_ImageFunction_drawGlyph.html">ImageFunction.drawGlyph</a> で描画できます。<br />
 	</p>
 
 	<li>PNG/JPEG/TLG 保存機能の追加。</li>
