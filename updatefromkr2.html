@@ -1,0 +1,355 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>吉里吉里Z / 吉里吉里Zでの吉里吉里2からの変更点一覧</title>
+<link rel="stylesheet" href="styles-site.css" type="text/css" />
+</head>
+<body>
+<a name="top"></a>
+<div id="top_link"><a href="./index.html">Topへ</a></div>
+<div id="container">
+<div id="title-banner"><h1>吉里吉里Zでの吉里吉里2からの変更点一覧</h1></div>
+
+<div class="content">
+<p>
+以下の変更点は初期正式版についてのものです。<br />
+それ以降のバージョンによってさらに変更が加えられている可能性があります。<br />
+1.0 以降の更新内容については、<a href="./olderversions.html">更新履歴</a>を参照してください。<br />
+</p>
+<br />
+<div class="title_bar"><a name="update">変更</a></div>
+<ol>
+	<li>VCL 依存部分を Win32 API 呼び出し処理へ変更。</li>
+	<p>
+		VCL では、不可視のメインウィンドウがアプリケーション(ウィンドウ)として機能し、他のウィンドウはその子として動く。<br />
+		吉里吉里2 内では、最初に作られたウィンドウがメインウィンドウとして扱われるが、内部には不可視のアプリケーション(ウィンドウ)が存在している(た)。<br />
+		吉里吉里Z では、VCL を書き換えると共に、この不可視のアプリケーション(ウィンドウ)は存在しなくなっている。<br />
+		このためアプリケーションの挙動で細部が異なる箇所が存在する。<br />
+		アプリケーションとして扱われるもののうちいくつかは最初に作られた吉里吉里内のメインウィンドウが相当する。<br />
+		アプリケーションのイベントでアクティブ/非アクティブはメインウィンドウのものとなる。<br />
+	</p>
+	<li>Direct3D7 を Direct3D9 へ変更。</li>
+	<p>
+		Direct3D7 によって描画されていたものは Direct3D9 へ書き換えられている。<br />
+		それに伴い次の変更が行われている。<br />
+	</p>
+
+	<li>フルスクリーン化処理を DrawDevice で行うように変更。</li>
+	<p>
+		DirectDraw によるフルスクリーン化は、Windows8 でいくつか問題を引き起こしていたようなので、この部分は変更する必要があり、Direct3D9 では Direct3D Device がフルスクリーン化を担当するということもあり、フルスクリーン化処理は DrawDevice 側で処理する実装とした。<br />
+		上述のように Direct3D9 化に伴い、フルスクリーン化は API/DirectDraw から API/Direct3D9 へと変更になり、設定はオプションではなく DirectDraw 依存となった。<br />
+	</p>
+
+	<li>KAGParser クラスをプラグインに変更。</li>
+	<p>
+		元々プラグインの方が良いと思えるクラスだったので、プラグインに移動した。<br />
+		このプラグインは互換性のために作成した。<br />
+	</p>
+
+	<li>Menu クラスをプラグインに変更。</li>
+	<p>
+		Menu を非推奨とするにあたり、プラグインに移動した。<br />
+		今後メニューを使わない実装にすることを推奨します。<br />
+	</p>
+
+	<li>各種依存ライブラリを更新。</li>
+	<p>
+		VCプロジェクト作成時に最新バージョンに更新した。<br />
+	</p>
+
+	<li> 正規表現エンジンを鬼車へ変更。</li>
+	<p>
+		boost の少し古いバージョンのものであったので、鬼車へと変更した。<br />
+	</p>
+
+	<li> コンソールへの出力をコマンドラインへの出力へ変更、デバッグ時はデバッグ出力へも出力。</li>
+	<p>
+		コンソール削除に伴いコマンドラインへ出力するように変更した。<br />
+		デバッグ時は、デバッグ出力で見られた方がデバッグしやすいため、デバッグビルドではデバッグ出力へも出力するようにした。<br />
+	</p>
+
+	<li>Font クラスを生成できるように変更。</li>
+	<p>
+		Layer.font としてのみ存在していたが、独立して生成できるようにした。<br />
+	</p>
+
+	<li>ツールチップ処理の仕様変更。</li>
+	<p>
+		VCL のツールチップは、コモンコントロールのツールチップではなく独自実装と言うことで、コモンコントロールに置き換えるか、同じように実装するか検討し、イベントを発生させて Layer として描画可能な形に変更した。<br />
+		Layer.hint を設定し、カーソルが一定時間停止しヒント表示タイミングになると <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> イベントが発生する。<br />
+		カーソル停止時間は、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> で指定可能。<br />
+		ヒントを描画するレイヤーには <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> を有効にして、ヒント表示を無視させる。<br />
+		これで onHintChanged で isshow が true の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
+		isshow が false でイベントが来たら非表示にする。<br />
+		<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub にサンプル</a>を上げている。<br />
+	</p>
+
+	<li>ゲームパッドの有効/無効をデバッグオプション化。</li>
+	<p>
+		組み込みのゲームパッドサポートはない方が良い場合もあるので、オプションのみでなくコンパイルオプションで無効化してしまえるようにした。<br />
+		DISABLE_EMBEDDED_GAME_PAD を指定すると無効化される。<br />
+	</p>
+
+	<li>JPEG デコード時 LLM を使用するのを標準に。</li>
+	<p>
+		吉里吉里2 では、品質が標準の時 AAN が使われていたが、AAN だと低品質なので LLM を標準とした。<br />
+		吉里吉里Z では JPEG の読込みは吉里吉里2 よりもかなり高速化しており、IDCT のアルゴリズムを AAN から LLM へ変更しても吉里吉里2 より高速にデコードされる。<br />
+		LLM の方が一般的に使われているはずなので、吉里吉里で表示すると汚いと言う状況は少なくなると考えられる。<br />
+	</p>
+
+	<li>TJS2 スクリプトのデフォルト文字コードを UTF-8 に変更。</li>
+	<p>
+		UTF-8 の方が一般化していると言うことで、Shift-JIS から変更。<br />
+		TVP_TEXT_READ_ANSI_MBCS を付けてコンパイルすれば従来通り Shift-JIS をデフォルトとする。<br />
+		Plugin用公開関数の TVPCreateTextStreamForReadByEncoding の第3引数にエンコーディング指定可能。<br />
+		"Shift_JIS" か "UTF-8" のどちらかを指定する。<br />
+		また、オプションの"-readencoding"で"Shift_JIS" か "UTF-8" のどちらかを指定することでデフォルトを変更できる。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Scripts_textEncoding.html">Scripts.textEncoding</a> で "Shift_JIS" か "UTF-8" のどちらかの指定も可能。<br />
+		プラグインの KAGParser もこの設定に従う。<br />
+		プラグインで TVPCreateTextStreamForReadByEncoding を呼び出している箇所を変更すれば、任意のエンコーディングで読み込む。<br />
+	</p>
+
+	<li>ソースコード埋め込み文字列をリソースへ移動。</li>
+	<p>
+		エラーメッセージ等直接ソースコードに記述されていた文字列をリソースへ移動し、日本語と英語で分離。<br />
+		メッセージからリソースやソースコードはスクリプトで自動生成するようにしたので、他環境実装時持っていきやすくなっている。<br />
+	</p>
+
+	<li>コンパイル後バイナリに結合していたオプションをリソースに移動。</li>
+	<p>
+		従来 tvpwin32.exe に optionarea.bin を末尾に結合し、krkr.eXe として、実行時末尾のバイナリを読み取っていたものをリソースに埋め込む形に変更。<br />
+		オプションは optionarea.txt に改行区切りで記述する。<br />
+		一般的な構造となったためウィルス駆除ソフト等で誤検出が減ることが期待できる。<br />
+	</p>
+
+	<li>マルチディスプレイ対応に伴いスクリーンサイズ等が返す値を変更。</li>
+	<p>
+		従来プライマリーディスプレイの値を常に返すようになっていたが、複数のディスプレイを考慮した値を返すように変更。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenWidth.html">System.screenWidth</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenHeight.html">screenHeight</a> は、メインウィンドウがあるモニタのサイズを返す。メインウィンドウが作られる前はプライマリモニタのサイズで返す。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopLeft.html">System.desktopLeft</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopTop.html">desktopTop</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopWidth.html">desktopWidth</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> は、メインウィンドウがあるモニタの作業領域を返す。メインウィンドウがない時は、プライマリモニタの作業領域を返す。<br />
+	</p>
+
+
+	<li>フォント選択ダイアログをスクリプト化。</li>
+	<p>
+		本体から削除し win32dialog.dll + スクリプトによる実装に変更。<br />
+		スクリプトは <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> にある。<br />
+
+	</p>
+
+	<li>文字入力ダイアログをスクリプト化。</li>
+	<p>
+		本体から削除し win32dialog.dll + スクリプトによる実装に変更。<br />
+		スクリプトは <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> にある。<br />
+	</p>
+
+
+	<li>起動時ファイル選択ダイアログをフォルダ選択ダイアログへ変更。</li>
+	<p>
+		VCL を使った独自のダイアログだったものを、フォルダ選択ダイアログへ変更した。<br />
+	</p>
+
+	<li>起動時ファイル選択をデバッグオプションで無効化可能に変更。</li>
+	<p>
+		最終リリース版ではない方がよい機能なので、無効化可能にした。<br />
+		TVP_DISABLE_SELECT_XP3_OR_FOLDER を定義することで無効化する。<br />
+	</p>
+
+	<li>マルチバイトコードからワイド(UNICODE)バイトコードへ変更。</li>
+	<p>
+		NT 系のみサポートとするので、ワイド(UNICODE)バイトコードに変更した。<br />
+	</p>
+
+	<li>-waitvsync のプロパティ化</li>
+	<p>
+		コマンドラインオプションの-waitvsyncは廃止し、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>に変更した。<br />
+		これはWindowごとにD3DDeviceを持ち、垂直同期待ちがそのデバイスに依存するためです。<br />
+	</p>
+
+	<li>PassThroughDrawDevice を BasicDrawDevice へ変更。</li>
+	<p>
+		DirectDraw / Direct3D / GDI をベンチマークし、いずれかで描画を行っていた PassThroughDrawDevice を廃止し、Direct3D9 で描画を行う BasicDrawDevice を追加した。<br />
+		DrawDevice は BasicDrawDevice が標準となる。<br />
+		Direct3D9 での描画を行いたい場合はプラグインによる追加が必要となる。<br />
+	</p>
+
+	<li>オプション説明をJSON化、リソースへ移動。</li>
+	<p>
+		独自フォーマットであったオプション説明ファイルをJSONに変更した。<br />
+		また、ファイルをリソースへ移動し、プラグインからの読込みも公開関数からリソースに変更した。<br />
+		option_desc_ja.json にて指定可能。<br />
+		-userconf で起動された時、このファイルにしたがって設定項目が表示される。<br />
+	</p>
+</ol>
+
+
+<div class="title_bar"><a name="delete">削除</a></div>
+<ol>
+	<li>コンソール削除</li>
+	<p>
+		最終的にリリースされるものに含まれていない方が良いので削除。<br />
+	</p>
+
+	<li>コントローラー削除</li>
+	<p>
+		最終的にリリースされるものに含まれていない方が良いので削除。<br />
+	</p>
+
+	<li>MIDI / CDDA / Pad クラス削除</li>
+	<p>
+		現状を考えるとレガシー機能であるとの判断から削除。<br />
+	</p>
+
+	<li>Win9X 系メソッド削除</li>
+	<p>
+		XP以降のみ対応としたので、それ以前をサポートするための API を削除。<br />
+	</p>
+
+	<li>DirectDraw 描画処理を削除</li>
+	<p>
+		ドライバの DirectDraw サポート状況が怪しくなってきていることと古いAPIであるので削除。<br />
+	</p>
+
+	<li>ERI フォーマットのサポートを削除</li>
+	<p>
+		現状では取り立てて使用する意味を見出せないので削除。<br />
+	</p>
+
+	<li>Window クラスのいくつかのメソッドを削除。</li>
+	<p>
+		削除されるメソッド/プロパティは以下の通り。<br />
+		Window.layerLeft / Window.layerTop / Window.setLayerPos<br />
+		Window.innerSunken<br />
+		Window.showScrollBars<br />
+		Window.beginMove<br />
+	</p>
+	<li>Layer クラスの obsolete メソッドを削除。</li>
+	<p>
+		以前から obsolete で新しいメソッドへの置き換えが推奨されていたので削除。<br />
+		削除されるメソッドは以下の通り。<br />
+		Layer.affineBlend<br />
+		Layer.affinePile<br />
+		Layer.blendRect<br />
+		Layer.pileRect<br />
+		Layer.stretchBlend<br />
+		Layer.stretchPile<br />
+	</p>
+
+	<li>マウスカーソルの内 Windows 標準でサポートされないものを削除。</li>
+	<p>
+		C++Builder 標準ではあっても、Windows 標準でないものは削除。<br />
+		削除されるカーソルは crDrag、crNoDrop、crHSplit、crVSplit、crMultiDrag、crSQLWait、crAppStart、crHBeam 。<br />
+		必要な場合は、自前でリソースを追加する必要がある。<br />
+		また、他のアイコンも C++ Builder とは少し見た目が異なります。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/MouseCursors.html">サポートされているカーソルはこちら</a>(画像は吉里吉里2のまま)<br />
+	</p>
+</ol>
+
+
+<div class="title_bar"><a name="added">追加</a></div>
+<ol>
+	<li>マルチタッチ機能のサポート。</li>
+	<p>
+		マルチタッチをサポートするデバイスが有効の場合、タッチが有効になります。<br />
+		1点のみのタッチがサポートされているような場合、マウス入力と同じように扱っても問題ないと考えられるため、タッチは有効にはなりません。<br />
+		タッチ処理ではなく、常にマウスと同じように処理したい場合は、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_enableTouch.html">Window.enableTouch</a>をfalseにして、タッチを無効化してください。<br />
+	</p>
+
+	<li>Bitmap/ImageFunction/Rect クラス追加。</li>
+	<p>
+		画像のみを保持するLayerクラスが欲しいという要望からBitmapクラスを新設。<br />
+		それに伴いLayerから分離して必要な機能を実装するためにImageFunctionとRectクラスを追加。<br />
+	</p>
+
+	<li>Octet.unpack と Array.pack の追加。</li>
+	<p>
+		吉里吉里2 で予定されていたものの追加されていない機能と思われる。<br />
+	</p>
+
+	<li>-startup="xxx" により任意スクリプトからの起動を可能に。</li>
+	<p>
+		テスト等で指定できた方が便利であるため追加。<br />
+	</p>
+
+	<li>5ボタンマウスの「戻る」「進む」キーサポート。</li>
+	<p>
+		Windows 2000 以降で追加され、使用可能であるため追加。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onMouseDown.html">Window.onMouseDown</a> 等で使用可能に。<br />
+	</p>
+
+	<li>バックグラウンドでの画像読込み機能サポート。</li>
+	<p>
+		今までの同期読込みでは画像を更新しながら読み込んだ時に、表示が読込み時止まると言う問題があったため追加。<br />
+		非同期読込みによって表示の更新を止めずに次の画像の読込みが可能になった。
+		非同期読込みは <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_loadAsync.html">Bitmap.loadAsync</a> によって行う。<br />
+	</p>
+
+	<li>TJS2 クラスの継承をネイティブ( C++ ) で記述可能に。</li>
+	<p>
+		C++ でも TJS2 クラスの継承を記述できた方が良いため追加。<br />
+	</p>
+
+	<li>drawGlyph を追加し外字を描画しやすくした。</li>
+	<p>
+		任意の字形を文字列に埋め込んで描画しやすくするために追加。<br />
+	</p>
+
+	<li>PNG/JPEG/TLG 保存機能の追加。</li>
+	<p>
+		読込みが出来るので、それと対になるように保存も追加。<br />
+		本体で BMP/PNG/JPEG/TLG の読み書きが出来るようになり便利に。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_saveLayerImage.html">Layer.saveLayerImage</a> / <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_save.html">Bitmap.save</a> の type 引数でBitmap以外の形式指定が可能になった。<br />
+	</p>
+	
+	<li>FreeType での文字描画追加。</li>
+	<p>
+		吉里吉里2 では GDI による文字描画のみだったが、FreeType による描画もサポートした。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_rasterizer.html">Font.rasterizer</a> で指定可能。<br />
+		GDI よりも綺麗な文字描画が期待できる。<br />
+	</p>
+	
+	<li>ログハンドラの追加。</li>
+	<p>
+		ログをスクリプトで表示可能にするためログハンドラを追加。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_addLoggingHandler.html">Debug.addLoggingHandler</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_removeLoggingHandler.html">removeLoggingHandler</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_getLastLog.html">getLastLog</a> によって処理可能。
+	</p>
+	
+	<li>文字列の実描画範囲取得メソッドの追加。</li>
+	<p>
+		フォントによって綺麗に指定位置へ描画することが困難な場合もあるため文字列の実描画範囲取得メソッドを追加した。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> で取得可能。<br />
+	</p>
+	
+	<li>取消線とアンダーラインの実装。</li>
+	<p>
+		吉里吉里2 では未実装となっていた取消線とアンダーラインを実装した。<br />
+		これによって取消線やアンダーラインを含む文字を描画できる。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_strikeout.html">Font.strikeout</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_underline.html">underline</a> で指定可能。<br />
+	</p>
+
+	<li>Opusサウンドフォーマットのサポート。</li>
+	<p>
+		Vorbis より高圧縮率の <a href="http://opus-codec.org/">Opusサウンドフォーマット</a> を kropus.dll にてサポートした。<br />
+		短い音でもファイルサイズが小さくなるため、効果音などにも利用しやすい。<br />
+		また、音声に最適化された圧縮方法も持っているため、台詞などで効果を発揮する。<br />
+	</p>
+
+	<li>吉里吉里デバッガ同梱。</li>
+	<p>
+		従来別配布となっていた吉里吉里デバッガを同梱し、デバッガ有効化バイナリも含めるようにした。<br />
+		TJS2 スクリプトのデバッグがより行いやすくなる。<br />
+	</p>
+</ol>
+
+
+</div>
+</div>
+</body>
+</html>
