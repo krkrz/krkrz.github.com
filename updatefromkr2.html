@@ -307,11 +307,15 @@
 	<li>Octet.unpack と Array.pack の追加。</li>
 	<p>
 		吉里吉里2 で予定されていたものの追加されていない機能と思われる。<br />
+		これによりバイナリファイルの読込み、書き出しが行いやすくなる。<br />
+		<a href="http://krkrz.github.io/docs/tjs2/j/contents/octet.html">オクテット列に対する操作</a> と 
+		<a href="http://krkrz.github.io/docs/tjs2/j/contents/array.html">Array クラス</a> を参照のこと。
 	</p>
 
 	<li>-startup="xxx" により任意スクリプトからの起動を可能に。</li>
 	<p>
 		テスト等で指定できた方が便利であるため追加。<br />
+		詳細は<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">コマンドラインオプション</a>参照のこと。<br />
 	</p>
 
 	<li>5ボタンマウスの「戻る」「進む」キーサポート。</li>
@@ -386,6 +390,14 @@
 	<p>
 		従来別配布となっていた吉里吉里デバッガを同梱し、デバッガ有効化バイナリも含めるようにした。<br />
 		TJS2 スクリプトのデバッグがより行いやすくなる。<br />
+	</p>
+
+	<li>スクリプト例外発生時起動エディタ指定追加。</li>
+	<p>
+		例外発生時に Pad を使用して表示されていたものを削除したため、それに変わるものとして任意のエディタを指定可能とした。<br />
+		-exceptionexe と -exceptionarg で指定可能。<br />
+		詳細は<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">コマンドラインオプション</a>参照のこと。<br />
+
 	</p>
 </ol>
 
