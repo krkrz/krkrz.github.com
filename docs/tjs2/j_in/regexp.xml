@@ -149,13 +149,7 @@ new RegExp(&lt;パターン文字列>, &lt;フラグ文字列=''>);<r/>
 
 <para>
 <ptitle>Copyright notice</ptitle>
-　正規表現機能の実装には John Maddock 氏の <at target="_blank" href="http://ourworld.compuserve.com/homepages/John_Maddock/regexpp.htm">Regex++</at> を用いています。有用なライブラリを公開なさっている氏に感謝します。<r />
-<r />
-Copyright (c) 1998-2001<r />
-<r />
-Dr John Maddock<r />
-<r />
-Permission to use, copy, modify, distribute and sell this software and its documentation for any purpose is hereby granted without fee, provided that the above copyright notice appear in all copies and that both that copyright notice and this permission notice appear in supporting documentation. Dr John Maddock makes no representations about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty.<r/>
+　正規表現機能の実装には K.Kosako 氏の鬼車を用いています。有用なライブラリを公開なさっている氏に感謝します。<r />
 </para>
 
 </doc>

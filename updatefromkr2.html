@@ -21,11 +21,13 @@
 <ol>
 	<li>Visual Studio でビルドできるように変更。</li>
 	<p>
-		C++Builder5 でビルドしてた吉里吉里2 を Visual Studio 2012 でビルドできるように各種変更を行った。<br />
+		C++Builder5 でビルドしてた吉里吉里2 を Visual C++ 2012 でビルドできるように各種変更を行った。<br />
 	</p>
 
 	<li>VCL 依存部分を Win32 API 呼び出し処理へ変更。</li>
 	<p>
+		VC では、VCL を利用できないため、通常の Win32 API を使用する処理へ変更。<br />
+		ある程度等価な処理となっているが、同じ実装ではないため細部の動作は異なる部分がある。<br />
 		VCL では、不可視のメインウィンドウがアプリケーション(ウィンドウ)として機能し、他のウィンドウはその子として動く。<br />
 		吉里吉里2 内では、最初に作られたウィンドウがメインウィンドウとして扱われるが、内部には不可視のアプリケーション(ウィンドウ)が存在している(た)。<br />
 		吉里吉里Z では、VCL を書き換えると共に、この不可視のアプリケーション(ウィンドウ)は存在しなくなっている。<br />
@@ -55,7 +57,7 @@
 	<li>Menu クラスをプラグインに変更。</li>
 	<p>
 		Menu を非推奨とするにあたり、プラグインに移動した。<br />
-		今後メニューを使わない実装にすることを推奨します。<br />
+		今後メニューを使わない実装にすることを推奨。<br />
 	</p>
 
 	<li>各種依存ライブラリを更新。</li>
@@ -175,7 +177,7 @@
 	<li>-waitvsync のプロパティ化</li>
 	<p>
 		コマンドラインオプションの-waitvsyncは廃止し、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>に変更した。<br />
-		これはWindowごとにD3DDeviceを持ち、垂直同期待ちがそのデバイスに依存するためです。<br />
+		これはWindowごとにD3DDeviceを持ち、垂直同期待ちがそのデバイスに依存するため。<br />
 	</p>
 
 	<li>PassThroughDrawDevice を BasicDrawDevice へ変更。</li>
@@ -200,14 +202,14 @@
 
 	<li>Windowの再生成排除。</li>
 	<p>
-		吉里吉里2 ではフルスクリーン化時ボーダースタイル変更時に、ウィンドウが作り直されていましたが、吉里吉里Z では作り直しが行われなくなりました。<br />
-		そのため TVP_WM_DETACH と TVP_WM_ATTACH が呼ばれる機会はほとんどなくなりました。<br />
-		フルスクリーン化/ウィンドウ化のタイミングを知るために、フルスクリーン変更前に TVP_WM_FULLSCREEN_CHANGING が、変更後に TVP_WM_FULLSCREEN_CHANGED が呼ばれるようになりました。(フルスクリーンかどうか判定するものではないことに注意してください)<br />
+		吉里吉里2 ではフルスクリーン化時ボーダースタイル変更時に、ウィンドウが作り直されていたが、吉里吉里Z では作り直しが行われなくなった。<br />
+		そのため TVP_WM_DETACH と TVP_WM_ATTACH が呼ばれる機会はほとんどなくなった。<br />
+		フルスクリーン化/ウィンドウ化のタイミングを知るために、フルスクリーン変更前に TVP_WM_FULLSCREEN_CHANGING が、変更後に TVP_WM_FULLSCREEN_CHANGED が呼ばれるようになった。(フルスクリーンかどうか判定するものではないことに注意)<br />
 	</p>
 
 	<li>プラグイン公開関数の増減。</li>
 	<p>
-		以下の公開関数が追加されました。<br />
+		以下の公開関数が追加された。<br />
 		TVPCreateTextStreamForReadByEncoding<br />
 		TVPSetDefaultReadEncoding<br />
 		TVPGetDefaultReadEncoding<br />
@@ -220,7 +222,7 @@
 		TVPChBlurAddMulCopy<br />
 		TVPChBlurCopy<br />
 		<br />
-		以下の公開関数が削除されました。<br />
+		以下の公開関数が削除された。<br />
 		TVPMIDIOutData<br />
 		TVPEnsureDirectDrawObject<br />
 		TVPGetDirectDrawObjectNoAddRef<br />
@@ -289,8 +291,15 @@
 		C++Builder 標準ではあっても、Windows 標準でないものは削除。<br />
 		削除されるカーソルは crDrag、crNoDrop、crHSplit、crVSplit、crMultiDrag、crSQLWait、crAppStart、crHBeam 。<br />
 		必要な場合は、自前でリソースを追加する必要がある。<br />
-		また、他のアイコンも C++ Builder とは少し見た目が異なります。<br />
+		また、他のアイコンも C++ Builder とは少し見た目が異なる。<br />
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/MouseCursors.html">サポートされているカーソルはこちら</a>(画像は吉里吉里2のまま)<br />
+	</p>
+
+	<li>krflash.dll の削除</li>
+	<p>
+		krflash.dll は同梱されなくなった。<br />
+		吉里吉里2 のものを持ってくれば動く可能性はあるが公式にはサポートしない。<br />
+		flashPlayer プラグインへの移行を推奨。<br />
 	</p>
 </ol>
 
@@ -299,9 +308,9 @@
 <ol>
 	<li>マルチタッチ機能のサポート。</li>
 	<p>
-		マルチタッチをサポートするデバイスが有効の場合、タッチが有効になります。<br />
-		1点のみのタッチがサポートされているような場合、マウス入力と同じように扱っても問題ないと考えられるため、タッチは有効にはなりません。<br />
-		タッチ処理ではなく、常にマウスと同じように処理したい場合は、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_enableTouch.html">Window.enableTouch</a>をfalseにして、タッチを無効化してください。<br />
+		マルチタッチをサポートするデバイスが有効の場合、タッチが有効になる。<br />
+		1点のみのタッチがサポートされているような場合、マウス入力と同じように扱っても問題ないと考えられるため、タッチは有効にならない。<br />
+		タッチ処理ではなく、常にマウスと同じように処理したい場合は、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_enableTouch.html">Window.enableTouch</a>をfalseにして、タッチを無効化する必要がある。<br />
 	</p>
 
 	<li>Bitmap/ImageFunction/Rect クラス追加。</li>
@@ -346,7 +355,7 @@
 	<p>
 		任意の字形を文字列に埋め込んで描画しやすくするために追加。<br />
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_drawGlyph.html">Layer.drawGlyph</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_ImageFunction_drawGlyph.html">ImageFunction.drawGlyph</a> で描画できます。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_ImageFunction_drawGlyph.html">ImageFunction.drawGlyph</a> で描画できる。<br />
 	</p>
 
 	<li>PNG/JPEG/TLG 保存機能の追加。</li>
