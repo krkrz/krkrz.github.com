@@ -13,6 +13,7 @@
 <div class="content">
 <div class="title_bar"><a name="download">ダウンロード</a></div>
 <ul>
+	<li><a href="./download/krkrz_20131231.zip">krkrz_20131231.zip (1.0.0.1)</a></li>
 	<li><a href="./download/krkrz_20131224.zip">krkrz_20131224.zip (β9)</a></li>
 	<li><a href="./download/krkrz_20131216.zip">krkrz_20131216.zip (β8)</a></li>
 	<li><a href="./download/krkrz_20131210.zip">krkrz_20131210.zip (β7)</a></li>
@@ -32,6 +33,25 @@
 <br />
 <div class="title_bar"><a name="revision">更新履歴</a></div>
 <dl>
+	<dt>2013/12/31 1.0.0.1 リリース</dt>
+	<dd>
+		MouseLeave以外のマウスメッセージでMouseEnterが発生するように修正。<br />
+		BasicDrawDevice でバックバッファクリアを必要な場合に行うように変更。<br />
+		使わなくなっていた垂直同期待ちとダブルバッファリング設定を設定画面から削除。<br />
+		垂直同期待ちを有効にしたらアクセス違反が発生していたのを修正。<br />
+		オーバーレイ/VMRでの動画再生の位置のズレ修正。<br />
+		Window.focusable を追加。<br />
+		Window.enableTouch の条件からマルチタッチを削除、設定フラグを起動時と同じものに変更。<br />
+		Window.onTouchRotate/onTouchScaling の中心座標計算修正。<br />
+		サウンド再生後終了時のメモリリーク修正。<br />
+		VMRで動画再生しつつLayerを更新すると動画がちらつく問題修正。<br />
+		pack/unpack 修正。<br />
+		Bitmap のコンストラクタにbppを明示的に指定した場合期待した動作ではなかったのを修正。<br />
+		tlg524で保存した時に発生するアクセス違反を修正。<br />
+		JPEG書き出し処理修正。<br />
+		<br />
+	</dd>
+
 	<dt>2013/12/24 β9 リリース</dt>
 	<dd>
 		吉里吉里ダウンロードURL変更。<br />
