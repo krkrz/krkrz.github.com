@@ -45,7 +45,7 @@
 	<li>フルスクリーン化処理を DrawDevice で行うように変更。</li>
 	<p>
 		DirectDraw によるフルスクリーン化は、Windows8 でいくつか問題を引き起こしていたようなので、この部分は変更する必要があり、Direct3D9 では Direct3D Device がフルスクリーン化を担当するということもあり、フルスクリーン化処理は DrawDevice 側で処理する実装とした。<br />
-		上述のように Direct3D9 化に伴い、フルスクリーン化は API/DirectDraw から API/Direct3D9 へと変更になり、設定はオプションではなく DirectDraw 依存となった。<br />
+		上述のように Direct3D9 化に伴い、フルスクリーン化は API/DirectDraw から API/Direct3D9 へと変更になり、設定はオプションではなく DrawDevice 依存となった。<br />
 	</p>
 
 	<li>KAGParser クラスをプラグインに変更。</li>
