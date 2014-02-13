@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
 <anchor target="main"/>
 <keywords/>
-<title>TJS2 リファレンス 目次</title>
+<title>TJS2 繝ｪ繝輔ぃ繝ｬ繝ｳ繧ｹ 逶ｮ谺｡</title>
 <para>
-<ptitle>言語リファレンス</ptitle>
+<ptitle>險隱槭Μ繝輔ぃ繝ｬ繝ｳ繧ｹ</ptitle>
 <link href="about"/><r/>
 <link href="style"/><r/>
 <link href="pp"/><r/>
@@ -35,7 +35,7 @@
 </para>
 
 <para>
-<ptitle>組み込みの手引き</ptitle>
+<ptitle>邨�縺ｿ霎ｼ縺ｿ縺ｮ謇句ｼ輔″</ptitle>
 <link href="basictypes"/><r/>
 <link href="ttjs"/><r/>
 <link href="variant"/><r/>
@@ -44,7 +44,7 @@
 </para>
 
 <para>
-<ptitle>付録</ptitle>
+<ptitle>莉倬鹸</ptitle>
 <link href="vmcodes"/><r/>
 </para>
 

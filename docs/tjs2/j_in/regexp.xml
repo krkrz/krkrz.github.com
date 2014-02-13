@@ -1,145 +1,145 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
 
-<title>RegExp �N���X</title>
+<title>RegExp クラス</title>
 
 <para>
-<ptitle>RegExp �N���X</ptitle>
-�@RegExp �N���X��<kw>���K�\���p�^�[��</kw>�������N���X�ł��B<r/>
-�@���K�\���p�^�[���ɂ� perl �݊��̃p�^�[�����w�肷�邱�Ƃ��ł��܂��B<r/>
-�@JavaScript �� RegExp �N���X�ɂɂĂ��܂����A�݊����͒Ⴂ�ł��B<r/>
+<ptitle>RegExp クラス</ptitle>
+　RegExp クラスは<kw>正規表現パターン</kw>を扱うクラスです。<r/>
+　正規表現パターンには perl 互換のパターンを指定することができます。<r/>
+　JavaScript の RegExp クラスににていますが、互換性は低いです。<r/>
 <r/>
-�R���X�g���N�^�̍\���͈ȉ��̒ʂ�ł��B
+コンストラクタの構文は以下の通りです。
 <bq>
-new RegExp(&lt;�p�^�[��������>, &lt;�t���O������=''>);<r/>
+new RegExp(&lt;パターン文字列>, &lt;フラグ文字列=''>);<r/>
 </bq>
-�@�p�^�[��������͐��K�\���p�^�[���ł��B�p�^�[�����Ɏw�肷�� \ �́A�����񑦒l���ŏ����Ƃ��� \\ �Ə������Ƃɒ��ӂ��Ă��������B<r/>
-�@�t���O������� g i �̕����̑g�ݍ��킹�ł��B<r/>
-�@g �̓O���[�o���T�[�`�t���O�ł��B���̃t���O������ƁAmatch�Aexec�Areplace �̊e���\�b�h�ŁA�p�^�[���Ƀ}�b�`����������̕������ׂĂɑ΂��ď������s���܂��B<r/>
-�@i �t���O�͉p���̑啶��/�������̋�ʂ��s���܂���B<r/>
+　パターン文字列は正規表現パターンです。パターン中に指定する \ は、文字列即値中で書くときは \\ と書くことに注意してください。<r/>
+　フラグ文字列は g i の文字の組み合わせです。<r/>
+　g はグローバルサーチフラグです。このフラグをつけると、match、exec、replace の各メソッドで、パターンにマッチした文字列の部分すべてに対して処理が行われます。<r/>
+　i フラグは英字の大文字/小文字の区別を行いません。<r/>
 <r/>
 <example>
 	var re = new RegExp("[a-z]+[0-9]*", "gi");<r/>
-	var re = new RegExp("\\.\\.\\."); // /\.\.\./ ( ... �Ƀ}�b�`�������� )<r/>
+	var re = new RegExp("\\.\\.\\."); // /\.\.\./ ( ... にマッチさせたい )<r/>
 </example>
 </para>
 
 
 <para>
-<ptitle>���K�\���p�^�[��</ptitle>
-�@/ �� / �ň͂܂ꂽ�����ɐ��K�\���p�^�[�����w�肷�邱�Ƃ��ł��܂��B<r/>
-�@<link href="token"/> ���Q�Ƃ��Ă��������B<r/>
+<ptitle>正規表現パターン</ptitle>
+　/ と / で囲まれた部分に正規表現パターンを指定することができます。<r/>
+　<link href="token"/> を参照してください。<r/>
 </para>
 
 <para>
 <ptitle>compile</ptitle>
-�@compile ���\�b�h�́A���K�\���I�u�W�F�N�g�ɐV�������K�\���p�^�[����ݒ肵�܂��B<r/>
-�@������ RegExp �N���X�̃R���X�g���N�^�Ɏw�肷����̂Ɠ���ł��B<r/>
+　compile メソッドは、正規表現オブジェクトに新しい正規表現パターンを設定します。<r/>
+　引数は RegExp クラスのコンストラクタに指定するものと同一です。<r/>
 </para>
 
 <para>
 <ptitle>test</ptitle>
-�@test ���\�b�h�́A�����Ɏw�肵�������񂪃p�^�[���Ƀ}�b�`���邩�ǂ�����Ԃ��܂��B<r/>
+　test メソッドは、引数に指定した文字列がパターンにマッチするかどうかを返します。<r/>
 <bq>
-�\�� : test(&lt;������>)<r/>
+構文 : test(&lt;文字列>)<r/>
 </bq>
-�@�p�^�[���Ƀ}�b�`����ΐ^�A�}�b�`���Ȃ���΋U���Ԃ�܂��B<r/>
-�@���̃��\�b�h�͂��̃I�u�W�F�N�g�̊e�v���p�e�B�̒l���X�V���܂��B<r/>
+　パターンにマッチすれば真、マッチしなければ偽が返ります。<r/>
+　このメソッドはこのオブジェクトの各プロパティの値を更新します。<r/>
 </para>
 
 <para>
 <ptitle>exec</ptitle>
-�@exec ���\�b�h�́A�����Ɏw�肵��������ɐ��K�\���p�^�[���}�b�`���O���s���A�}�b�`�������ʂ��܂ޔz���Ԃ��܂��B<r/>
+　exec メソッドは、引数に指定した文字列に正規表現パターンマッチングを行い、マッチした結果を含む配列を返します。<r/>
 <bq>
-�\�� : exec(&lt;������>)<r/>
+構文 : exec(&lt;文字列>)<r/>
 </bq>
-�@�p�^�[���Ƀ}�b�`���Ȃ��ꍇ�A�z��̗v�f���� 0 �ɂȂ�܂��B<r/>
-�@�}�b�`�����ꍇ�A�v�f 0 (�ŏ��̗v�f) �̓}�b�`���������S�́A����ȍ~�̗v�f�͊e�}�b�`���� ( ���K�\���p�^�[������ (  ) �Ŏw�肵������ ) �������Ă��܂��B<r/>
-�@���̃��\�b�h�͂��̃I�u�W�F�N�g�̊e�v���p�e�B�̒l���X�V���܂��B<r/>
+　パターンにマッチしない場合、配列の要素数は 0 になります。<r/>
+　マッチした場合、要素 0 (最初の要素) はマッチした部分全体、それ以降の要素は各マッチ部分 ( 正規表現パターン中の (  ) で指定した部分 ) が入っています。<r/>
+　このメソッドはこのオブジェクトの各プロパティの値を更新します。<r/>
 </para>
 
 <para>
 <ptitle>match</ptitle>
-�@match ���\�b�h�́A���̃I�u�W�F�N�g�̃v���p�e�B�̒l���X�V���Ȃ��ȊO�́Aexec ���\�b�h�Ɠ���ł��B<r/>
+　match メソッドは、このオブジェクトのプロパティの値を更新しない以外は、exec メソッドと同一です。<r/>
 <bq>
-�\�� : match(&lt;������>)<r/>
+構文 : match(&lt;文字列>)<r/>
 </bq>
 </para>
 
 
 <para>
 <ptitle>replace</ptitle>
-�@replace ���\�b�h�́A������̒u���������s���A�u���������s��ꂽ��̕������Ԃ��܂��B<r/>
+　replace メソッドは、文字列の置き換えを行い、置き換えが行われた後の文字列を返します。<r/>
 <bq>
-�\�� : replace(&lt;�Ώە�����>, &lt;�u������������>)<r/>
+構文 : replace(&lt;対象文字列>, &lt;置き換え文字列>)<r/>
 </bq>
-�@�Ώە�����ɑ΂��ă}�b�`���O���s���A�}�b�`����������u������������Œu�������A�u���������s��ꂽ��̕������Ԃ��܂��B<r/>
-�@�u������������Ƃ��āA������ł͂Ȃ��֐���n���ƁA�u����������̂��߂ɂ��̊֐����Ă΂��悤�ɂȂ�܂��B�֐��͈������ЂƂƂ�A�Ώە�����̒��̃}�b�`��������������킷�z��I�u�W�F�N�g���n����܂� ( ���̔z��ɂ��Ă� exec ���\�b�h���Q�Ƃ��Ă������� )�B�Ώە����񒆂̃}�b�`���������́A�֐��̖߂���������ɒu�������܂��B<r/>
-�@���̃��\�b�h�� start �v���p�e�B�𖳎����܂��B<r/>
+　対象文字列に対してマッチングを行い、マッチした部分を置き換え文字列で置き換え、置き換えが行われた後の文字列を返します。<r/>
+　置き換え文字列として、文字列ではなく関数を渡すと、置き換え動作のためにその関数が呼ばれるようになります。関数は引数をひとつとり、対象文字列の中のマッチした部分をあらわす配列オブジェクトが渡されます ( この配列については exec メソッドを参照してください )。対象文字列中のマッチした部分は、関数の戻した文字列に置き換わります。<r/>
+　このメソッドは start プロパティを無視します。<r/>
 </para>
 
 <para>
 <ptitle>split</ptitle>
-�@split ���\�b�h�́A������𕪊����܂��B<r/>
+　split メソッドは、文字列を分割します。<r/>
 <bq>
-�\�� : split(&lt;�Ώە�����>, &lt;(�\��)>, &lt;��̗v�f�𖳎����邩=false>)<r/>
+構文 : split(&lt;対象文字列>, &lt;(予約)>, &lt;空の要素を無視するか=false>)<r/>
 </bq>
-�@������𕪊��������ʂ��i�[���ꂽ�z��I�u�W�F�N�g��Ԃ��܂��B<r/>
-�@<link href="array"/> �� split ���\�b�h���Q�Ƃ��Ă��������B<r/>
+　文字列を分割した結果が格納された配列オブジェクトを返します。<r/>
+　<link href="array"/> の split メソッドも参照してください。<r/>
 </para>
 
 <para>
 <ptitle>matches</ptitle>
-�@matches �v���p�e�B�́A�}�b�`�����e�������܂ޔz���\���ǂݏo����p�̃v���p�e�B�ł��B<r/>
-�@�p�^�[���Ƀ}�b�`���Ȃ��ꍇ�A�z��̗v�f���� 0 �ɂȂ�܂��B<r/>
-�@�}�b�`�����ꍇ�A�v�f 0 (�ŏ��̗v�f) �̓}�b�`���������S�́A����ȍ~�̗v�f�͊e�}�b�`���� ( ���K�\���p�^�[������ (  ) �Ŏw�肵������ ) �������Ă��܂��B<r/>
+　matches プロパティは、マッチした各部分を含む配列を表す読み出し専用のプロパティです。<r/>
+　パターンにマッチしない場合、配列の要素数は 0 になります。<r/>
+　マッチした場合、要素 0 (最初の要素) はマッチした部分全体、それ以降の要素は各マッチ部分 ( 正規表現パターン中の (  ) で指定した部分 ) が入っています。<r/>
 </para>
 
 <para>
 <ptitle>start</ptitle>
-�@������̌����J�n�ʒu��\���v���p�e�B�ł��B�l��ݒ肷�邱�Ƃ��ł��܂��B<r/>
+　文字列の検索開始位置を表すプロパティです。値を設定することもできます。<r/>
 </para>
 
 <para>
 <ptitle>index</ptitle>
-�@�}�b�`���������̐擪�����̈ʒu��\���A�ǂݏo����p�̃v���p�e�B�ł��B0 ���擪��\���̂ŁA���ꂪ�}�b�`���O�Ώە�����̐擪�̕����Ȃ�� 0 �ɂȂ�܂��B<r/>
+　マッチした部分の先頭文字の位置を表す、読み出し専用のプロパティです。0 が先頭を表すので、それがマッチング対象文字列の先頭の文字ならば 0 になります。<r/>
 </para>
 
 <para>
 <ptitle>lastIndex</ptitle>
-�@�}�b�`���������̍ŏI�����̎��̕����̈ʒu��\���A�ǂݏo����p�̃v���p�e�B�ł��B0 ���擪��\���܂��B<r/>
+　マッチした部分の最終文字の次の文字の位置を表す、読み出し専用のプロパティです。0 が先頭を表します。<r/>
 </para>
 
 <para>
 <ptitle>input</ptitle>
-�@�}�b�`���O�Ώۂ̕����������킷�A�ǂݏo����p�̃v���p�e�B�ł��B<r/>
+　マッチング対象の文字列をあらわす、読み出し専用のプロパティです。<r/>
 </para>
 
 <para>
 <ptitle>leftContext</ptitle>
-�@�}�b�`���O�Ώە�����̂����A�}�b�`�����������������̕����������킷�A�ǂݏo����p�̃v���p�e�B�ł��B<r/>
+　マッチング対象文字列のうち、マッチした部分よりも左側の文字列をあらわす、読み出し専用のプロパティです。<r/>
 </para>
 
 <para>
 <ptitle>rightContext</ptitle>
-�@�}�b�`���O�Ώە�����̂����A�}�b�`�������������E���̕����������킷�A�ǂݏo����p�̃v���p�e�B�ł��B<r/>
+　マッチング対象文字列のうち、マッチした部分よりも右側の文字列をあらわす、読み出し専用のプロパティです。<r/>
 </para>
 
 <para>
 <ptitle>lastMatch</ptitle>
-�@�}�b�`���O�Ώە������\���܂��Bmatches[0] �Ɠ����ł��B
+　マッチング対象文字列を表します。matches[0] と同じです。
 </para>
 
 <para>
 <ptitle>lastParen</ptitle>
-�@�}�b�`�����e�����̂����A�Ō�̕�����Ԃ��܂��Bmatches[matches.count-1] �Ɠ����ł��B
+　マッチした各部分のうち、最後の部分を返します。matches[matches.count-1] と同じです。
 </para>
 
 <para>
 <ptitle>RegExp.last</ptitle>
-�@�Ō�� test ���邢�� exec ���\�b�h�����s���ꂽ RegExp �N���X�̃C���X�^���X�ł��B
+　最後に test あるいは exec メソッドが実行された RegExp クラスのインスタンスです。
 <bq>
-�� : if(/pat(\d+)/.test(target)) { return RegExp.last.matches[1]; }<r/>
+例 : if(/pat(\d+)/.test(target)) { return RegExp.last.matches[1]; }<r/>
 </bq>
 
 </para>
@@ -148,7 +148,7 @@ new RegExp(&lt;�p�^�[��������>, &lt;�t���O������=''>);<r/>
 
 <para>
 <ptitle>Copyright notice</ptitle>
-�@���K�\���@�\�̎����ɂ� K.Kosako ���̋S�Ԃ�p���Ă��܂��B�L�p�ȃ��C�u���������J�Ȃ����Ă��鎁�Ɋ��ӂ��܂��B<r />
+　正規表現機能の実装には K.Kosako 氏の鬼車を用いています。有用なライブラリを公開なさっている氏に感謝します。<r />
 </para>
 
 </doc>

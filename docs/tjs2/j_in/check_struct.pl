@@ -3,6 +3,7 @@ use XML::DOM;
 use Jcode;
 use Image::Size;
 
+use utf8;
 
 sub process
 {

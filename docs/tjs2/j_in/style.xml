@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
-<title>�X�^�C���Ȃ�</title>
+<title>スタイルなど</title>
 
 <para>
-<ptitle>�X�^�C���Ȃ�</ptitle>
-�@TJS2 �́A�X�^�C���Ƃ��Ă� C ����̗�������ތ���ł��B�ꕶ�����s�ŏI��� BASIC ���ƈႢ�A�������͊�{�I�Ɂu�t���[�X�^�C���v�ł��B<r/>
+<ptitle>スタイルなど</ptitle>
+　TJS2 は、スタイルとしては C 言語の流れを汲む言語です。一文が改行で終わる BASIC 等と違い、書き方は基本的に「フリースタイル」です。<r/>
 <r/>
-�@�������AJavaScript �̂悤�Ɉꕶ�����s�ŏI��点�邱�Ƃ͂ł��܂���B<r/>
+　ただし、JavaScript のように一文を改行で終わらせることはできません。<r/>
 </para>
 
 <para>
-<ptitle>�t���[�X�^�C��</ptitle>
-�@���s��X�y�[�X�A�^�u���A��ʂɁu<kw>�z���C�g�X�y�[�X</kw>�v�ƌĂ΂�镶���́A�Ӗ���������Ȃ�Ȃ���΂ǂ��ɂł�����鎖���ł��܂��B�܂��A�Ӗ���������Ȃ��Ȃ�Ȃ��悤�ɓK�X�}�����Ȃ���΂Ȃ�܂���B<r/>
+<ptitle>フリースタイル</ptitle>
+　改行やスペース、タブ等、一般に「<kw>ホワイトスペース</kw>」と呼ばれる文字は、意味が分からならなければどこにでも入れる事ができます。また、意味が分からなくならないように適宜挿入しなければなりません。<r/>
 <example>
 (1)<r/>
 	function func(a,b) { a++; return a+b; }<r/>
@@ -60,25 +60,25 @@
 	}<r/>
 </example>
 <r/>
-�@�����́A(1) �` (4) �͂��ׂē����Ӗ��ł��B�������A�ǂ݂₷���̓_���� (2) �܂��� (3) �𐄏����܂��B<r/>
-�@(5) �́A�X�y�[�X����ꂸ�ɏ��������̂ł����A���̂悤�ɂ���ƕ������Ȃ����Ă��܂��A����ɉ��߂���܂���B<r/>
-�@(6) �́A�X�y�[�X������ׂ����łȂ��Ƃ���ɃX�y�[�X�������Ă��܂��܂��̂ŃG���[�ɂȂ�܂��B<r/>
+　これらの、(1) 縲鰀 (4) はすべて同じ意味です。ただし、読みやすさの点から (2) または (3) を推奨します。<r/>
+　(5) は、スペースを入れずに書いたものですが、このようにすると文字がつながってしまい、正常に解釈されません。<r/>
+　(6) は、スペースを入れるべき所でないところにスペースが入ってしまいますのでエラーになります。<r/>
 </para>
 
 <para>
-<ptitle>�R�����g</ptitle>
-�@<tt>/*</tt> �� <tt>*/</tt> �ň͂܂ꂽ�����́A�R�����g�Ƃ��Ĉ����A���߂���܂���B�R�����g�̓l�X�g ( ����q�� ) �ł��܂��B<r/>
-�@���l�ɁA ��s�̂����A<tt>//</tt> �ȍ~�̕������R�����g�Ƃ��Ĉ����܂��B<r/>
+<ptitle>コメント</ptitle>
+　<tt>/*</tt> と <tt>*/</tt> で囲まれた部分は、コメントとして扱われ、解釈されません。コメントはネスト ( 入れ子に ) できます。<r/>
+　同様に、 一行のうち、<tt>//</tt> 以降の部分もコメントとして扱われます。<r/>
 <r/>
 <example>
 	function example(a,b,c)<r/>
 	{<r/>
-		return a*b/c; // a*b/c ��Ԃ�<r/>
+		return a*b/c; // a*b/c を返す<r/>
 	}<r/>
 <r/>
 	/*<r/>
-		���̂悤�ɃR�����g���������Ƃ��ł��܂�<r/>
-		/* �R�����g�̃l�X�g�͉\�ɂȂ��Ă��܂� */<r/>
+		このようにコメントを書くこともできます<r/>
+		/* コメントのネストは可能になっています */<r/>
 	*/<r/>
 </example>
 </para>

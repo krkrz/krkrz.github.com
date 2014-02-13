@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
-<title>iTJSDispatch2 �C���^�[�t�F�[�X</title>
+<title>iTJSDispatch2 インターフェース</title>
 
 <para>
-<ptitle>iTJSDispatch2 �Ƃ�</ptitle>
-�@iTJSDispatch2 �́ATJS2 �ɂ�����u�I�u�W�F�N�g�v�ɑ΂���C���^�[�t�F�[�X��񋟂��钊�ۊ�{�N���X�ł��B<r/>
-�@TJS2 �́u�I�u�W�F�N�g�v�ɂ͊֐��I�u�W�F�N�g�A�N���X�A�v���p�e�B�I�u�W�F�N�g�A�z��(�����z��) �Ȃǂ��܂܂�܂��B<r/>
-�@TJS2 �ɑ΂���قƂ�ǂ̑���͂��̃C���^�[�t�F�[�X��ʂ��čs�����Ƃ��ł��܂��B<r/>
+<ptitle>iTJSDispatch2 とは</ptitle>
+　iTJSDispatch2 は、TJS2 における「オブジェクト」に対するインターフェースを提供する抽象基本クラスです。<r/>
+　TJS2 の「オブジェクト」には関数オブジェクト、クラス、プロパティオブジェクト、配列(辞書配列) などが含まれます。<r/>
+　TJS2 に対するほとんどの操作はこのインターフェースを通じて行うことができます。<r/>
 <r/>
-�@�ȉ��A���̃C���^�[�t�F�[�X�𗘗p���鑤�Ƃ��Đ��������܂��B<r/>
+　以下、このインターフェースを利用する側として説明をします。<r/>
 </para>
 
 
 
 
 <para>
-<ptitle>�����ɂ��Ăяo��</ptitle>
+<ptitle>序数による呼び出し</ptitle>
 <r/>
-�@iTJSDispatch2 �̃��\�b�h�ɂ́A���\�b�h���̖����� ByNum �ŏI��镨������܂��B����́A�����ɂ��Ăяo�����s�����̂ł���A���Ƃ��� �����o���� "23" ���w�肵�� FuncCall ���ĂԂ̂ƁA������ 23 ���w�肵�� FuncCallByNum ���ĂԂ͓̂����ł��B<r/>
-�@�z��I�u�W�F�N�g�ɃA�N�Z�X���鎞�ɕ֗��ł��傤�B<r/>
+　iTJSDispatch2 のメソッドには、メソッド名の末尾が ByNum で終わる物があります。これは、序数による呼び出しを行うものであり、たとえば メンバ名に "23" を指定して FuncCall を呼ぶのと、序数に 23 を指定して FuncCallByNum を呼ぶのは等価です。<r/>
+　配列オブジェクトにアクセスする時に便利でしょう。<r/>
 <r/>
-�@ByNum �������ɂ����\�b�h�́A������ ByNum �̂��Ȃ������̃��\�b�h�� membername ������ hint �������Ȃ��A����� tjs_int num ������܂��B���� num �ɂ͏������w�肵�܂��B<r/>
+　ByNum が末尾につくメソッドは、末尾に ByNum のつかない同名のメソッドの membername 引数と hint 引数がなく、代わりに tjs_int num があります。引数 num には序数を指定します。<r/>
 <r/>
-�@�ȉ��A�����ɂ��Ăяo�����s�����\�b�h�ɂ��Ă͏ڍׂȐ������ȗ����܂� (������ ByNum �̂��Ȃ������̃��\�b�h�̐������Q�Ƃ��Ă�������)�B<r/>
+　以下、序数による呼び出しを行うメソッドについては詳細な説明を省略します (末尾に ByNum のつかない同名のメソッドの説明を参照してください)。<r/>
 </para>
 
 
@@ -37,9 +37,9 @@
 <ptitle>AddRef</ptitle>
 tjs_uint iTJSDispatch2::AddRef(void)<r/>
 <r/>
-�@�I�u�W�F�N�g�̎Q�ƃJ�E���^���C���N�������g���܂��B<r/>
-�@TJS2 �̊e�I�u�W�F�N�g�͎Q�ƃJ�E���^�ŊǗ�����Ă��܂��B<r/>
-�@�߂�l�̓C���N�������g��̎Q�ƃJ�E���^�̒l�ł����A���̒l��M�p���邱�Ƃ͐�������܂���B<r/>
+　オブジェクトの参照カウンタをインクリメントします。<r/>
+　TJS2 の各オブジェクトは参照カウンタで管理されています。<r/>
+　戻り値はインクリメント後の参照カウンタの値ですが、この値を信用することは推奨されません。<r/>
 </para>
 
 
@@ -54,8 +54,8 @@ tjs_uint iTJSDispatch2::AddRef(void)<r/>
 <ptitle>Release</ptitle>
 tjs_uint iTJSDispatch2::Release(void)<r/>
 <r/>
-�@�I�u�W�F�N�g�̎Q�ƃJ�E���^���f�N�������g���܂��B<r/>
-�@�߂�l�̓f�N�������g��̎Q�ƃJ�E���^�̒l�ŁA0 ���߂����Ƃ��̓I�u�W�F�N�g��������ꂽ���Ƃ�\���܂��B�������A���̒l��M�p���邱�Ƃ͐�������܂���B<r/>
+　オブジェクトの参照カウンタをデクリメントします。<r/>
+　戻り値はデクリメント後の参照カウンタの値で、0 が戻ったときはオブジェクトが解放されたことを表します。しかし、この値を信用することは推奨されません。<r/>
 </para>
 
 
@@ -82,56 +82,56 @@ tjs_error iTJSDispatch2::FuncCall(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�֐��Ăяo�����s���܂��B<r/>
+　関数呼び出しを行います。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@����ΏۂƂ��郁���o���ł��B<r/>
-�@NULL �̏ꍇ�́A���̃I�u�W�F�N�g���g�ɑ΂��鑀��ɂȂ�܂��B���̏ꍇ�́A���̃I�u�W�F�N�g�͊֐��̋@�\�������Ă���K�v������܂��B
+　操作対象とするメンバ名です。<r/>
+　NULL の場合は、このオブジェクト自身に対する操作になります。この場合は、このオブジェクトは関数の機能を持っている必要があります。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�u<kw>�q���g</kw>�v���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�́A�Q��ڈȍ~�̓��������o���ɑ΂��錟���������ɍs����悤�ɂ��邽�߂̂��̂ł��Bhint �� tjs_uint32 �^�̕ϐ��ւ̃|�C���^���w�肷��ƁA�����Ƀq���g�ƂȂ鐔�l���������܂�܂��B�Q��ڈȍ~�͂��̐��l���Q�l�ɂ��ă����o���������܂��B�Q�l�ɂ�����x�ł��̂ŁA�q���g�̏����l�͂ǂ̂悤�Ȓl�ł����Ă����܂��܂��� ( 0 ����������܂� )�B�܂��A���̂悤�Ȏd�g�݂̂��߁A�q���g�Ƃ���ɑ΂��郁���o���͂P�΂P�őΉ����Ă���Ƃ������I�ł� (tTJSString �^�͂��̃q���g�̂��߂̋@�\�������Ă��܂�)�B<r/>
-�@�I�u�W�F�N�g�ɂ���ẮA�q���g�𗘗p����@�\�������Ă��Ȃ������m��܂���B
+　「<kw>ヒント</kw>」を格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントは、２回目以降の同じメンバ名に対する検索を高速に行えるようにするためのものです。hint に tjs_uint32 型の変数へのポインタを指定すると、そこにヒントとなる数値が書き込まれます。２回目以降はその数値を参考にしてメンバを検索します。参考にする程度ですので、ヒントの初期値はどのような値であってもかまいません ( 0 が推奨されます )。また、このような仕組みのため、ヒントとそれに対するメンバ名は１対１で対応しているとより効率的です (tTJSString 型はこのヒントのための機構を持っています)。<r/>
+　オブジェクトによっては、ヒントを利用する機構を持っていないかも知れません。
 </dd>
 
 
 <dt>tTJSVariant *result</dt>
 <dd>
-�@�֐����Ăяo�������ʂ��i�[���邽�߂� tTJSVariant �^�ւ̃|�C���^���w�肵�܂��B<r/>
-�@���ʂ��K�v�Ȃ��ꍇ�� NULL ���w�肵�Ă��܂��܂���B
+　関数を呼び出した結果を格納するための tTJSVariant 型へのポインタを指定します。<r/>
+　結果が必要ない場合は NULL を指定してかまいません。
 </dd>
 
 
 <dt>tjs_int numparams</dt>
 <dd>
-�@�֐��ɓn�������̐����w�肵�܂��B
+　関数に渡す引数の数を指定します。
 </dd>
 
 
 <dt>tTJSVariant **param</dt>
 <dd>
-�@�֐��ɓn�������̃|�C���^�̔z���n���܂��B�������Ȃ��ꍇ�� NULL �ł��܂��܂���B
+　関数に渡す引数のポインタの配列を渡します。引数がない場合は NULL でかまいません。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@�֐������s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B
+　関数が実行されるコンテキスト (this オブジェクト) を指定します。
 </dd>
 </dl>
 </para>
@@ -151,7 +151,7 @@ tjs_error iTJSDispatch2::FuncCall(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����ɂ��֐��Ăяo�����s���܂��B<r/>
+　序数による関数呼び出しを行います。<r/>
 </para>
 
 
@@ -167,43 +167,43 @@ tjs_error iTJSDispatch2::PropGet(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�v���p�e�B�⃁���o�ϐ��̒l�̎擾���s���܂��B<r/>
+　プロパティやメンバ変数の値の取得を行います。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@����ΏۂƂ��郁���o���ł��B<r/>
+　操作対象とするメンバ名です。<r/>
 <r/>
-�@NULL �̏ꍇ�́A���̃I�u�W�F�N�g���g�ɑ΂��鑀��ɂȂ�܂��B���̏ꍇ�́A���̃I�u�W�F�N�g�̓v���p�e�B�擾�̋@�\�������Ă���K�v������܂��B<r/>
-�@���̈����� NULL �ł���������I�u�W�F�N�g�́A�v���p�e�B�I�u�W�F�N�g�ƌ��Ȃ���܂��B�ʏ�A���̂悤�ȃv���p�e�B�I�u�W�F�N�g�����̃I�u�W�F�N�g�̃����o�ɂȂ����ꍇ�́A���̃v���p�e�B�I�u�W�F�N�g���̂ł͂Ȃ��A���̃v���p�e�B�I�u�W�F�N�g�ɑ΂��� PropGet ���s�������ʂ��p�����܂��B���̓���͌Ăяo���t���O�� TJS_IGNOREPROP ���w�肷�邱�ƂŃo�C�p�X���邱�Ƃ��ł��܂��B
+　NULL の場合は、このオブジェクト自身に対する操作になります。この場合は、このオブジェクトはプロパティ取得の機能を持っている必要があります。<r/>
+　この引数が NULL でも成功するオブジェクトは、プロパティオブジェクトと見なされます。通常、このようなプロパティオブジェクトが他のオブジェクトのメンバになった場合は、このプロパティオブジェクト自体ではなく、そのプロパティオブジェクトに対して PropGet を行った結果が用いられます。この動作は呼び出しフラグに TJS_IGNOREPROP を指定することでバイパスすることができます。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>tTJSVariant *result</dt>
 <dd>
-�@���ʂ��i�[���邽�߂� tTJSVariant �^�ւ̃|�C���^���w�肵�܂��BNULL �͋�����܂���B
+　結果を格納するための tTJSVariant 型へのポインタを指定します。NULL は許されません。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���̃��\�b�h�����s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B
+　このメソッドが実行されるコンテキスト (this オブジェクト) を指定します。
 </dd>
 </dl>
 </para>
@@ -219,7 +219,7 @@ tjs_error iTJSDispatch2::PropGetByNum(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����ɂ��A�v���p�e�B�⃁���o�ϐ��̒l�̎擾���s���܂��B<r/>
+　序数による、プロパティやメンバ変数の値の取得を行います。<r/>
 </para>
 
 
@@ -238,43 +238,43 @@ tjs_error iTJSDispatch2::PropSet(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�v���p�e�B�⃁���o�ϐ��̒l�̐ݒ���s���܂��B<r/>
+　プロパティやメンバ変数の値の設定を行います。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@����ΏۂƂ��郁���o���ł��B<r/>
+　操作対象とするメンバ名です。<r/>
 <r/>
-�@NULL �̏ꍇ�́A���̃I�u�W�F�N�g���g�ɑ΂��鑀��ɂȂ�܂��B���̏ꍇ�́A���̃I�u�W�F�N�g�̓v���p�e�B�ݒ�̋@�\�������Ă���K�v������܂��B<r/>
-�@���̈����� NULL �ł���������I�u�W�F�N�g�́A�v���p�e�B�I�u�W�F�N�g�ƌ��Ȃ���܂��B�ʏ�A���̂悤�ȃv���p�e�B�I�u�W�F�N�g�����̃I�u�W�F�N�g�̃����o�ɂȂ����ꍇ�́A���̃v���p�e�B�I�u�W�F�N�g���̂ł͂Ȃ��A���̃v���p�e�B�I�u�W�F�N�g�ɑ΂��� PropSet ���Ă΂�܂��B���̓���͌Ăяo���t���O�� TJS_IGNOREPROP ���w�肷�邱�ƂŃo�C�p�X���邱�Ƃ��ł��܂��B
+　NULL の場合は、このオブジェクト自身に対する操作になります。この場合は、このオブジェクトはプロパティ設定の機能を持っている必要があります。<r/>
+　この引数が NULL でも成功するオブジェクトは、プロパティオブジェクトと見なされます。通常、このようなプロパティオブジェクトが他のオブジェクトのメンバになった場合は、このプロパティオブジェクト自体ではなく、そのプロパティオブジェクトに対して PropSet が呼ばれます。この動作は呼び出しフラグに TJS_IGNOREPROP を指定することでバイパスすることができます。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>const tTJSVariant *param</dt>
 <dd>
-�@�ݒ肷��l��\�� tTJSVariant �^�̕ϐ��ւ̃|�C���^���w�肵�܂��BNULL �͋�����܂���B
+　設定する値を表す tTJSVariant 型の変数へのポインタを指定します。NULL は許されません。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���̃��\�b�h�����s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B
+　このメソッドが実行されるコンテキスト (this オブジェクト) を指定します。
 </dd>
 </dl>
 </para>
@@ -289,8 +289,8 @@ tjs_error iTJSDispatch2::PropSetByVS(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�v���p�e�B�⃁���o�ϐ��̒l�̐ݒ���s���܂��BPropSet �ƈقȂ�̂́A�����o���� tTJSVariantString �ɂ��Q�Ƃ����_�ł��B�����I�ɗp�����܂��BtTJSVariantString �͓���������p�������̈���A�����̕�����I�u�W�F�N�g�����L���Ďg���@�\�������Ă��邽�߁A���̃��\�b�h����ăv���p�e�B�̐ݒ� (�I�u�W�F�N�g���ւ̃����o�̍쐬) ���s���ƁA�����o���Ɏg�p����镶���񃁃����̈�p�������̑�����h�����Ƃ��ł��܂��B<r/>
-�@���̃��\�b�h���������Ȃ��ꍇ�� TJS_E_NOTIMPL ��Ԃ��Ă��������B����� PropSet ���g�p����܂��B�܂��A���̃��\�b�h���Ăяo���� TJS_E_NOTIMPL ���Ԃ��ꂽ�ꍇ�́APropSet �����Ɏg���悤�Ɏ������Ă��������B<r/>
+　プロパティやメンバ変数の値の設定を行います。PropSet と異なるのは、メンバ名が tTJSVariantString により参照される点です。内部的に用いられます。tTJSVariantString は同じ文字列用メモリ領域を、複数の文字列オブジェクトが共有して使う機構を持っているため、このメソッドを介してプロパティの設定 (オブジェクト内へのメンバの作成) を行うと、メンバ名に使用される文字列メモリ領域用メモリの増加を防ぐことができます。<r/>
+　このメソッドを実装しない場合は TJS_E_NOTIMPL を返してください。代わりに PropSet が使用されます。また、このメソッドを呼び出して TJS_E_NOTIMPL が返された場合は、PropSet を代わりに使うように実装してください。<r/>
 <r/>
 </para>
 
@@ -308,7 +308,7 @@ tjs_error iTJSDispatch2::PropSetByNum(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����ɂ��A�v���p�e�B�⃁���o�ϐ��̒l�̐ݒ���s���܂��B<r/>
+　序数による、プロパティやメンバ変数の値の設定を行います。<r/>
 </para>
 
 
@@ -326,37 +326,37 @@ tjs_error iTJSDispatch2::GetCount(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�I�u�W�F�N�g���ێ����Ă��郁���o�̐���Ԃ��܂��B<r/>
+　オブジェクトが保持しているメンバの数を返します。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_int *result</dt>
 <dd>
-�@���ʂ��i�[���邽�߂̕ϐ��ւ̃|�C���^���w�肵�܂��BNULL �͋�����܂���B
+　結果を格納するための変数へのポインタを指定します。NULL は許されません。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@�ΏۂƂ��郁���o�̖��O���w�肵�܂��B<r/>
-�@NULL �̏ꍇ�A���̃I�u�W�F�N�g���g�̕ێ����Ă��郁���o�̐����A��܂��B<r/>
-�@�����o�����w�肳�ꂽ�ꍇ�A�����A���̃����o���I�u�W�F�N�g�Ȃ�΁A���̃I�u�W�F�N�g�̕ێ����Ă��郁���o�̐���Ԃ��܂��B�w�肳�ꂽ�����o���I�u�W�F�N�g�^�łȂ������ꍇ�͎��s���܂��B
+　対象とするメンバの名前を指定します。<r/>
+　NULL の場合、このオブジェクト自身の保持しているメンバの数が帰ります。<r/>
+　メンバ名が指定された場合、もし、そのメンバがオブジェクトならば、そのオブジェクトの保持しているメンバの数を返します。指定されたメンバがオブジェクト型でなかった場合は失敗します。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���̃��\�b�h�����s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B<r/>
-�@���̈����́A�ʏ�A�Ӗ��������܂���(��������܂�)�B
+　このメソッドが実行されるコンテキスト (this オブジェクト) を指定します。<r/>
+　この引数は、通常、意味を持ちません(無視されます)。
 </dd>
 </dl>
 </para>
@@ -372,7 +372,7 @@ tjs_error iTJSDispatch2::GetCount(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@GetCount �̏����o�[�W�����ł��B<r/>
+　GetCount の序数バージョンです。<r/>
 </para>
 
 
@@ -386,35 +386,35 @@ tjs_error iTJSDispatch2::DeleteMember(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����o�̍폜���s���܂��B<r/>
+　メンバの削除を行います。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@�ΏۂƂ��郁���o�̖��O���w�肵�܂��BNULL �͋�����܂���B
+　対象とするメンバの名前を指定します。NULL は許されません。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���̃��\�b�h�����s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B<r/>
-�@���̈����́A�ʏ�A�Ӗ��������܂���(��������܂�)�B
+　このメソッドが実行されるコンテキスト (this オブジェクト) を指定します。<r/>
+　この引数は、通常、意味を持ちません(無視されます)。
 </dd>
 </dl>
 </para>
@@ -432,7 +432,7 @@ tjs_error iTJSDispatch2::DeleteMemberByNum(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����ɂ�胁���o�̍폜���s���܂��B<r/>
+　序数によりメンバの削除を行います。<r/>
 </para>
 
 
@@ -445,27 +445,27 @@ tjs_error iTJSDispatch2::EnumMembers(<r/>
 		iTJSDispatch2 *objthis<r/>
 		)<r/>
 <r/>
-�@�I�u�W�F�N�g���̃����o��񋓂��܂��B<r/>
-�@callback �ɂ̓R�[���o�b�N�֐����w��ł��܂����A���o�[�W�����ł̓R�[���o�b�N�֐����ł��̃I�u�W�F�N�g�̃����o�̍쐬��폜���s�����ꍇ�̓���͕ۏ؂���܂���B<r/>
+　オブジェクト内のメンバを列挙します。<r/>
+　callback にはコールバック関数を指定できますが、現バージョンではコールバック関数内でこのオブジェクトのメンバの作成や削除を行った場合の動作は保証されません。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
-�@<r/>
+　引数は以下の通りです。<r/>
+　<r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł��B�Ăяo���t���O�́A���L�̃t���O�̃r�b�g�_���a���邢�� 0(�[��) ���w�肵�Ă��������B<r/>
+　呼び出しフラグです。呼び出しフラグは、下記のフラグのビット論理和あるいは 0(ゼロ) を指定してください。<r/>
 
 <dl>
 
 <dt>TJS_IGNOREPROP</dt>
 <dd>
-�@�v���p�e�B�A�N�Z�X�𖳌������܂��B�����o��񋓂��A���l���擾����ꍇ�A���̃t���O���w�肳��Ă���ƁA�����o���v���p�e�B�̏ꍇ�̓v���p�e�B�I�u�W�F�N�g���̂��̂������܂��B���̃t���O���w�肵�Ȃ������ꍇ�́A�v���p�e�B�I�u�W�F�N�g��ʂ��ē���ꂽ�l�������܂��B<r/>
+　プロパティアクセスを無効化します。メンバを列挙し、かつ値を取得する場合、このフラグが指定されていると、メンバがプロパティの場合はプロパティオブジェクトそのものが得られます。このフラグを指定しなかった場合は、プロパティオブジェクトを通して得られた値が得られます。<r/>
 </dd>
 
 <dt>TJS_ENUM_NO_VALUE</dt>
 <dd>
-�@�l���擾���܂���B���̃t���O���w�肳��Ă���ƁA�R�[���o�b�N�֐��ɓn���������� 2 �ɂȂ�܂��B�w�肳��Ă���� 3 �ɂȂ�܂��B<r/>
+　値を取得しません。このフラグが指定されていると、コールバック関数に渡される引数は 2 つになります。指定されていると 3 つになります。<r/>
 </dd>
 
 </dl>
@@ -473,21 +473,21 @@ tjs_error iTJSDispatch2::EnumMembers(<r/>
 
 <dt>tTJSVariantClosure *callback</dt>
 <dd>
-�@�R�[���o�b�N�֐����w�肵�܂��B<r/>
-�@���̃R�[���o�b�N�֐��́A�����o��ɂ���񂸂Acallback->FuncCall ���Ăяo����܂��B<r/>
-�@�֐��ɂ͂Q��(TJS_ENUM_NO_VALUE���w�肵���ꍇ)���邢�͂R��(TJS_ENUM_NO_VALUE���w�肵�Ȃ������ꍇ)�̈������n����܂��B<r/>
+　コールバック関数を指定します。<r/>
+　このコールバック関数は、メンバ一つにつき一回ずつ、callback->FuncCall が呼び出されます。<r/>
+　関数には２つ(TJS_ENUM_NO_VALUEを指定した場合)あるいは３つ(TJS_ENUM_NO_VALUEを指定しなかった場合)の引数が渡されます。<r/>
 <ul>
-<li>��P�����͕�����^�ɂȂ�A�����o���ł�</li>
-<li>��Q�����͐����^�ɂȂ�A���̃����o�̃t���O�ł��BTJS_HIDDENMEMBER ���邢�� TJS_STATICMEMBER �̃r�b�g�_���a�̑g�ݍ��킹�A���邢�� 0 ���w�肳��܂�</li>
-<li>��R������TJS_ENUM_NO_VALUE���w�肵�Ȃ������ꍇ�ɂ̂ݑ��݂��A���̃����o�̒l��\���܂�</li>
+<li>第１引数は文字列型になり、メンバ名です</li>
+<li>第２引数は整数型になり、そのメンバのフラグです。TJS_HIDDENMEMBER あるいは TJS_STATICMEMBER のビット論理和の組み合わせ、あるいは 0 が指定されます</li>
+<li>第３引数はTJS_ENUM_NO_VALUEを指定しなかった場合にのみ存在し、そのメンバの値を表します</li>
 </ul>
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���̃��\�b�h�����s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B<r/>
-�@���̈����́ATJS_IGNOREPROP �t���O���w�肳��Ȃ��ꍇ�A�v���p�e�B�I�u�W�F�N�g�����s�����f�t�H���g�̃R���e�L�X�g�ƂȂ�܂��B<r/>
+　このメソッドが実行されるコンテキスト (this オブジェクト) を指定します。<r/>
+　この引数は、TJS_IGNOREPROP フラグが指定されない場合、プロパティオブジェクトが実行されるデフォルトのコンテキストとなります。<r/>
 </dd>
 
 </dl>
@@ -513,37 +513,37 @@ tjs_error iTJSDispatch2::Invalidate(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@���������s���܂��B<r/>
+　無効化を行います。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@�ΏۂƂ��郁���o�̖��O���w�肵�܂��B<r/>
-�@NULL �̏ꍇ�A���̃I�u�W�F�N�g���g������������܂��B<r/>
-�@�����o�����w�肳�ꂽ�ꍇ�A�����A���̃����o���I�u�W�F�N�g�Ȃ�΁A���̃I�u�W�F�N�g������������܂��B�w�肳�ꂽ�����o���I�u�W�F�N�g�^�łȂ������ꍇ�͎��s���܂��B
+　対象とするメンバの名前を指定します。<r/>
+　NULL の場合、このオブジェクト自身が無効化されます。<r/>
+　メンバ名が指定された場合、もし、そのメンバがオブジェクトならば、そのオブジェクトが無効化されます。指定されたメンバがオブジェクト型でなかった場合は失敗します。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���̃��\�b�h�����s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B<r/>
-�@���̈����́A�ʏ�A�Ӗ��������܂���(��������܂�)�B
+　このメソッドが実行されるコンテキスト (this オブジェクト) を指定します。<r/>
+　この引数は、通常、意味を持ちません(無視されます)。
 </dd>
 </dl>
 </para>
@@ -558,7 +558,7 @@ tjs_error iTJSDispatch2::InvalidateByNum(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�����ɂ�薳�������s���܂��B<r/>
+序数により無効化を行います。<r/>
 </para>
 
 
@@ -574,39 +574,39 @@ tjs_error iTJSDispatch2::IsValid(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�I�u�W�F�N�g���L�����ǂ����𒲂ׂ܂��B<r/>
-�@�L���̏ꍇ�� TJS_S_TRUE ���A�������̏ꍇ�� TJS_S_FALSE ���߂�܂��B<r/>
+　オブジェクトが有効かどうかを調べます。<r/>
+　有効の場合は TJS_S_TRUE が、向こうの場合は TJS_S_FALSE が戻ります。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@�ΏۂƂ��郁���o�̖��O���w�肵�܂��B<r/>
-�@NULL �̏ꍇ�A���̃I�u�W�F�N�g���g�̗L�����𒲂ׂ邱�Ƃ��ł��܂��B<r/>
-�@�����o�����w�肳�ꂽ�ꍇ�A�����A���̃����o���I�u�W�F�N�g�Ȃ�΁A���̃I�u�W�F�N�g�̗L�����𒲂ׂ邱�Ƃ��ł��܂��B�w�肳�ꂽ�����o���I�u�W�F�N�g�^�łȂ������ꍇ�͎��s���܂��B
+　対象とするメンバの名前を指定します。<r/>
+　NULL の場合、このオブジェクト自身の有効性を調べることができます。<r/>
+　メンバ名が指定された場合、もし、そのメンバがオブジェクトならば、そのオブジェクトの有効性を調べることができます。指定されたメンバがオブジェクト型でなかった場合は失敗します。
 
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���̃��\�b�h�����s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B<r/>
-�@���̈����́A�ʏ�A�Ӗ��������܂���(��������܂�)�B
+　このメソッドが実行されるコンテキスト (this オブジェクト) を指定します。<r/>
+　この引数は、通常、意味を持ちません(無視されます)。
 </dd>
 </dl>
 </para>
@@ -625,7 +625,7 @@ tjs_error iTJSDispatch2::IsValidByNum(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����ɂ��A�I�u�W�F�N�g���L�����ǂ����𒲂ׂ܂��B<r/>
+　序数により、オブジェクトが有効かどうかを調べます。<r/>
 </para>
 
 
@@ -645,55 +645,55 @@ tjs_error iTJSDispatch2::CreateNew(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�V�K�I�u�W�F�N�g���쐬���܂��B<r/>
-�@���̃��\�b�h�� FuncCall ���\�b�h�Ɏ��āA�I�u�W�F�N�g��V�K�쐬���邽�߂Ɉ�����n�����Ƃ��ł��܂��B<r/>
-�@�I�u�W�F�N�g�̐��`�ƂȂ�A������u�N���X�I�u�W�F�N�g�v�͂��̃��\�b�h���������Ă���K�v������܂��B<r/>
+　新規オブジェクトを作成します。<r/>
+　このメソッドは FuncCall メソッドに似て、オブジェクトを新規作成するために引数を渡すことができます。<r/>
+　オブジェクトの雛形となる、いわゆる「クラスオブジェクト」はこのメソッドを実装している必要があります。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@����ΏۂƂ��郁���o���ł��B<r/>
-�@NULL �̏ꍇ�́A���̃I�u�W�F�N�g���g�ɑ΂��鑀��ɂȂ�܂��B���̏ꍇ�́A���̃I�u�W�F�N�g�́A�V�ɃI�u�W�F�N�g��V�K�쐬����@�\�������Ă���K�v������܂��B
+　操作対象とするメンバ名です。<r/>
+　NULL の場合は、このオブジェクト自身に対する操作になります。この場合は、このオブジェクトは、新にオブジェクトを新規作成する機能を持っている必要があります。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>iTJSDispatch2 **result</dt>
 <dd>
-�@�V�����쐬�����I�u�W�F�N�g���i�[���邽�߂� iTJSDispatch * �^�ւ̃|�C���^���w�肵�܂��BNULL �͋�����܂���B
+　新しく作成したオブジェクトを格納するための iTJSDispatch * 型へのポインタを指定します。NULL は許されません。
 </dd>
 
 
 <dt>tjs_int numparams</dt>
 <dd>
-�@�I�u�W�F�N�g��V�K�쐬����ۂɓn�������̐����w�肵�܂��B
+　オブジェクトを新規作成する際に渡す引数の数を指定します。
 </dd>
 
 
 <dt>tTJSVariant **param</dt>
 <dd>
-�@�I�u�W�F�N�g��V�K�쐬����ۂɓn�������̃|�C���^�̔z���n���܂��B�������Ȃ��ꍇ�� NULL �ł��܂��܂���B
+　オブジェクトを新規作成する際に渡す引数のポインタの配列を渡します。引数がない場合は NULL でかまいません。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@�I�u�W�F�N�g��V�K�쐬����ۂɎ��s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B
+　オブジェクトを新規作成する際に実行されるコンテキスト (this オブジェクト) を指定します。
 </dd>
 </dl>
 </para>
@@ -713,7 +713,7 @@ tjs_error iTJSDispatch2::CreateNew(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����ɂ��V�K�I�u�W�F�N�g���쐬���܂��B<r/>
+　序数により新規オブジェクトを作成します。<r/>
 </para>
 
 
@@ -733,44 +733,44 @@ tjs_error iTJSDispatch2::IsInstanceOf(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�I�u�W�F�N�g���A����̃N���X�̃C���X�^���X�ł��邩�ǂ����𒲂ׂ܂��B<r/>
-�@�N���X���� classname �����ɕ�����œn����܂��B<r/>
-�@TJS2 �� instanceof ���Z�q�ɂ��Q�Ƃ���܂��B<r/>
-�@���������ꍇ�A�w�肳�ꂽ�N���X�̃C���X�^���X�ł���ꍇ�� TJS_S_TRUE ���A�����łȂ��ꍇ�� TJS_S_FALSE ���A��܂��B<r/>
+　オブジェクトが、特定のクラスのインスタンスであるかどうかを調べます。<r/>
+　クラス名は classname 引数に文字列で渡されます。<r/>
+　TJS2 の instanceof 演算子により参照されます。<r/>
+　成功した場合、指定されたクラスのインスタンスである場合は TJS_S_TRUE が、そうでない場合は TJS_S_FALSE が帰ります。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł�(���L�Q��)�B
+　呼び出しフラグです(下記参照)。
 </dd>
 
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@����ΏۂƂ��郁���o���ł��B<r/>
-�@NULL �̏ꍇ�́A���̃I�u�W�F�N�g���g�ɑ΂��鑀��ɂȂ�܂��B���̏ꍇ�́A���̃I�u�W�F�N�g�́A�V�ɃI�u�W�F�N�g��V�K�쐬����@�\�������Ă���K�v������܂��B
+　操作対象とするメンバ名です。<r/>
+　NULL の場合は、このオブジェクト自身に対する操作になります。この場合は、このオブジェクトは、新にオブジェクトを新規作成する機能を持っている必要があります。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>const tjs_char *classname</dt>
 <dd>
-�@�N���X���𕶎���Ŏw�肵�܂��B
+　クラス名を文字列で指定します。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@�I�u�W�F�N�g��V�K�쐬����ۂɎ��s�����R���e�L�X�g (this �I�u�W�F�N�g) ���w�肵�܂��B
+　オブジェクトを新規作成する際に実行されるコンテキスト (this オブジェクト) を指定します。
 </dd>
 </dl>
 </para>
@@ -787,7 +787,7 @@ tjs_error iTJSDispatch2::IsInstanceOfByNum(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����ɂ��A�I�u�W�F�N�g���A����̃N���X�̃C���X�^���X�ł��邩�ǂ����𒲂ׂ܂��B<r/>
+　序数により、オブジェクトが、特定のクラスのインスタンスであるかどうかを調べます。<r/>
 </para>
 
 
@@ -804,131 +804,131 @@ tjs_error iTJSDispatch2::Operation(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@�����o�ɑ΂��ĉ��Z���s���܂��B���Z�̎�ނ� flag �Ŏw�肵�܂��B<r/>
+　メンバに対して演算を行います。演算の種類は flag で指定します。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł��B���L�̒ʏ�̌Ăяo���t���O�̑��A���Z�̎�ނ��w�肷�邽�߂Ɉȉ��̃t���O�̂����ꂩ���r�b�gOR�ŕt������K�v������܂��B<r/>
+　呼び出しフラグです。下記の通常の呼び出しフラグの他、演算の種類を指定するために以下のフラグのいずれかをビットORで付加する必要があります。<r/>
 <r/>
-�@�Ȃ��A���̐������� v �̓����o�̒l�Ap �� param �����œn���p�����[�^��\���܂��B<r/>
+　なお、この説明中で v はメンバの値、p は param 引数で渡すパラメータを表します。<r/>
 <r/>
 <dl>
 
 <dt>TJS_OP_BAND</dt>
 <dd>
-�r�b�g AND ���Z<r/>
+ビット AND 演算<r/>
 v &amp;= p
 </dd>
 
 
 <dt>TJS_OP_BOR</dt>
 <dd>
-�r�b�g OR ���Z<r/>
+ビット OR 演算<r/>
 v |= p
 </dd>
 
 
 <dt>TJS_OP_BXOR</dt>
 <dd>
-�r�b�g XOR ���Z<r/>
+ビット XOR 演算<r/>
 v ^= p
 </dd>
 
 
 <dt>TJS_OP_SUB</dt>
 <dd>
-���Z<r/>
+減算<r/>
 v -= p
 </dd>
 
 
 <dt>TJS_OP_ADD</dt>
 <dd>
-���Z<r/>
+加算<r/>
 v += p
 </dd>
 
 
 <dt>TJS_OP_MOD</dt>
 <dd>
-���W����<r/>
+モジュラ<r/>
 v %= p
 </dd>
 
 
 <dt>TJS_OP_DIV</dt>
 <dd>
-�������Z<r/>
+実数除算<r/>
 v /= p
 </dd>
 
 
 <dt>TJS_OP_IDIV</dt>
 <dd>
-�������Z<r/>
+整数除算<r/>
 v \= p
 </dd>
 
 
 <dt>TJS_OP_MUL</dt>
 <dd>
-��Z<r/>
+乗算<r/>
 v *= p
 </dd>
 
 
 <dt>TJS_OP_LOR</dt>
 <dd>
-�_�� OR<r/>
+論理 OR<r/>
 v = v || p
 </dd>
 
 
 <dt>TJS_OP_LAND</dt>
 <dd>
-�_�� AND<r/>
+論理 AND<r/>
 v = v &amp;&amp; p
 </dd>
 
 
 <dt>TJS_OP_SAR</dt>
 <dd>
-�Z�p�E�V�t�g<r/>
+算術右シフト<r/>
 v >>= p
 </dd>
 
 
 <dt>TJS_OP_SAL</dt>
 <dd>
-�Z�p���V�t�g<r/>
+算術左シフト<r/>
 v &lt;&lt;= p
 </dd>
 
 
 <dt>TJS_OP_SR</dt>
 <dd>
-�r�b�g���V�t�g<r/>
+ビット左シフト<r/>
 v >>>= p
 </dd>
 
 
 <dt>TJS_OP_INC</dt>
 <dd>
-�C���N�������g<r/>
+インクリメント<r/>
 v++<r/>
-param �����͖�������܂�
+param 引数は無視されます
 </dd>
 
 
 <dt>TJS_OP_DEC</dt>
 <dd>
-�f�N�������g<r/>
+デクリメント<r/>
 v--<r/>
-param �����͖�������܂�
+param 引数は無視されます
 </dd>
 </dl>
 
@@ -938,32 +938,32 @@ param �����͖�������܂�
 
 <dt>const tjs_char * membername</dt>
 <dd>
-�@����ΏۂƂ��郁���o���ł��BNULL �͋�����܂���B
+　操作対象とするメンバ名です。NULL は許されません。
 </dd>
 
 
 <dt>tjs_uint32 *hint</dt>
 <dd>
-�@�q���g���i�[���邽�߂̕ϐ��̗̈���w�肵�܂��BNULL�ł����܂��܂���B<r/>
-�@�q���g�̐����ɂ��Ă� FuncCall �̐������Q�Ƃ��Ă��������B
+　ヒントを格納するための変数の領域を指定します。NULLでもかまいません。<r/>
+　ヒントの説明については FuncCall の説明を参照してください。
 </dd>
 
 
 <dt>tTJSVariant *result</dt>
 <dd>
-�@���Z�̌��ʂ��i�[���邽�߂� tTJSVariant �^�̕ϐ��ւ̃|�C���^���w�肵�܂��BNULL �ł��܂��܂���B
+　演算の結果を格納するための tTJSVariant 型の変数へのポインタを指定します。NULL でかまいません。
 </dd>
 
 
 <dt>tTJSVariant *param</dt>
 <dd>
-�@���Z�̃p�����[�^���w�肵�܂��B���Z�̎�ނ� TJS_OP_INC �܂��� TJS_OP_DEC ���w�肵���ꍇ�� NULL �ł��܂��܂���B
+　演算のパラメータを指定します。演算の種類に TJS_OP_INC または TJS_OP_DEC を指定した場合は NULL でかまいません。
 </dd>
 
 
 <dt>iTJSDispatch2 *objthis</dt>
 <dd>
-�@���Z�����s�����R���e�L�X�g���w�肵�܂����A�ʏ햳������܂��B
+　演算が実行されるコンテキストを指定しますが、通常無視されます。
 </dd>
 </dl>
 </para>
@@ -982,7 +982,7 @@ tjs_error iTJSDispatch2::OperationByNum(<r/>
 	iTJSDispatch2 *objthis<r/>
 	)<r/>
 <r/>
-�@������p���āA�����o�ɑ΂��ĉ��Z���s���܂��B<r/>
+　序数を用いて、メンバに対して演算を行います。<r/>
 </para>
 
 
@@ -996,30 +996,30 @@ tjs_error iTJSDispatch2::NativeInstanceSupport(<r/>
 	iTJSNativeInstance **pointer<r/>
 	)<r/>
 <r/>
-�@�I�u�W�F�N�g�Ƀl�C�e�B�u�R�[�h�̃C���X�^���X���֘A�Â�����A�I�u�W�F�N�g����l�C�e�B�u�R�[�h�̃C���X�^���X���擾�����肵�܂��B<r/>
+　オブジェクトにネイティブコードのインスタンスを関連づけたり、オブジェクトからネイティブコードのインスタンスを取得したりします。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O���w�肵�܂��B<r/>
-�@�ȉ��̂����ꂩ�̒l���w�肷��K�v������܂��B<r/>
+　呼び出しフラグを指定します。<r/>
+　以下のいずれかの値を指定する必要があります。<r/>
 <r/>
 <dl>
 
 <dt><kw>TJS_NIS_REGISTER</kw></dt>
 <dd>
-�@*pointer �Ŏ������l�C�e�B�u�R�[�h�̃C���X�^���X��o�^���܂��B�l�C�e�B�u�R�[�h�̃N���X�̎��ʂɂ� classid ��p���܂��B
+　*pointer で示したネイティブコードのインスタンスを登録します。ネイティブコードのクラスの識別には classid を用います。
 </dd>
 
 
 
 <dt><kw>TJS_NIS_GETINSTANCE</kw></dt>
 <dd>
-�@classid �Ŏw�肵�� �N���XID �����l�C�e�B�u�R�[�h�̃C���X�^���X�� *pointer �ɏ������݂܂��B
+　classid で指定した クラスID を持つネイティブコードのインスタンスを *pointer に書き込みます。
 </dd>
 </dl>
 
@@ -1029,18 +1029,18 @@ tjs_error iTJSDispatch2::NativeInstanceSupport(<r/>
 
 <dt>tjs_int32 classid</dt>
 <dd>
-�@�l�C�e�B�u�R�[�h�̃N���X ID ���w�肵�܂��B<r/>
-�@�l�C�e�B�u�R�[�h�̃N���X ID �̊Ǘ��ɂ� TJSRegisterNativeClass
+　ネイティブコードのクラス ID を指定します。<r/>
+　ネイティブコードのクラス ID の管理には TJSRegisterNativeClass
 TJSFindNativeClassID
-TJSFindNativeClassName ���g�p���邱�Ƃ��ł��܂����A�ʏ�� �����̏����̓l�C�e�B�u�R�[�h���L�q���邽�߂�
-�x���R�[�h�Q ( tjsNative.cpp/tjsNative.h �ɋL�q ) �Ŏ����I�ɏ�������܂��B
+TJSFindNativeClassName を使用することができますが、通常は これらの処理はネイティブコードを記述するための
+支援コード群 ( tjsNative.cpp/tjsNative.h に記述 ) で自動的に処理されます。
 </dd>
 
 
 
 <dt>iTJSNativeInstance **pointer</dt>
 <dd>
-�@�l�C�e�B�u�R�[�h�̃C���X�^���X��n������A�󂯎�����肷�邽�߂ɁAiTJSNativeInstance *�^�̕ϐ��ւ̃|�C���^���w�肵�܂��B
+　ネイティブコードのインスタンスを渡したり、受け取ったりするために、iTJSNativeInstance *型の変数へのポインタを指定します。
 </dd>
 </dl>
 
@@ -1056,32 +1056,32 @@ tjs_error iTJSDispatch2::ClassInstanceInfo(<r/>
 	tTJSVariant *value<r/>
 	)<r/>
 <r/>
-�@IsInstanceOf ���\�b�h�Ŏg�p����A�N���X�̃C���X�^���X���𑀍삷�郁�\�b�h�ł��B<r/>
-�@�I�u�W�F�N�g���ǂ̃N���X�̃C���X�^���X�������ʂ��邽�߂ɃN���X����ǉ�������A�I�u�W�F�N�g���ǂ̃N���X�̃C���X�^���X���𒲂ׂ邽�߂ɃN���X��񋓂��邱�Ƃ��ł��܂��B<r/>
+　IsInstanceOf メソッドで使用する、クラスのインスタンス情報を操作するメソッドです。<r/>
+　オブジェクトがどのクラスのインスタンスかを識別するためにクラス名を追加したり、オブジェクトがどのクラスのインスタンスかを調べるためにクラスを列挙することができます。<r/>
 <r/>
-�@�����͈ȉ��̒ʂ�ł��B<r/>
+　引数は以下の通りです。<r/>
 <r/>
 <dl>
 
 <dt>tjs_uint32 flag</dt>
 <dd>
-�@�Ăяo���t���O�ł��B�ȉ��̃t���O�̂����ꂩ���w�肵�܂��B<r/>
+　呼び出しフラグです。以下のフラグのいずれかを指定します。<r/>
 <r/>
 <dl>
 
 <dt><kw>TJS_CII_ADD</kw></dt>
 <dd>
-�@�C���X�^���X����ǉ����܂��B<r/>
-�@value �ɂ̓N���X�� (������) �̊i�[���ꂽ tTJSVariant �^�̕ϐ��ւ̃|�C���^��n���܂��B<r/>
-�@num �����͖�������܂��B
+　インスタンス情報を追加します。<r/>
+　value にはクラス名 (文字列) の格納された tTJSVariant 型の変数へのポインタを渡します。<r/>
+　num 引数は無視されます。
 </dd>
 
 
 <dt><kw>TJS_CII_GET</kw></dt>
 <dd>
-�@�C���X�^���X�����擾���܂��B<r/>
-�@num �����ɂ� 0 ����n�܂� �������w�肵�܂��B�ݒ肳��Ă���C���X�^���X���̐��𒴂��� num ���w�肷��� TJS_E_FAIL ���߂�܂��B<r/>
-�@value �ɂ̓N���X�����󂯎�邽�߂́AtTJSVariant �^�̕ϐ��ւ̃|�C���^��n���܂��B
+　インスタンス情報を取得します。<r/>
+　num 引数には 0 から始まる 整数を指定します。設定されているインスタンス情報の数を超えて num を指定すると TJS_E_FAIL が戻ります。<r/>
+　value にはクラス名を受け取るための、tTJSVariant 型の変数へのポインタを渡します。
 </dd>
 </dl>
 </dd>
@@ -1090,15 +1090,15 @@ tjs_error iTJSDispatch2::ClassInstanceInfo(<r/>
 
 <dt>tjs_uint num</dt>
 <dd>
-�@flag �� TJS_CII_GET ���w�肵���ꍇ�̏������w�肵�܂��B
+　flag に TJS_CII_GET を指定した場合の序数を指定します。
 </dd>
 
 
 
 <dt>tTJSVariant *value</dt>
 <dd>
-�@flag �� TJS_CII_ADD ���w�肵���ꍇ�́A�N���X�����i�[���ꂽ tTJSVariant �^�̕ϐ��ւ̃|�C���^��n���܂��B<r/>
-�@flag �� TJS_CII_GET ���w�肵���ꍇ�́A�N���X�����󂯎�邽�߂� tTJSVariant �^�̕ϐ��ւ̃|�C���^��n���܂��B
+　flag に TJS_CII_ADD を指定した場合は、クラス名が格納された tTJSVariant 型の変数へのポインタを渡します。<r/>
+　flag に TJS_CII_GET を指定した場合は、クラス名を受け取るための tTJSVariant 型の変数へのポインタを渡します。
 </dd>
 </dl>
 
@@ -1108,23 +1108,23 @@ tjs_error iTJSDispatch2::ClassInstanceInfo(<r/>
 
 
 <para>
-<ptitle>�Ăяo���t���O</ptitle>
+<ptitle>呼び出しフラグ</ptitle>
 
-�@�Ăяo���t���O�ł��B<r/>
-�@�ȉ��̒l�̃r�b�gOR�ɂ��g�ݍ��킹���w�肷�邱�Ƃ��ł��܂��B<r/>
+　呼び出しフラグです。<r/>
+　以下の値のビットORによる組み合わせを指定することができます。<r/>
 <r/>
 <dl>
 
 <dt>TJS_MEMBERENSURE</dt>
 <dd>
-�@�w�肳�ꂽ�����o����������Ȃ������ꍇ�A�����I�Ƀ����o���쐬���܂��BPropSet �ɑ΂���Ăяo���t���O�Ƃ��ėL���ł��B
+　指定されたメンバ名が見つからなかった場合、強制的にメンバを作成します。PropSet に対する呼び出しフラグとして有効です。
  )
 </dd>
 
 
 <dt>TJS_MEMBERMUSTEXIST</dt>
 <dd>
-�@�w�肳�ꂽ�����o����������Ȃ������ꍇ�A�G���[�ɂ��܂��B����́ADictionary �� Array �̂悤�ȁA�����o��������Ȃ��ꍇ�Ƀf�t�H���g�� void ��Ԃ��悤�ȃI�u�W�F�N�g�ɑ΂��ėL���ł� (���̂悤�ȃI�u�W�F�N�g�łȂ��ꍇ�́A�����o��������Ȃ��ꍇ�̓f�t�H���g�ŃG���[�ɂȂ�܂�)�B
+　指定されたメンバ名が見つからなかった場合、エラーにします。これは、Dictionary や Array のような、メンバが見つからない場合にデフォルトで void を返すようなオブジェクトに対して有効です (そのようなオブジェクトでない場合は、メンバが見つからない場合はデフォルトでエラーになります)。
 </dd>
 
 
@@ -1133,20 +1133,20 @@ tjs_error iTJSDispatch2::ClassInstanceInfo(<r/>
 
 <dt>TJS_IGNOREPROP</dt>
 <dd>
-�@�v���p�e�B������o�C�p�X���܂��B<r/>
-�@TJS2 �̃I�u�W�F�N�g�͒ʏ�A�w�肳�ꂽ�����o���I�u�W�F�N�g�ŁA���A���̃I�u�W�F�N�g�ɑ΂��� PropSet �� PropGet ����������ꍇ (�v���p�e�B�I�u�W�F�N�g�̏ꍇ)�A���̃����o�ɑ΂��� PropSet �� PropGet �̌��ʂ��A���̃����o�̑���ƌ��Ȃ��Ďg���܂��B<r/>
-�@���̃t���O���w�肷��ƁA���̂悤�ȏ������o�C�p�X���邽�߁A�w�肳�ꂽ�����o���v���p�e�B�I�u�W�F�N�g�ł����Ă��A�v���p�e�B�I�u�W�F�N�g���̂��̂ɑ΂��鑀��ɂȂ�܂��B
+　プロパティ操作をバイパスします。<r/>
+　TJS2 のオブジェクトは通常、指定されたメンバがオブジェクトで、かつ、そのオブジェクトに対して PropSet や PropGet が成功する場合 (プロパティオブジェクトの場合)、そのメンバに対する PropSet や PropGet の結果を、そのメンバの代わりと見なして使います。<r/>
+　このフラグを指定すると、このような処理をバイパスするため、指定されたメンバがプロパティオブジェクトであっても、プロパティオブジェクトそのものに対する操作になります。
 </dd>
 
 
 <dt>TJS_HIDDENMEMBER</dt>
 <dd>
-�@���̃t���O���w�肵�ă����o���쐬����ƁA�����o�͕s���ɂȂ�܂��B�I�u�W�F�N�g�ɂ���Ă̓T�|�[�g����Ă��Ȃ����Ƃ����蓾�܂��B
+　このフラグを指定してメンバを作成すると、メンバは不可視になります。オブジェクトによってはサポートされていないこともあり得ます。
 </dd>
 
 <dt>TJS_STATICMEMBER</dt>
 <dd>
-�@���̃t���O���w�肵�ă����o���쐬����ƁA�����o�̓X�^�e�B�b�N (���s�R���e�L�X�g�Ɉˑ����Ȃ�) �ƂȂ�܂��B�I�u�W�F�N�g�ɂ���Ă̓T�|�[�g����Ă��Ȃ����Ƃ����蓾�܂��B
+　このフラグを指定してメンバを作成すると、メンバはスタティック (実行コンテキストに依存しない) となります。オブジェクトによってはサポートされていないこともあり得ます。
 </dd>
 
 
@@ -1156,114 +1156,114 @@ tjs_error iTJSDispatch2::ClassInstanceInfo(<r/>
 
 <para>
 <ptitle>tjs_error</ptitle>
-�@tjs_error �́AiTJSDispatch2 �̊e���\�b�h ( AddRef �� Release ������ ) ���Ԃ��G���[�^�ł��B<r/>
-�@�ȉ��̒l���̂�܂��B�܂��A�����ɍڂ��ĂȂ��l�ł��A�l�����̏ꍇ�̓G���[�ƌ��Ȃ��K�v������܂��B�����𔻒f���邽�߂� TJS_SUCCEEDED ����� TJS_FAILED �}�N�����g�p���邱�Ƃ��ł��܂��B<r/>
+　tjs_error は、iTJSDispatch2 の各メソッド ( AddRef と Release を除く ) が返すエラー型です。<r/>
+　以下の値を採ります。また、ここに載ってない値でも、値が負の場合はエラーと見なす必要があります。これらを判断するために TJS_SUCCEEDED および TJS_FAILED マクロを使用することができます。<r/>
 <r/>
 <dl>
 
 <dt><kw>TJS_E_MEMBERNOTFOUND</kw></dt>
 <dd>
-�@�w�肳�ꂽ�����o��������܂���B
+　指定されたメンバが見つかりません。
 </dd>
 
 
 
 <dt><kw>TJS_E_NOTIMPL</kw></dt>
 <dd>
-�@�Ăяo�����Ƃ����@�\�͖������ł��B
+　呼び出そうとした機能は未実装です。
 </dd>
 
 
 
 <dt><kw>TJS_E_INVALIDPARAM</kw></dt>
 <dd>
-�@�s���Ȉ����ł��B
+　不正な引数です。
 </dd>
 
 
 
 <dt><kw>TJS_E_BADPARAMCOUNT</kw></dt>
 <dd>
-�@�����̐����s���ł��B
+　引数の数が不正です。
 </dd>
 
 
 
 <dt><kw>TJS_E_INVALIDTYPE</kw></dt>
 <dd>
-�@�֐��ł͂Ȃ����v���p�e�B�̎�ނ��Ⴂ�܂��B<r/>
-�@�֐��łȂ������Ăяo�����Ƃ����ꍇ��A�v���p�e�B�łȂ������v���p�e�B�Ƃ��Ĉ������Ƃ����Ƃ��ɂ��̒l���A��܂��B
+　関数ではないかプロパティの種類が違います。<r/>
+　関数でない物を呼び出そうとした場合や、プロパティでない物をプロパティとして扱おうとしたときにこの値が帰ります。
 </dd>
 
 
 
 <dt><kw>TJS_E_INVALIDOBJECT</kw></dt>
 <dd>
-�@�I�u�W�F�N�g�͂��łɖ���������Ă��܂��B
+　オブジェクトはすでに無効化されています。
 </dd>
 
 
 
 <dt><kw>TJS_E_ACCESSDENYED</kw></dt>
 <dd>
-�@�ǂݍ��݂��邢�͏������ݐ�p�v���p�e�B�ɑ΂��čs���Ȃ���������悤�Ƃ��܂����B
+　読み込みあるいは書き込み専用プロパティに対して行えない操作をしようとしました。
 </dd>
 
 
 
 <dt><kw>TJS_E_NATIVECLASSCRASH</kw></dt>
 <dd>
-�@���s�R���e�L�X�g���Ⴂ�܂��B<r/>
-�@�l�C�e�B�u�R�[�h�Ŏ������ꂽ���\�b�h���A���̃l�C�e�B�u�R�[�h�ň����Ȃ��R���e�L�X�g (�Ⴄ�N���X�̃I�u�W�F�N�g��Ȃ�) �Ŏ��s���悤�Ƃ����Ƃ��ɂ��̒l���A��܂��B
+　実行コンテキストが違います。<r/>
+　ネイティブコードで実装されたメソッドを、そのネイティブコードで扱えないコンテキスト (違うクラスのオブジェクト上など) で実行しようとしたときにこの値が帰ります。
 </dd>
 
 
 
 <dt><kw>TJS_S_TRUE</kw></dt>
 <dd>
-�@�G���[�ł͂���܂��񂪁A���ʂ��u�^�v�ł��邱�Ƃ������܂��B
+　エラーではありませんが、結果が「真」であることを示します。
 </dd>
 
 
 
 <dt><kw>TJS_S_FALSE</kw></dt>
 <dd>
-�@�G���[�ł͂���܂��񂪁A���ʂ��u�U�v�ł��邱�Ƃ������܂��B
+　エラーではありませんが、結果が「偽」であることを示します。
 </dd>
 
 
 
 <dt><kw>TJS_S_OK</kw></dt>
 <dd>
-�@�G���[���������Ȃ������ꍇ�ɁA�ʏ�A���̒l���A��܂��B
+　エラーが発生しなかった場合に、通常、この値が帰ります。
 </dd>
 
 
 
 <dt><kw>TJS_E_FAIL</kw></dt>
 <dd>
-�@����`�̃G���[�����������ꍇ�A���̒l���A��܂��B
+　未定義のエラーが発生した場合、この値が帰ります。
 </dd>
 
 
 
 <dt><kw>TJS_FAILED</kw>(x)</dt>
 <dd>
-�@x ���G���[�̒l�̏ꍇ�ɐ^�ɂȂ�}�N���ł��B
+　x がエラーの値の場合に真になるマクロです。
 </dd>
 
 
 <dt><kw>TJS_SUCCEEDED</kw>(x)</dt>
 <dd>
-�@x ���G���[�łȂ��l�̏ꍇ�ɐ^�ɂȂ�}�N���ł��B
+　x がエラーでない値の場合に真になるマクロです。
 </dd>
 </dl>
 <r/>
 
 
 <r/>
-�@�G���[��`�A����ъ֘A����}�N���� tjsErrorDef.h �ɋL�q����Ă��܂��B<r/>
-�@�܂��A�G���[�ł͂Ȃ� (C++�ɂ�����) ���s����O����������ꍇ������܂��B�v���O���~���O�Ɋւ��ẮA���s����O���\���ɍl������K�v������܂��B<r/>
+　エラー定義、および関連するマクロは tjsErrorDef.h に記述されています。<r/>
+　また、エラーではなく (C++における) 実行時例外が投げられる場合があります。プログラミングに関しては、実行時例外を十分に考慮する必要があります。<r/>
 </para>
 
 

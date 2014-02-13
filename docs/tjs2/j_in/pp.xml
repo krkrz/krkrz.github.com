@@ -1,58 +1,58 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <doc>
-<title>�v���v���Z�b�T</title>
+<title>プリプロセッサ</title>
 
 <para>
-<ptitle>�v���v���Z�b�T</ptitle>
-�@TJS2 �́A<kw>�����R���p�C����</kw> ( C �� #if �� #endif �ɑΉ�������� ) �̏������s�����Ƃ��ł��܂��B����́A�X�N���v�g�����ۂɉ��߂����O�ɏ�������A�����ɂ���ăX�N���v�g�̕��������߂����Ȃ��悤�ɂ�����A���߂�����悤�ɂ����肷�鎖���ł��܂��B<r/>
-�@�����R���p�C�����̃X�^�C���� C �̃v���v���Z�b�T�w�߂Ƃ͈Ⴂ�A�t���[�X�^�C���ƂȂ�A�ǂ��ɂł��������Ƃ��ł��܂��BC �̎w�߂̂悤�ɁA��s�ɂP�w�߂݂̂������Ȃ���΂Ȃ�Ȃ��ƌ������Ƃ͂���܂���B<r/>
+<ptitle>プリプロセッサ</ptitle>
+　TJS2 は、<kw>条件コンパイル式</kw> ( C の #if や #endif に対応するもの ) の処理を行うことができます。これは、スクリプトが実際に解釈される前に処理され、条件によってスクリプトの部分を解釈させないようにしたり、解釈させるようにしたりする事ができます。<r/>
+　条件コンパイル式のスタイルは C のプリプロセッサ指令とは違い、フリースタイルとなり、どこにでも書くことができます。C の指令のように、一行に１指令のみを書かなければならないと言うことはありません。<r/>
 </para>
 
 <para>
-<ptitle>@set �w��</ptitle>
-�@@set �w�߂́A�����R���p�C������]�����A���ʂ��̂Ă܂��B�\���͈ȉ��̒ʂ�ł��B
+<ptitle>@set 指令</ptitle>
+　@set 指令は、条件コンパイル式を評価し、結果を捨てます。構文は以下の通りです。
 <bq>
-	@set(��)<r/>
+	@set(式)<r/>
 </bq>
-�@�u���v�ɂ͏����R���p�C�����������܂��B�����ɂ́A�ȉ��̉��Z�q���g�����Ƃ��ł��܂��B<r/>
+　「式」には条件コンパイル式を書きます。ここには、以下の演算子を使うことができます。<r/>
 <bq>
 	,  =  !=  ==  ||  &amp;&amp;  |  ^  &amp;  &lt;  &gt;  &lt;=  &gt;=  +  -  %  *  /  !  +  -  ( )<r/>
 </bq>
-�@�����̉��Z�q�̈Ӗ��ɂ��Ă� <link href="expr_and_op"/> ���������������B�������A������f�[�^�^�͐����݂̂ł��B<r/>
-�@�܂��A�C�ӂ̕ϐ��A���l���g�p���邱�Ƃ��ł��܂��B�ϐ����̖����K���ɂ��ẮA <link href="token"/> �̕ϐ��̖����K���⑦�l�Ɠ����K�����K�p����܂��B<r/>
-�@�������A�v���v���Z�b�T���Ŏg�p����ϐ��ƁATJS2 �X�N���v�g���Ŏg�p����ϐ��͊����܂��� ( �������O��Ԃ����L���܂��� )�B<r/>
+　これらの演算子の意味については <link href="expr_and_op"/> をご覧ください。ただし、扱えるデータ型は整数のみです。<r/>
+　また、任意の変数、即値を使用することができます。変数名の命名規則については、 <link href="token"/> の変数の命名規則や即値と同じ規則が適用されます。<r/>
+　ただし、プリプロセッサ中で使用する変数と、TJS2 スクリプト中で使用する変数は干渉しません ( 同じ名前空間を共有しません )。<r/>
 </para>
 
 <para>
-<ptitle>@if �w��, @endif �w��</ptitle>
-�@@if �w�߂́A�����R���p�C������]�����A���ʂ� 0 �ł���΁A���� @endif ������܂ŁA���̊Ԃ����߂��Ȃ��悤�ɂ��܂��B���ʂ� 0 �ȊO�̏ꍇ�͉��߂���܂��B<r/>
-�@�\���͈ȉ��̒ʂ�ł��B<r/>
+<ptitle>@if 指令, @endif 指令</ptitle>
+　@if 指令は、条件コンパイル式を評価し、結果が 0 であれば、次に @endif が来るまで、その間を解釈しないようにします。結果が 0 以外の場合は解釈されます。<r/>
+　構文は以下の通りです。<r/>
 <bq>
-	@if(��)              ...         @endif<r/>
+	@if(式)              ...         @endif<r/>
 </bq>
-	�u���v�ɂ͏����R���p�C�������w�肵�܂��B @if �` @endif �͓���q�ɂł��܂��B<r/>
+	「式」には条件コンパイル式を指定します。 @if 縲鰀 @endif は入れ子にできます。<r/>
 <r/>
 <example>
-	@if(flag==0)  // �܂������������Ă��Ȃ��ϐ��� 0 �ł���ƌ��Ȃ����<r/>
+	@if(flag==0)  // まだ何も代入されていない変数は 0 であると見なされる<r/>
 		@set(flag=1)<r/>
 		****<r/>
 	@endif<r/>
-	// ��  **** �̕����ɏ����ꂽ�X�N���v�g�̃R���p�C������x����̂��̂Ƃ���<r/>
+	// ↑  **** の部分に書かれたスクリプトのコンパイルを一度きりのものとする<r/>
 <r/>
 	@if(version>=0x02040009)<r/>
 		@if(flag)<r/>
 			****<r/>
 		@endif<r/>
 	@endif <r/>
-	// �� version �� 0x02040009 (2.4.9) �ȏ�� flag �� 0 �ȊO�̎��̂� **** �̕������R���p�C������<r/>
+	// ↑ version が 0x02040009 (2.4.9) 以上で flag が 0 以外の時のみ **** の部分をコンパイルする<r/>
 </example>
 </para>
 
 <para>
-<ptitle>��`�ςݕϐ�</ptitle>
-�@<kw>version</kw> �ϐ����A���݂� TJS2 �̃o�[�W������\���Ă��܂��B<r/>
+<ptitle>定義済み変数</ptitle>
+　<kw>version</kw> 変数が、現在の TJS2 のバージョンを表しています。<r/>
 <r/>
-�@���l�Ƃ��āA16�i���� 0x0XYYZZZZ �̌`���ł���A X �̕����̓��W���[�o�[�W�����AYY �̕����̓}�C�i�[�o�[�W�����AZZZZ �̓����[�X�ԍ���\���܂��B���Ƃ��� 0x02040009 �ł���΁A�o�[�W������ 2.4.9 �ł��B
+　数値として、16進数で 0x0XYYZZZZ の形式であり、 X の部分はメジャーバージョン、YY の部分はマイナーバージョン、ZZZZ はリリース番号を表します。たとえば 0x02040009 であれば、バージョンは 2.4.9 です。
 </para>
 </doc>

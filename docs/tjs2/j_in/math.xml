@@ -1,38 +1,38 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
-<title>Math �N���X</title>
+<title>Math クラス</title>
 
 <para>
-<ptitle>Math �N���X</ptitle>
-�@JavaScript �� Math �Ƃقڌ݊��ł��B<r/>
+<ptitle>Math クラス</ptitle>
+　JavaScript の Math とほぼ互換です。<r/>
 <r/>
-��������Ă��郁�\�b�h :<r/>
-abs (��Βl�̎擾)<r/>
-acos (�A�[�N �R�T�C��)<r/>
-asin (�A�[�N �T�C��)<r/>
-atan (�A�[�N �^���W�F���g)<r/>
-atan2 (2�ϐ��̃A�[�N �^���W�F���g)<r/>
-ceil (�؂�グ)<r/>
-floor (�؂�̂�)<r/>
-exp (<i>e</i>��n��)<r/>
-log (���R�ΐ�)<r/>
-max (��̒l�̑傫����)<r/>
-min (��̒l�̏�������)<r/>
-random (0�ȏ�1�����̗���)<r/>
-pow (�搔)<r/>
-round(�����ւ̂܂��)<r/>
-sin (�T�C��)<r/>
-cos (�R�T�C��)<r/>
-tan (�^���W�F���g)<r/>
-sqrt (������)<r/>
+実装されているメソッド :<r/>
+abs (絶対値の取得)<r/>
+acos (アーク コサイン)<r/>
+asin (アーク サイン)<r/>
+atan (アーク タンジェント)<r/>
+atan2 (2変数のアーク タンジェント)<r/>
+ceil (切り上げ)<r/>
+floor (切り捨て)<r/>
+exp (<i>e</i>のn乗)<r/>
+log (自然対数)<r/>
+max (二つの値の大きい方)<r/>
+min (二つの値の小さい方)<r/>
+random (0以上1未満の乱数)<r/>
+pow (乗数)<r/>
+round(整数へのまるめ)<r/>
+sin (サイン)<r/>
+cos (コサイン)<r/>
+tan (タンジェント)<r/>
+sqrt (平方根)<r/>
 <r/>
-��������Ă���v���p�e�B :<r/>
+実装されているプロパティ :<r/>
 E (<i>e</i>)<r/>
 LN10 (log(10))<r/>
 LN2 (log(2))<r/>
-LOG10E (10���Ƃ���<i>e</i>�̑ΐ�)<r/>
-LOG2E (2���Ƃ���<i>e</i>�̑ΐ�)<r/>
-PI (��)<r/>
+LOG10E (10を底とした<i>e</i>の対数)<r/>
+LOG2E (2を底とした<i>e</i>の対数)<r/>
+PI (π)<r/>
 SQRT1_2 (sqrt(1/2))<r/>
 SQRT2 (sqrt(2))<r/>
 </para>

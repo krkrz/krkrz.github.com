@@ -1,115 +1,115 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
-<title>������ɑ΂��鑀��</title>
+<title>文字列に対する操作</title>
 
 <para>
-<ptitle>������ɑ΂��鑀��</ptitle>
-�@TJS2 �ł́A������͋[���I�� <kw>String</kw> �N���X�̃I�u�W�F�N�g�Ƃ������ƂɂȂ��Ă��܂����AString �N���X�͑��݂��Ă��܂��񂵁A���ۂ� String �N���X�̃I�u�W�F�N�g�Ƃ����킯�ł͂���܂��� ( ������ ������ɑ΂��� typeof ���Z�q���g���� "String" ��Ԃ��܂� )�B<r/>
-�@������ ��������I�u�W�F�N�g�ƌ����ĂāA�������̃��\�b�h��v���p�e�B���g�p�\�ɂȂ��Ă��܂��B<r/>
+<ptitle>文字列に対する操作</ptitle>
+　TJS2 では、文字列は擬似的に <kw>String</kw> クラスのオブジェクトということになっていますが、String クラスは存在していませんし、実際に String クラスのオブジェクトというわけではありません ( ただし 文字列に対して typeof 演算子を使うと "String" を返します )。<r/>
+　しかし 文字列をオブジェクトと見立てて、いくつかのメソッドやプロパティが使用可能になっています。<r/>
 </para>
 
 <para>
 <ptitle>length</ptitle>
-�@length �v���p�e�B�́A������̒�����Ԃ��܂��B���\�b�h�ł͂Ȃ��ăv���p�e�B�ł��̂Œ��ӂ��Ă��������B�������A���̃v���p�e�B�ւ̒l�̑���͂ł��܂���B<r/>
+　length プロパティは、文字列の長さを返します。メソッドではなくてプロパティですので注意してください。ただし、このプロパティへの値の代入はできません。<r/>
 <r/>
-�@TJS �ł͓����I�ɕ��������ׂ� <kw>UNICODE</kw> �ň����Ă��܂��̂ŁA�S�p������ 1 �����A���p������ 1 �����Ɛ������܂��B<r/>
+　TJS では内部的に文字をすべて <kw>UNICODE</kw> で扱っていますので、全角文字も 1 文字、半角文字も 1 文字と数えられます。<r/>
 <example>
-	var str = "abc����";<r/>
-	var n = str.length;  // n �ɂ� 5 ����������<r/>
-	var n = "abc����".length; // ����������� 5 ����������<r/>
+	var str = "abc漢字";<r/>
+	var n = str.length;  // n には 5 が代入される<r/>
+	var n = "abc漢字".length; // これも同じく 5 が代入される<r/>
 </example>
 </para>
 
 <para>
-<ptitle>'���l' �v���p�e�B</ptitle>
-�@���l���v���p�e�B�Ƃ��ĊԐڎw�肷��ƁA���̕����ʒu�ɂ��镶���ɃA�N�Z�X�ł��܂��B<r/>
-�@���Ƃ��΁Astr �������񂠂邢�͕������\�������Ƃ���ƁAstr[0] �͐擪�̈ꕶ����\��������ɂȂ�܂��B<r/>
-�@���l����������������ʒu��A���̏ꍇ�͗�O���������܂� ( ������������̍Ō�̕����� �󕶎� ���Ԃ���܂� )�B<r/>
+<ptitle>'数値' プロパティ</ptitle>
+　数値をプロパティとして間接指定すると、その文字位置にある文字にアクセスできます。<r/>
+　たとえば、str が文字列あるいは文字列を表す式だとすると、str[0] は先頭の一文字を表す文字列になります。<r/>
+　数値が文字列よりも長い位置や、負の場合は例外が発生します ( ただし文字列の最後の文字は 空文字 が返されます )。<r/>
 <r/>
-�@������𐶐����邱�Ƃ͂ł��܂���B<r/>
+　代入式を生成することはできません。<r/>
 <example>
 	var str = "abcdef";<r/>
-	var c = str[0];  // 'a' �� c �ɑ�������<r/>
-	var c = str[2];  // 'c' �� c �ɑ�������<r/>
-	str[3] = 'A'; // ������͐����ł��Ȃ��̂ŃG���[�ɂȂ�<r/>
-	var c = str[100]; // c �l���͈͊O�Ȃ̂ŃG���[�ɂȂ�<r/>
-	var c = str[6]; // �󕶎� '' ����������<r/>
+	var c = str[0];  // 'a' が c に代入される<r/>
+	var c = str[2];  // 'c' が c に代入される<r/>
+	str[3] = 'A'; // 代入式は生成できないのでエラーになる<r/>
+	var c = str[100]; // c 値が範囲外なのでエラーになる<r/>
+	var c = str[6]; // 空文字 '' が代入される<r/>
 </example>
 </para>
 
 <para>
 <ptitle>charAt</ptitle>
-�@charAt ���\�b�h�́A������̎w��ʒu�Ŏw�肳�ꂽ�ʒu�̕�����Ԃ��܂��B '���l' �v���p�e�B�Ɠ��l�̓�������܂����A�͈͊O�̏ꍇ�͏�ɋ󕶎����Ԃ��܂� (��O���o���܂���)�B<r/>
+　charAt メソッドは、文字列の指定位置で指定された位置の文字を返します。 '数値' プロパティと同様の動作をしますが、範囲外の場合は常に空文字列を返します (例外を出しません)。<r/>
 <bq>
-�\�� : charAt(&lt;�����ʒu>)<r/>
+構文 : charAt(&lt;文字位置>)<r/>
 </bq>
 <example>
 	var str = "abcdef";
-	var c = str.charAt(3); // 'd' �� c �ɑ�������
+	var c = str.charAt(3); // 'd' が c に代入される
 </example>
 </para>
 
 <para>
 <ptitle>indexOf</ptitle>
-�@indexOf ���\�b�h�́A����������̈ʒu��Ԃ��܂��B<r/>
+　indexOf メソッドは、部分文字列の位置を返します。<r/>
 <bq>
-�\�� : indexOf(&lt;����������>[,&lt;�����J�n�ʒu>])<r/>
+構文 : indexOf(&lt;部分文字列>[,&lt;検索開始位置>])<r/>
 </bq>
-�@�����񂩂�A&lt;����������> ��&lt;�����J�n�ʒu>���猟�����A�ŏ��Ɍ��������ʒu��Ԃ��܂��B 0 ���Ԃ����Ε�����̐擪�ł��B-1 ���Ԃ��ꂽ�Ƃ��͌�����Ȃ������Ƃ��ł��B&lt;�����J�n�ʒu>���ȗ�����ƁA������̐擪����̌����ɂȂ�܂��B<r/>
+　文字列から、&lt;部分文字列> を&lt;検索開始位置>から検索し、最初に見つかった位置を返します。 0 が返されれば文字列の先頭です。-1 が返されたときは見つからなかったときです。&lt;検索開始位置>を省略すると、文字列の先頭からの検索になります。<r/>
 <r/>
 <example>
 	var str = "abcdefghijkl";<r/>
-	var n = str.indexOf("fgh"); // n �ɂ� 5 ����������<r/>
-	var n = str.indexOf("xyz"); // n �ɂ� -1 ����������<r/>
+	var n = str.indexOf("fgh"); // n には 5 が代入される<r/>
+	var n = str.indexOf("xyz"); // n には -1 が代入される<r/>
 </example>
 </para>
 
 <para>
 <ptitle>toLowerCase</ptitle>
-�@���̃��\�b�h�Ɉ����͂���܂���B<r/>
-�@toLowerCase �́A������̃A���t�@�x�b�g���������ɂ����������Ԃ��܂��B<r/>
-�@�S�p�����͕ϊ�����܂���B<r/>
+　このメソッドに引数はありません。<r/>
+　toLowerCase は、文字列のアルファベットを小文字にした文字列を返します。<r/>
+　全角文字は変換されません。<r/>
 <r/>
-�@�����̃��\�b�h�́A���Ƃ̕�����ɂ͉e����^���܂���B<r/>
+　これらのメソッドは、もとの文字列には影響を与えません。<r/>
 <example>
-	var lwr="ABCDEF".toLowerCase(); // lwr �ɂ� "abcdef" ����������<r/>
+	var lwr="ABCDEF".toLowerCase(); // lwr には "abcdef" が代入される<r/>
 </example>
 <note>
-�@���o�[�W������ TJS2 �ł� �����R�[�h 0x80 �����̕����ɑ΂��Ă̂ݕϊ����s���܂��B<r/>
+　現バージョンの TJS2 では 文字コード 0x80 未満の文字に対してのみ変換を行います。<r/>
 </note>
 </para>
 
 <para>
 <ptitle>toUpperCase</ptitle>
-�@���̃��\�b�h�� toLowerCase �Ƌt�ŁA�������̃A���t�@�x�b�g��啶���ɂ����������Ԃ��܂��B<r/>
+　このメソッドは toLowerCase と逆で、小文字のアルファベットを大文字にした文字列を返します。<r/>
 </para>
 
 
 <para>
 <ptitle>substring</ptitle>
-�@substring ���\�b�h�́A������̕����������Ԃ��܂��B<r/>
+　substring メソッドは、文字列の部分文字列を返します。<r/>
 <bq>
-�\�� : substring(&lt;�J�n�����ʒu>[,&lt;������>])
+構文 : substring(&lt;開始文字位置>[,&lt;文字数>])
 </bq>
-�@������́A&lt;�J�n�����ʒu>����&lt;��������>�̕����������Ԃ��܂��B���̕�����ɉe���͗^���܂���B&lt;������> ���ȗ�����ƁA&lt;�J�n�����ʒu> �ȍ~�̕����񂪂��ׂĕԂ���܂��B<r/>
-�@JavaScript �̓����\�b�h�Ƃ͈����̈Ӗ����Ⴄ�̂Œ��ӂ��Ă��������B<r/>
+　文字列の、&lt;開始文字位置>から&lt;文字数分>の部分文字列を返します。元の文字列に影響は与えません。&lt;文字数> を省略すると、&lt;開始文字位置> 以降の文字列がすべて返されます。<r/>
+　JavaScript の同メソッドとは引数の意味が違うので注意してください。<r/>
 <example>
-	var ss="abcdefghijkl".substring(3,3); // ss �ɂ� "def" ����������
+	var ss="abcdefghijkl".substring(3,3); // ss には "def" が代入される
 </example>
 </para>
 
 <para>
 <ptitle>substr</ptitle>
-�@substring �Ɠ����ł��B<r/>
+　substring と同じです。<r/>
 </para>
 
 <para>
 <ptitle>sprintf</ptitle>
-�@sprintf ���\�b�h�́A����������������܂��B<r/>
+　sprintf メソッドは、文字列を書式化します。<r/>
 <bq>
-�\�� : sprintf(����, ����, ....)<r/>
+構文 : sprintf(引数, 引数, ....)<r/>
 </bq>
-�@�����������������ƌ��Ȃ��AC����ɂ����� sprintf ���l�̃e�L�X�g�̃t�H�[�}�b�e�B���O���s�����������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
+　文字列を書式文字列と見なし、C言語における sprintf 同様のテキストのフォーマッティングを行った文字列を返します。元の文字列には影響を与えません。<r/>
 <example>
 	var formatted = "%04X %c %5d".sprintf(v1, v2, dic[v1]);
 </example>
@@ -118,77 +118,77 @@
 
 <para>
 <ptitle>replace</ptitle>
-�@replace ���\�b�h�́A������̒u���������s���܂��B<r/>
+　replace メソッドは、文字列の置き換えを行います。<r/>
 <bq>
-�\�� : replace(&lt;�p�^�[��>, &lt;�u�������㕶����>)
+構文 : replace(&lt;パターン>, &lt;置き換え後文字列>)
 </bq>
-�@���K�\���p�^�[���ɏ]���ĕ�����̒u���������s���A�u���������s�������Ƃ̕������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
-�@����ɂ��Ă� <link href="regexp"/> �� replace ���\�b�h���Q�Ƃ��Ă��������B<r/>
+　正規表現パターンに従って文字列の置き換えを行い、置き換えを行ったあとの文字列を返します。元の文字列には影響を与えません。<r/>
+　動作については <link href="regexp"/> の replace メソッドを参照してください。<r/>
 </para>
 
 <para>
 <ptitle>split</ptitle>
-�@split ���\�b�h�́A������𕪊����܂��B<r/>
+　split メソッドは、文字列を分割します。<r/>
 <bq>
-�\�� : split(&lt;�p�^�[��/�f���~�^�W��>, &lt;(�\��)>, &lt;��̗v�f�𖳎����邩=false>)
+構文 : split(&lt;パターン/デリミタ集合>, &lt;(予約)>, &lt;空の要素を無視するか=false>)
 </bq>
-�@������𕪊��������ʂ��i�[���ꂽ�z��I�u�W�F�N�g��Ԃ��܂��B<r/>
+　文字列を分割した結果が格納された配列オブジェクトを返します。<r/>
 <r/>
-�@<link href="array"/> �� split ���\�b�h���Q�Ƃ��Ă������� (�����̏��Ԃɒ��ӂ��Ă�������)�B<r/>
+　<link href="array"/> の split メソッドも参照してください (引数の順番に注意してください)。<r/>
 </para>
 
 <para>
 <ptitle>escape</ptitle>
-�@escape ���\�b�h�́A��������ATJS�̕����񑦒l���ŕ\���\�Ȍ`���ɕϊ����܂��B\ �� " �Ȃǂ̋L���͂��ׂ� \ �L����p���ē���ȗp�r�Ƃ��ĉ��߂���Ȃ�����܂� (�G�X�P�[�v����܂�)�B<r/>
+　escape メソッドは、文字列を、TJSの文字列即値内で表現可能な形式に変換します。\ や " などの記号はすべて \ 記号を用いて特殊な用途として解釈されなくされます (エスケープされます)。<r/>
 <bq>
-�\�� : escape()
+構文 : escape()
 </bq>
-�@�G�X�P�[�v���ꂽ�������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
+　エスケープされた文字列を返します。元の文字列には影響を与えません。<r/>
 <r/>
 <example>
-	var escaped = str.escape(); // str ���� " �� \" �ɁA\ �� \\ �ɕϊ������Ȃ�<r/>
+	var escaped = str.escape(); // str 中の " は \" に、\ は \\ に変換されるなど<r/>
 </example>
 </para>
 
 <para>
 <ptitle>trim</ptitle>
-�@trim ���\�b�h�́A������̐擪�ƍŌ�̋󔒂���菜�����������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
-�@�擪�ƍŌ�̋󔒂Ƃ́A�����R�[�h��U+0001�`U+0020�̕������w���܂��B�܂�AASCII���䕶���Ȃǂ��܂܂�܂����A������S�p�̋󔒂͊܂݂܂���B<r/>
-�@�A�����Đ擪�܂��͍Ō�ɂ����̋󔒂��������ꍇ�́A���ׂĎ�菜����܂��B<r/>
+　trim メソッドは、文字列の先頭と最後の空白を取り除いた文字列を返します。元の文字列には影響を与えません。<r/>
+　先頭と最後の空白とは、文字コードがU+0001縲弑+0020の文字を指します。つまり、ASCII制御文字なども含まれますが、いわゆる全角の空白は含みません。<r/>
+　連続して先頭または最後にこれらの空白があった場合は、すべて取り除かれます。<r/>
 <bq>
-�\�� : trim()
+構文 : trim()
 </bq>
-�@�擪�Ɩ����̋󔒕������폜���ꂽ�������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
+　先頭と末尾の空白文字が削除された文字列を返します。元の文字列には影響を与えません。<r/>
 <r/>
 <example>
-	var str = "  Hoge ".trim(); // str �� "Hoge" �ł��B<r/>
+	var str = "  Hoge ".trim(); // str は "Hoge" です。<r/>
 </example>
 </para>
 
 <para>
 <ptitle>reverse</ptitle>
-�@reverse ���\�b�h�́A�����̕��т��t�]�����������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
-�@���o�[�W������TJS2�ł́AUTF-16�̂����T���Q�[�g�y�A���܂ޕ�����̓���͕ۏ؂��܂���B<r/>
+　reverse メソッドは、文字の並びを逆転した文字列を返します。元の文字列には影響を与えません。<r/>
+　現バージョンのTJS2では、UTF-16のうちサロゲートペアを含む文字列の動作は保証しません。<r/>
 <bq>
-�\�� : reverse()
+構文 : reverse()
 </bq>
-�@�����̕��т��t�]�����������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
+　文字の並びを逆転した文字列を返します。元の文字列には影響を与えません。<r/>
 <r/>
 <example>
-	var str = "Hoge".reverse(); // str �� "egoH" �ł��B
+	var str = "Hoge".reverse(); // str は "egoH" です。
 </example>
 </para>
 
 <para>
 <ptitle>repeat</ptitle>
-�@repeat ���\�b�h�́A�w�肵���񐔂�����������J��Ԃ����������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
+　repeat メソッドは、指定した回数だけ文字列を繰り返した文字列を返します。元の文字列には影響を与えません。<r/>
 <bq>
-�\�� : repeat(count)
+構文 : repeat(count)
 </bq>
-�@count�A���̕�������J��Ԃ����������Ԃ��܂��B���̕�����ɂ͉e����^���܂���B<r/>
+　count個、この文字列を繰り返した文字列を返します。元の文字列には影響を与えません。<r/>
 <r/>
 <example>
-	var str = "Hoge".repeat(3); // str �� "HogeHogeHoge" �ł��B
+	var str = "Hoge".repeat(3); // str は "HogeHogeHoge" です。
 </example>
 </para>
 

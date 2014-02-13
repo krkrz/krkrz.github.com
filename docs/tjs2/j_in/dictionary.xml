@@ -1,90 +1,90 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
 
-<title>Dictionary �N���X</title>
+<title>Dictionary クラス</title>
 
 <para>
-<ptitle>Dictionary �N���X</ptitle>
-�@Dictionary �N���X��<kw>�����z��</kw>�������N���X�ł��B<r/>
+<ptitle>Dictionary クラス</ptitle>
+　Dictionary クラスは<kw>辞書配列</kw>を扱うクラスです。<r/>
 <r/>
-�@�����z���<kw>�A�z�z��</kw>�Ƃ��Ă΂�A���O�ƁA����Ɍ��т���ꂽ�l����̃y�A�Ƃ��āA����𕡐��ێ�����I�u�W�F�N�g�ł��B<r/>
-�@�z��Ɠ����悤�� <kw>[ ]</kw> (�ԐڎQ��) ���Z�q�ŃA�N�Z�X���܂����A�Y�����̑���ɕ�������g���A���ꂪ���O�ƂȂ�܂��B���O�����ʎq�Ƃ��ėL���Ȃ��̂ł���΁A <kw>.</kw> (���ڎQ��) ���Z�q���g�����Ƃ��ł��܂��B<r/>
-�@�܂��A���݂��Ȃ����O���Q�Ƃ���� void �ɂȂ�܂��B<r/>
-�@�v�f���폜����ɂ� delete ���Z�q���g���܂��B<r/>
+　辞書配列は<kw>連想配列</kw>とも呼ばれ、名前と、それに結びつけられた値を一つのペアとして、それを複数保持するオブジェクトです。<r/>
+　配列と同じように <kw>[ ]</kw> (間接参照) 演算子でアクセスしますが、添え字の代わりに文字列を使い、それが名前となります。名前が識別子として有効なものであれば、 <kw>.</kw> (直接参照) 演算子も使うことができます。<r/>
+　また、存在しない名前を参照すると void になります。<r/>
+　要素を削除するには delete 演算子を使います。<r/>
 <example>
 	var d=new Dictionary();<r/>
-	d["sat"] = 1; // d.sat = 1 �Ɠ���<r/>
-	d["sun"] = 2; // d.sun = 2 �Ɠ���<r/>
-	d["mon"] = 3; // d.mon = 3 �Ɠ���<r/>
-	d["name"] ="value!"; // d.name = "value!" �Ɠ���<r/>
-	d["continue"] = 4; // continue �͎��ʎq�ł͂Ȃ��� OK<r/>
-	d.continue = 4; // continue �͎��ʎq�ł͂Ȃ��̂ŃG���[<r/>
+	d["sat"] = 1; // d.sat = 1 と同じ<r/>
+	d["sun"] = 2; // d.sun = 2 と同じ<r/>
+	d["mon"] = 3; // d.mon = 3 と同じ<r/>
+	d["name"] ="value!"; // d.name = "value!" と同じ<r/>
+	d["continue"] = 4; // continue は識別子ではないが OK<r/>
+	d.continue = 4; // continue は識別子ではないのでエラー<r/>
 <r/>
-	var sat = d["sat"]; // 1 ����������<r/>
-	var none = d["none"]; // void ����������<r/>
+	var sat = d["sat"]; // 1 が代入される<r/>
+	var none = d["none"]; // void が代入される<r/>
 <r/>
-	delete d.sat; // sat ���폜<r/>
-	delete d["continue"]; // continue ���폜<r/>
+	delete d.sat; // sat を削除<r/>
+	delete d["continue"]; // continue を削除<r/>
 </example>
 <r/>
 </para>
 
 
 <para>
-<ptitle>���������z��</ptitle>
-�@<tt><kw>%[ ]</kw></tt> ���g���āA������ <tt>Dictionary</tt> �N���X�̃I�u�W�F�N�g�����̏�ŋL�q���邱�Ƃ��ł��܂��B�v�f�� => �v�f�̒l�A���J���}�ŋ�؂�A�����v�f�ƂȂ鎮��񋓂��܂��B���Ƃ��΁A<r/>
+<ptitle>式中辞書配列</ptitle>
+　<tt><kw>%[ ]</kw></tt> を使って、式中に <tt>Dictionary</tt> クラスのオブジェクトをその場で記述することができます。要素名 => 要素の値、をカンマで区切り、初期要素となる式を列挙します。たとえば、<r/>
 <tt>
 	var dic = %["a" => 1, "b" => 2, "c" => 3];<r/>
 </tt>
-�@�ƋL�q����΁A<tt>dic</tt> �ɁA�v�f���Ɨv�f�̑g�����ꂼ�� <tt>"a":1</tt>�A <tt>"b":2</tt>�A <tt>"c":3</tt>  �ƂȂ� <tt>Dictionary</tt> �N���X�̃I�u�W�F�N�g�ւ̎Q�Ƃ��������܂��B<r/>
-�@�����I�ɂ́A<tt>=></tt> �̓J���}�ƑS���������̂ł����A�ǂ݂₷�����l���A<tt>=></tt> ���g�p�ł���悤�ɂȂ��Ă��܂� ( perl �Ɠ����ł� )�B<r/>
+　と記述すれば、<tt>dic</tt> に、要素名と要素の組がそれぞれ <tt>"a":1</tt>、 <tt>"b":2</tt>、 <tt>"c":3</tt>  となる <tt>Dictionary</tt> クラスのオブジェクトへの参照が代入されます。<r/>
+　内部的には、<tt>=></tt> はカンマと全く同じものですが、読みやすさを考え、<tt>=></tt> を使用できるようになっています ( perl と同じです )。<r/>
 </para>
 
 <para>
-<ptitle>Dictionary �N���X�̃��\�b�h�ւ̃A�N�Z�X</ptitle>
-�@Dictionary �N���X�̃I�u�W�F�N�g�́A�쐬���ꂽ��Ԃł̓����o����������Ă��܂���B<r/>
-�@���Ƃ��΁Aassign ���\�b�h���g�����Ǝv���āADictionary �N���X�̃I�u�W�F�N�g dict �ɑ΂���<tt>dict.assign(src)</tt> �̂悤�ɋL�q���Ă��Adict �� assign �Ƃ������\�b�h�������Ă��Ȃ����߂ɃG���[�ɂȂ�܂��B<r/>
-�@���������āA<kw>incontextof</kw> ���Z�q���g���āADictionary �N���X�ɒ��ڑ����Ă��郁�\�b�h���A�ΏۂƂȂ� Dictionary �N���X�̃I�u�W�F�N�g���R���e�L�X�g�Ƃ��Ď��s�����܂��B<r/>
+<ptitle>Dictionary クラスのメソッドへのアクセス</ptitle>
+　Dictionary クラスのオブジェクトは、作成された状態ではメンバを何一つ持っていません。<r/>
+　たとえば、assign メソッドを使おうと思って、Dictionary クラスのオブジェクト dict に対して<tt>dict.assign(src)</tt> のように記述しても、dict が assign というメソッドを持っていないためにエラーになります。<r/>
+　したがって、<kw>incontextof</kw> 演算子を使って、Dictionary クラスに直接属しているメソッドを、対象となる Dictionary クラスのオブジェクトをコンテキストとして実行させます。<r/>
 <example>
 	var a = %[];<r/>
 	var b = %[];<r/>
-	(Dictionary.assign incontextof a)(b); // b �� a �ɃR�s�[<r/>
-	(Dictionary.clear incontextof b)(); // b �̓��e���N���A<r/>
+	(Dictionary.assign incontextof a)(b); // b を a にコピー<r/>
+	(Dictionary.clear incontextof b)(); // b の内容をクリア<r/>
 </example>
 </para>
 
 <para>
 <ptitle>saveStruct</ptitle>
-�@saveStruct �̓t�@�C���֍\�������ꂽ�f�[�^�̏o�͂��s���܂��B<r/>
-�@<link href="array"/> �̓����\�b�h�Q�Ƃ��Ă��������B<r/>
+　saveStruct はファイルへ構造化されたデータの出力を行います。<r/>
+　<link href="array"/> の同メソッド参照してください。<r/>
 </para>
 
 <para>
 <ptitle>assign</ptitle>
-�@assign ���\�b�h�́A�����z����R�s�[���܂��B<r/>
+　assign メソッドは、辞書配列をコピーします。<r/>
 <bq>
-�\�� : assign(&lt;�R�s�[�������z��>, &lt;���e���N���A���邩=true>)<r/>
+構文 : assign(&lt;コピー元辞書配列>, &lt;内容をクリアするか=true>)<r/>
 </bq>
-�@�����Ŏw�肳�ꂽ���̎����z��̓��e���A��������R�s�[���܂��B<r/>
-�@�u���e���N���A���邩�v���U�̏ꍇ�́A�R�s�[�� (���\�b�h�����s����I�u�W�F�N�g) �̓��e���N���A�����A�R�s�[�������z��̓��e���㏑�����܂��B�R�s�[�������z��Ɠ������O�̃����o���R�s�[�掫���z��ɂ������ꍇ�́A�R�s�[���̓��e�ŃR�s�[�悪�㏑������܂��B<r/>
+　引数で指定された他の辞書配列の内容を、そっくりコピーします。<r/>
+　「内容をクリアするか」が偽の場合は、コピー先 (メソッドを実行するオブジェクト) の内容をクリアせず、コピー元辞書配列の内容を上書きします。コピー元辞書配列と同じ名前のメンバがコピー先辞書配列にあった場合は、コピー元の内容でコピー先が上書きされます。<r/>
 <r/>
-�@�z�� (Array�N���X�̃I�u�W�F�N�g) ���R�s�[���z��Ɏw�肵���ꍇ�́A���̔z��ɂ́A���̎����z��̃����o�ƂȂ�ׂ��v�f�����O�A�l�̏��ɕ���ł���Ƃ݂Ȃ��A���̔z��̓��e�����̎����z��ɃR�s�[���܂��B<r/>
+　配列 (Arrayクラスのオブジェクト) をコピー元配列に指定した場合は、その配列には、この辞書配列のメンバとなるべき要素が名前、値の順に並んでいるとみなし、その配列の内容をこの辞書配列にコピーします。<r/>
 </para>
 
 <para>
 <ptitle>assignStruct</ptitle>
-�@assignStruct ���\�b�h�́A�����z����R�s�[���܂��B<r/>
+　assignStruct メソッドは、辞書配列をコピーします。<r/>
 <bq>
-�\�� : assignStruct(&lt;�R�s�[�������z��>)<r/>
+構文 : assignStruct(&lt;コピー元辞書配列>)<r/>
 </bq>
-�@�����Ŏw�肳�ꂽ���̎����z��̓��e���A��������R�s�[���܂��B<r/>
-�@assign ���\�b�h�ƈႢ�A�����o�ɔz�񂠂邢�͎����z�񂪂������ꍇ�́A�ċA�I�ɂ��̓��e��
-�R�s�[���܂� ( assign ���\�b�h�̏ꍇ�͎Q�Ƃ��R�s�[����邾���ł� )�B<r/>
+　引数で指定された他の辞書配列の内容を、そっくりコピーします。<r/>
+　assign メソッドと違い、メンバに配列あるいは辞書配列があった場合は、再帰的にその内容も
+コピーします ( assign メソッドの場合は参照がコピーされるだけです )。<r/>
 </para>
 
 <para>
 <ptitle>clear</ptitle>
-�@clear ���\�b�h�́A�����z��̓��e�����ׂď������܂��B<r/>
+　clear メソッドは、辞書配列の内容をすべて消去します。<r/>
 </para>
 
 

@@ -1,57 +1,57 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
-<title>TJS2 �̊�{�^</title>
+<title>TJS2 の基本型</title>
 
 <para>
-<ptitle>�v���~�e�B�u�^</ptitle>
-�@tjsTypes.h �Œ�`����Ă���v���~�e�B�u�^������������܂��B<r/>
+<ptitle>プリミティブ型</ptitle>
+　tjsTypes.h で定義されているプリミティブ型がいくつかあります。<r/>
 <r/>
 <dl>
 
 <dt><kw>tjs_int</kw></dt>
-<dd>�������萮��(�Œ�32bit)</dd>
+<dd>符号あり整数(最低32bit)</dd>
 
 <dt><kw>tjs_uint</kw></dt>
-<dd>�����Ȃ�����(�Œ�32bit)</dd>
+<dd>符号なし整数(最低32bit)</dd>
 
 <dt><kw>tjs_int8</kw></dt>
-<dd>8bit�̕������萮��</dd>
+<dd>8bitの符号あり整数</dd>
 
 <dt><kw>tjs_uint8</kw></dt>
-<dd>8bit�̕����Ȃ�����</dd>
+<dd>8bitの符号なし整数</dd>
 
 <dt><kw>tjs_int16</kw></dt>
-<dd>16bit�̕������萮��</dd>
+<dd>16bitの符号あり整数</dd>
 
 <dt><kw>tjs_uint16</kw></dt>
-<dd>16bit�̕����Ȃ�����</dd>
+<dd>16bitの符号なし整数</dd>
 
 <dt><kw>tjs_int32</kw></dt>
-<dd>32bit�̕������萮��</dd>
+<dd>32bitの符号あり整数</dd>
 
 <dt><kw>tjs_uint32</kw></dt>
-<dd>32bit�̕����Ȃ�����</dd>
+<dd>32bitの符号なし整数</dd>
 
 <dt><kw>tjs_int64</kw></dt>
-<dd>64bit�̕������萮��</dd>
+<dd>64bitの符号あり整数</dd>
 
 <dt><kw>tjs_uint64</kw></dt>
-<dd>64bit�̕����Ȃ�����</dd>
+<dd>64bitの符号なし整数</dd>
 
 <dt><kw>tjs_char</kw></dt>
-<dd>���C�h����(TJS2�̕�����^�̃v���~�e�B�u�^�Ƃ��Ďg�p����܂�)</dd>
+<dd>ワイド文字(TJS2の文字列型のプリミティブ型として使用されます)</dd>
 
 <dt><kw>tjs_nchar</kw></dt>
-<dd>�i���[����</dd>
+<dd>ナロー文字</dd>
 
 <dt><kw>tjs_real</kw></dt>
-<dd>�����^(double)</dd>
+<dd>実数型(double)</dd>
 
 <dt><kw>tTVInteger</kw></dt>
-<dd>tjs_int64�Ɠ���</dd>
+<dd>tjs_int64と同じ</dd>
 
 <dt><kw>tTVReal</kw></dt>
-<dd>tjs_real�Ɠ���</dd>
+<dd>tjs_realと同じ</dd>
 </dl>
 </para>
 
@@ -60,21 +60,21 @@
 
 <para>
 <ptitle>tTJSString</ptitle>
-�@tTJSString �^�� TJS2 �ŗp���镶����^�ŁAtjs_char �^�̃[���I��������������܂��BtjsString.cpp / tjsString.h �ɒ�`����Ă��܂��B�܂��A�Z�� <tt>ttstr</tt> �Ƃ����^���ł����p�\�ł��B<r/>
-�@���̌^�͕�����p�̃������̊Ǘ��������I�ɍs���ق��A<link href="variant" /> �Ƃ̐e�a���������^�ł��B<r/>
+　tTJSString 型は TJS2 で用いる文字列型で、tjs_char 型のゼロ終結文字列を扱います。tjsString.cpp / tjsString.h に定義されています。また、短く <tt>ttstr</tt> という型名でも利用可能です。<r/>
+　この型は文字列用のメモリの管理を自動的に行うほか、<link href="variant" /> との親和性が高い型です。<r/>
 </para>
 
 <para>
 <ptitle>eTJS</ptitle>
-�@eTJS �^�� C++ ��O�I�u�W�F�N�g�̊�{�^�ł��BtjsError.h �ɒ�`����Ă��܂��B<kw>GetMessage</kw> �Ƃ������\�b�h������A��O�ƂƂ��ɓ�����ꂽ���b�Z�[�W��������擾���邱�Ƃ��ł��܂��B
+　eTJS 型は C++ 例外オブジェクトの基本型です。tjsError.h に定義されています。<kw>GetMessage</kw> というメソッドがあり、例外とともに投げられたメッセージ文字列を取得することができます。
 </para>
 
 
 <para>
 <ptitle>TJS_W</ptitle>
-�@�����񃊃e������ tjs_char * �^�ɕϊ����邽�߂̃}�N���ł��B<r/>
+　文字列リテラルを tjs_char * 型に変換するためのマクロです。<r/>
 <r/>
-�� : TJS_W("�����񃊃e����")<r/>
+例 : TJS_W("文字列リテラル")<r/>
 </para>
 
 </doc>

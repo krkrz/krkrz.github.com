@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="Shift_JIS" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <doc>
-<title>Date �N���X</title>
+<title>Date クラス</title>
 
 <para>
-<ptitle>Date �N���X</ptitle>
-�@������ ���� Date �I�u�W�F�N�g�����@�\�ƃI�u�W�F�N�g���� ����������@�\���������ł����A���� JavaScript �� Date �Ƃقڌ݊��ł��B<r/>
+<ptitle>Date クラス</ptitle>
+　文字列 から Date オブジェクトを作る機能とオブジェクトから 文字列を作る機能が未実装ですが、他は JavaScript の Date とほぼ互換です。<r/>
 <r/>
-�@�R���X�g���N�^�̍\���͈ȉ��̒ʂ�ł��B<r/>
+　コンストラクタの構文は以下の通りです。<r/>
 <bq>
 new Date();<r/>
-new Date(&lt;���t������>);<r/>
-new Date(&lt;�N>, &lt;��(0�`)=0>, &lt;��=1>, &lt;��=0>, &lt;��=0>, &lt;�b=0>);<r/>
+new Date(&lt;日付文字列>);<r/>
+new Date(&lt;年>, &lt;月(0縲鰀)=0>, &lt;日=1>, &lt;時=0>, &lt;分=0>, &lt;秒=0>);<r/>
 </bq>
-�@�P�Ԗڂ̍\���ɂ͈����͕K�v����܂���B���̏ꍇ�́A���̃R���X�g���N�^�����s���ꂽ���_�ł̌��݂̓��t���Ԃ�ێ����܂��B<r/>
-�@�Q�Ԗڂ̍\���͓��t��������w�肷����̂ł��B���t������� ANSI C �� asctime() �����̂��́ARFC1123 �Œ�`����Ă�����́ARFC1036 �Œ�`����Ă�����́A"�N/��/�� ��:��:�b" �̌`���̂����ꂩ���w�肷��K�v������܂��B���t������̔F���͎����ōs���A������x�̏����̕ό`�ɂ͑Ή����܂����A���܂�ɑz�肵�Ă��鏑���ƈقȂ�ꍇ�͔F���ł��Ȃ��ꍇ������܂��B<r/>
-�@�R�Ԗڂ̍\���͔N���������b���w�肷����̂ł��B<r/>
+　１番目の構文には引数は必要ありません。この場合は、このコンストラクタが実行された時点での現在の日付時間を保持します。<r/>
+　２番目の構文は日付文字列を指定するものです。日付文字列は ANSI C の asctime() 書式のもの、RFC1123 で定義されているもの、RFC1036 で定義されているもの、"年/月/日 時:分:秒" の形式のいずれかを指定する必要があります。日付文字列の認識は自動で行われ、ある程度の書式の変形には対応しますが、あまりに想定している書式と異なる場合は認識できない場合があります。<r/>
+　３番目の構文は年月日時分秒を指定するものです。<r/>
 <r/>
-�@��������Ă��郁�\�b�h(JavaScript�݊�) :<r/>
-setYear/getYear (�n�掞�Ԃɂ��4���̐���N�̐ݒ�/�擾)<r/>
-setMonth/getMonth (�n�掞�Ԃɂ�錎�̐ݒ�/�擾)<r/>
-setDate/getDate (�n�掞�Ԃɂ����̐ݒ�/�擾)<r/>
-setHours/getHours (�n�掞�Ԃɂ�鎞�̐ݒ�/�擾)<r/>
-setMinutes/getMinutes (�n�掞�Ԃɂ�镪�̐ݒ�/�擾)<r/>
-setSeconds/getSeconds (�n�掞�Ԃɂ��b�̐ݒ�/�擾)<r/>
-setTime/getTime (1970�N1��1��0:00����̌o�߃~���b�̐ݒ�/�擾)<r/>
-getDay (�j���̎擾)<r/>
-parse (���t������̉���)<r/>
+　実装されているメソッド(JavaScript互換) :<r/>
+setYear/getYear (地域時間による4桁の西暦年の設定/取得)<r/>
+setMonth/getMonth (地域時間による月の設定/取得)<r/>
+setDate/getDate (地域時間による日の設定/取得)<r/>
+setHours/getHours (地域時間による時の設定/取得)<r/>
+setMinutes/getMinutes (地域時間による分の設定/取得)<r/>
+setSeconds/getSeconds (地域時間による秒の設定/取得)<r/>
+setTime/getTime (1970年1月1日0:00からの経過ミリ秒の設定/取得)<r/>
+getDay (曜日の取得)<r/>
+parse (日付文字列の解釈)<r/>
 </para>
 </doc>
 
