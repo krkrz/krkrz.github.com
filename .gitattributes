@@ -1,4 +1,4 @@
-*.css       encoding=shiftjis
-*.html      encoding=shiftjis
-*.xml       encoding=shiftjis
-*.htm       encoding=shiftjis
+*.css       encoding=utf8
+*.html      encoding=utf8
+*.xml       encoding=utf8
+*.htm       encoding=utf8
