@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>decompress - 別のストレージからデータを展開しつつコピー</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">BinaryStream.decompress</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>別のストレージからデータを展開しつつコピー</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_BinaryStream.html">BinaryStreamクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">decompress(<span class="arg">storage</span>, <span class="arg">elm</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="decompressの引数">
+<tr><td valign="top"><span class="argname">storage</span></td>
+<td>コピー元のストレージ（現在開いているストレージと同じ場合は例外）</td></tr>
+<tr><td valign="top"><span class="argname">elm</span></td>
+<td>動作指定用の辞書（in/out）内容は copy() と同じ</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>書き込んだバイト数\n\n対象ストレージを zlib/inflate で展開しつつ，現在のストリームのポジションから書き込みます\n展開に失敗すると例外が発生します\nフィルタ関数は展開後のバイナリに対して適用されます\nhash[out] は展開後／フィルタ後のバイナリに対して計算されます</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

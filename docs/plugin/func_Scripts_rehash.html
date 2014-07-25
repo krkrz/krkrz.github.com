@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>rehash - TJSDoRehash()を呼ぶ TJSCustomObjectベースのオブジェクトのハッシュテーブルサイズの再構築フラグを立てます。 （辞書やほとんどのクラスおよびインスタンスのオブジェクトが対象になります）  解説： ハッシュテーブルサイズはそのオブジェクトの持つ要素数により決定されます。 フラグが立った後，オブジェクトに何か書き込んだタイミングで再計算を行い， テーブルサイズが変わった場合にのみ再構築が行われます。（サイズ＝2^(要素数のビット数+2)程度？） 普段，吉里吉里は定期的（アイドル時かつ前回から1.5秒以上経過している時）に TJSDoRehash()が呼ばれているので特に気にする必要はありませんが， アイドルを挟まずに大量に要素を追加する場合において カウンタで何千～万回に1回等の間隔で呼び出すようにすると効果的かと思われます。</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">Scripts.rehash</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>TJSDoRehash()を呼ぶ TJSCustomObjectベースのオブジェクトのハッシュテーブルサイズの再構築フラグを立てます。 （辞書やほとんどのクラスおよびインスタンスのオブジェクトが対象になります）  解説： ハッシュテーブルサイズはそのオブジェクトの持つ要素数により決定されます。 フラグが立った後，オブジェクトに何か書き込んだタイミングで再計算を行い， テーブルサイズが変わった場合にのみ再構築が行われます。（サイズ＝2^(要素数のビット数+2)程度？） 普段，吉里吉里は定期的（アイドル時かつ前回から1.5秒以上経過している時）に TJSDoRehash()が呼ばれているので特に気にする必要はありませんが， アイドルを挟まずに大量に要素を追加する場合において カウンタで何千～万回に1回等の間隔で呼び出すようにすると効果的かと思われます。</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_Scripts.html">Scriptsクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">rehash()</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="rehashの引数">
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

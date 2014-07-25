@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>onRequest - リクエスト処理（イベント）</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">SimpleHTTPServer.onRequest</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>リクエスト処理（イベント）</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_SimpleHTTPServer.html">SimpleHTTPServerクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">onRequest()</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="onRequestの引数">
+<tr><td valign="top"><span class="argname">request</span></td>
+<td>= %[<br />method:  メソッドの種類（GET/POST/...）<br />path:    リクエストパス<br />request: 生リクエスト（%xx未デコード，?以降も含む）<br />header:  %[ リクエストヘッダ（ブラウザの情報等） ]<br />form:    %[ フォームデータ ]<br />];</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>response = %[\nstatus:ステータスコード（省略可能，エラーが無ければ自動で200）\ncontent_type: Content-Type名\nerror_type:エラーの種類（text/file/binaryが無い場合に有効）\nerror_desc:エラーの説明（text/file/binaryが無い場合に有効）\nredirect: リダイレクトする場合のURI（省略可能）\n\n以下は排他（どれかひとつ，上から優先）\ntext:返すテキスト（codepageで自動エンコードされる）\nfile:返すファイル\nbinary:返すバイナリ（ArrayまたはOctet）\n];</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>DrawDevice - コンストラクタ</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">DrawDevice.DrawDevice</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>コンストラクタ</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_DrawDevice.html">DrawDeviceクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">DrawDevice(<span class="arg">width</span>, <span class="arg">height</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="DrawDeviceの引数">
+<tr><td valign="top"><span class="argname">width</span></td>
+<td>バックバッファ横幅</td></tr>
+<tr><td valign="top"><span class="argname">width</span></td>
+<td>バックバッファ縦幅<br />縦幅と横幅は従来的機構での primaryLayer の width/height に相当するものです。<br />作成されたプライマリレイヤ(複数)はすべてここで指定した領域に対して<br />引き延ばし表示されます。<br />例:<br />drawDevice = new Irrlicht.DrawDevice(800,400);<br />base1 = new Layer(this, null); base1.setSize(800,400); // 画面と同じ解像度<br />base2 = new Layer(this, null); base1.setSize(400,200); // 画面の半分の解像度<br />base3 = new Layer(this, null); base1.setSize(800,200); // 縦だけ解像度半分<br /><br />生成した時点では Irrlichtのデバイスは存在しません。<br />DrawDevice としての描画処理開始時 (SetTargetWindow 呼び出し時)に初期化されて、<br />ドライバ、シーンマネージャ、GUIが扱えるようになります。<br />処理は onAttach() イベントを待ってから行う必要があります。</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

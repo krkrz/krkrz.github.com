@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>registerUserMessageReceiver - ユーザ定義のメッセージハンドラを登録します。</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">Window.registerUserMessageReceiver</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>ユーザ定義のメッセージハンドラを登録します。</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_Window.html">Windowクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">registerUserMessageReceiver(<span class="arg">mode</span>, <span class="arg">msg</span>, <span class="arg">proc</span>, <span class="arg">userdata</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="registerUserMessageReceiverの引数">
+<tr><td valign="top"><span class="argname">mode</span></td>
+<td>wrmRegister:登録 wrmUnRegister:解除</td></tr>
+<tr><td valign="top"><span class="argname">msg</span></td>
+<td>数値:メッセージ番号 文字列:RegisterWindowMessage して値を決定</td></tr>
+<tr><td valign="top"><span class="argname">proc</span></td>
+<td>呼び出しファンクション</td></tr>
+<tr><td valign="top"><span class="argname">userdata</span></td>
+<td>ユーザデータパラメータ</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>登録されたメッセージ番号を返す\n\n※TJS2 から関数を登録した場合（typeof proc == Object の場合)\nfunction receiver(userdata, wparam, lparam)\nの形式のファンクションであるとみなされます。\nこの時、userdata は渡した値そのままを、\nwparam, lparam は元メッセージのデータから整数にキャストした値を渡します。\n\n※TJS2 から文字列を登録した場合 (typeof proc == String の場合)\n該当オブジェクトの指定された文字列の関数を function name(userdata, wparam, lparam)\nの引数で呼びだします\n\n※プラグイン側から関数を登録する場合 (typeof proc == Integer の場合)\nstatic bool __stdcall receiver(iTJSDispatch2 *winobj, void *userdata, tTVPWindowMessage *Message)\nであるとみなされます。設定時は整数にキャストしてください。\nwinobj は該当するウインドウのオブジェクトです\nuserdata は整数にキャストした値でひきわたされます。</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>foreach - オブジェクトのメンバの全参照</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">Scripts.foreach</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>オブジェクトのメンバの全参照</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_Scripts.html">Scriptsクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">foreach(<span class="arg">obj</span>, <span class="arg">func</span>, <span class="arg">args</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="foreachの引数">
+<tr><td valign="top"><span class="argname">obj</span></td>
+<td>処理対象オブジェクト(辞書または配列)</td></tr>
+<tr><td valign="top"><span class="argname">func</span></td>
+<td>呼び出し関数。func(key, value, args*) の形で呼ばれます。<br />無名関数などコンテキストが null の場合は自動的に thisコンテキストで動作します<br />関数がなにかしら値を返すと処理が中断されます</td></tr>
+<tr><td valign="top"><span class="argname">args</span></td>
+<td>追加引数<br />配列の場合は単純にループによる参照になります。辞書やオブジェクトは iTJSDispatch2::EnumMebers の呼び出しになります</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>中断時に返された値</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

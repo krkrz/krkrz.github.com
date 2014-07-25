@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>shrinkCopy - 縮小コピー</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">Layer.shrinkCopy</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>縮小コピー</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_Layer.html">Layerクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">shrinkCopy(<span class="arg">dleft</span>, <span class="arg">dtop</span>, <span class="arg">dwidth</span>, <span class="arg">dheight</span>, <span class="arg">src</span>, <span class="arg">sleft</span>, <span class="arg">stop</span>, <span class="arg">swidth</span>, <span class="arg">sheight</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="shrinkCopyの引数">
+<tr><td valign="top"><span class="argname">dleft</span></td>
+<td>コピー先の矩形の左端。小数点指定可。</td></tr>
+<tr><td valign="top"><span class="argname">dtop</span></td>
+<td>コピー先の矩形の上端。小数点指定可。</td></tr>
+<tr><td valign="top"><span class="argname">dwidth</span></td>
+<td>コピー先の矩形の横幅。小数点指定可。</td></tr>
+<tr><td valign="top"><span class="argname">dheight</span></td>
+<td>コピー先の矩形の縦幅。小数点指定可。</td></tr>
+<tr><td valign="top"><span class="argname">src</span></td>
+<td>コピー元レイヤ</td></tr>
+<tr><td valign="top"><span class="argname">sleft</span></td>
+<td>コピー元の矩形の左端。ピクセル単位。小数点指定不可。</td></tr>
+<tr><td valign="top"><span class="argname">stop</span></td>
+<td>コピー元の矩形の上端。ピクセル単位。小数点指定不可。</td></tr>
+<tr><td valign="top"><span class="argname">swidth</span></td>
+<td>コピー元の矩形の横幅。ピクセル単位。小数点指定不可。</td></tr>
+<tr><td valign="top"><span class="argname">sheight</span></td>
+<td>コピー元の矩形の縦幅。ピクセル単位。小数点指定不可。<br /><br />拡大される（dwidth > swidth || dheight > sheight）場合はエラー。<br />縮小アルゴリズムは面積平均法。1/2以下の縮小で affineCopyより高品質。<br />stretchCopyと違い Layer.face, holdAlpha は無視。<br /><br />※透明と不透明の境目の部分で偽色（完全透明部分の裏にある色）が出ることがあるので<br />あらかじめ layerExSave.dll の Layer.oozeColor() などを使っておくことを推奨</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

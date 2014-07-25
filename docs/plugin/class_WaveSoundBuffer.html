@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>WaveSoundBuffer - 擬似コードによるマニュアル</title>
+</head>
+<body>
+<h1><a name="top" id="top">WaveSoundBuffer</a></h1>
+<div class="para"></div>
+<h1>メンバ</h1><div class="para">
+<dl>
+<dt>メソッド</dt>
+<dd>
+<a class="jump" href="func_WaveSoundBuffer_getSample.html">getSample</a> (サンプル値の取得（旧方式） 現在の再生位置から指定数のサンプルを取得してその平均値を返します。 値が負のサンプル値は無視されます。 )<br />
+</dd>
+<dt>プロパティ</dt>
+<dd>
+<a class="jump" href="prop_WaveSoundBuffer_sampleAhead.html">sampleAhead</a> ( )<br />
+<a class="jump" href="prop_WaveSoundBuffer_sampleCount.html">sampleCount</a> (新方式のバッファ取得用パラメータプロパティ（sampleValueを参照） デフォルトはsetDefaultCounts/setDefaultAheadsで決定されます ※このプロパティを読み書きする暗黙でuseVisBuffer=trueに設定されます )<br />
+<a class="jump" href="prop_WaveSoundBuffer_sampleValue.html">sampleValue</a> (サンプル値の取得（新方式） getVisBuffer(buf, sampleCount, 1, sampleAhead)でサンプルを取得し， (value/32768)^2の最大値を取得します。(0～1の実数で返ります) ※このプロパティを読み出すと暗黙でuseVisBuffer=trueに設定されます )<br />
+</dd>
+</dl>
+</div>
+</body>
+</html>

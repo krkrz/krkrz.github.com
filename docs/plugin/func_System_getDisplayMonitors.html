@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>getDisplayMonitors - モニタの情報一覧を取得</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">System.getDisplayMonitors</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>モニタの情報一覧を取得</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_System.html">Systemクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">getDisplayMonitors()</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="getDisplayMonitorsの引数">
+<tr><td valign="top"><span class="argname">x,y,w,h</span></td>
+<td>範囲枠指定。交わるモニタのみを返す。全省略で全てのモニタを返す。</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>[ %[ name, primary, monitor:%[ x, y, w, h ], work:%[ x,y,w,h ], intersect:%[ x,y,w,h ] ], ... ];\nname:      モニタの名前('\\.\DISPLAY?' 等)\nprimary:   プライマリモニタかどうか\nmonitor:   モニタの範囲辞書\nwork:      モニタのワークエリア範囲(ウィンドウを最大化したときなどの表示範囲)\nintersect: 指定範囲と交わる領域(指定しなかった場合は monitor と同じ)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

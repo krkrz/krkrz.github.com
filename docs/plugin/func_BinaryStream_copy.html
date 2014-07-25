@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>copy - 別のストレージからデータをコピー</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">BinaryStream.copy</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>別のストレージからデータをコピー</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_BinaryStream.html">BinaryStreamクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">copy(<span class="arg">storage</span>, <span class="arg">elm</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="copyの引数">
+<tr><td valign="top"><span class="argname">storage</span></td>
+<td>コピー元のストレージ（現在開いているストレージと同じ場合は例外）</td></tr>
+<tr><td valign="top"><span class="argname">elm</span></td>
+<td>動作指定用の辞書（in/out）内容は下記：（省略時は単純コピー，[out]なし）<br />offset  :[in] コピー元ストレージの読み込み開始オフセット（省略時先頭）<br />length  :[in] コピー元ストレージの最大読み込みサイズ（省略時ファイルサイズ）<br /><br />filter  :[in] フィルタ処理を行う関数名（省略時はフィルタ処理なし）<br />fparam  :[in] フィルタに渡すパラメータ値(int)<br /><br />nocopy  :[in] trueを指定すると出力を書き込まない（省略時はfalse，hashのみ取得したい場合などに指定）<br />md5     :[in] trueを指定すると出力のMD5ダイジェストを返す<br /><br />hash    :[out]読み込んだファイルのハッシュ値（Adler32）<br />read    :[out]読み込んだバイト数<br />digest  :[out]書き込んだデータのMD5ダイジェスト（octet） ※md5がtrueの場合にのみ有効</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>書き込んだバイト数\n\n対象ストレージのoffsetからlength分の内容が，現在のストリームのポジションから書き込まれます\nフィルタの詳細は setFilter() の説明を参照してください</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

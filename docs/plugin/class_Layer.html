@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>Layer - レイヤへの AGG プリミティブ描画機能の拡張</title>
+</head>
+<body>
+<h1><a name="top" id="top">Layer</a></h1>
+<div class="para"></div>
+<h1>メンバ</h1><div class="para">
+<dl>
+<dt>メソッド</dt>
+<dd>
+<a class="jump" href="func_Layer_aggRotate.html">aggRotate</a> (agg プリミティブの回転指定 )<br />
+<a class="jump" href="func_Layer_aggSetPos.html">aggSetPos</a> (agg の表示原点指定 )<br />
+<a class="jump" href="func_Layer_aggX.html">aggX</a> ( )<br />
+<a class="jump" href="func_Layer_aggY.html">aggY</a> ( )<br />
+<a class="jump" href="func_Layer_clear.html">clear</a> (画面の消去 )<br />
+<a class="jump" href="func_Layer_clearAlpha.html">clearAlpha</a> (αが指定以下の部分を指定色で塗りつぶすする )<br />
+<a class="jump" href="func_Layer_clipAlphaRect.html">clipAlphaRect</a> (レイヤの Alpha CHANNEL を src の Alpha CHANNEL で乗算する )<br />
+<a class="jump" href="func_Layer_closeAVI.html">closeAVI</a> (AVI ファイルを閉じる )<br />
+<a class="jump" href="func_Layer_closeWAV.html">closeWAV</a> (WAV録音終了 )<br />
+<a class="jump" href="func_Layer_colorize.html">colorize</a> (色相と彩度 )<br />
+<a class="jump" href="func_Layer_copyAlphaToProvince.html">copyAlphaToProvince</a> (レイヤの Alpha CHANNEL を Province Image（領域画像）にコピーする )<br />
+<a class="jump" href="func_Layer_copyBlueToAlpha.html">copyBlueToAlpha</a> (レイヤの Blue CHANNEL を Alpha 領域に複製する )<br />
+<a class="jump" href="func_Layer_copyBottomBlueToTopAlpha.html">copyBottomBlueToTopAlpha</a> (レイヤ下半分の Blue CHANNEL を上半分の Alpha CHANNELに複製する ※クリップ非対応 )<br />
+<a class="jump" href="func_Layer_copyExposure.html">copyExposure</a> (総和バッファから画像作成 )<br />
+<a class="jump" href="func_Layer_copyRaster.html">copyRaster</a> (ラスターコピー処理 )<br />
+<a class="jump" href="func_Layer_copyRightBlueToLeftAlpha.html">copyRightBlueToLeftAlpha</a> (レイヤ右半分の Blue CHANNEL を左半分の Alpha CHANNELに複製する ※クリップ非対応 )<br />
+<a class="jump" href="func_Layer_drawArc.html">drawArc</a> (円弧の描画 )<br />
+<a class="jump" href="func_Layer_drawBezier.html">drawBezier</a> (ベジェ曲線の描画 )<br />
+<a class="jump" href="func_Layer_drawBeziers.html">drawBeziers</a> (連続ベジェ曲線の描画 )<br />
+<a class="jump" href="func_Layer_drawClosedCurve.html">drawClosedCurve</a> (Closed cardinal spline の描画 )<br />
+<a class="jump" href="func_Layer_drawClosedCurve2.html">drawClosedCurve2</a> (Closed cardinal spline の描画 )<br />
+<a class="jump" href="func_Layer_drawCurve.html">drawCurve</a> (cardinal spline の描画 )<br />
+<a class="jump" href="func_Layer_drawCurve2.html">drawCurve2</a> (cardinal spline の描画 )<br />
+<a class="jump" href="func_Layer_drawCurve3.html">drawCurve3</a> (cardinal spline の描画 )<br />
+<a class="jump" href="func_Layer_drawEllipse.html">drawEllipse</a> (楕円の描画 )<br />
+<a class="jump" href="func_Layer_drawGlyph.html">drawGlyph</a> (System.savePreRenderedFont用の文字を描画する )<br />
+<a class="jump" href="func_Layer_drawImage.html">drawImage</a> (画像の描画。コピー先は元画像の Bounds を配慮した位置、サイズは Pixel 指定になります。 )<br />
+<a class="jump" href="func_Layer_drawImageAffine.html">drawImageAffine</a> (画像のアフィン変換コピー )<br />
+<a class="jump" href="func_Layer_drawImageRect.html">drawImageRect</a> (画像の矩形コピー )<br />
+<a class="jump" href="func_Layer_drawImageStretch.html">drawImageStretch</a> (画像の拡大縮小コピー )<br />
+<a class="jump" href="func_Layer_drawLine.html">drawLine</a> (線分の描画 )<br />
+<a class="jump" href="func_Layer_drawLines.html">drawLines</a> (連続線分の描画 )<br />
+<a class="jump" href="func_Layer_drawPath.html">drawPath</a> (パスの描画 )<br />
+<a class="jump" href="func_Layer_drawPathString.html">drawPathString</a> (文字列のパスベースでの描画 )<br />
+<a class="jump" href="func_Layer_drawPie.html">drawPie</a> (円錐の描画 )<br />
+<a class="jump" href="func_Layer_drawPolygon.html">drawPolygon</a> (多角形の描画 )<br />
+<a class="jump" href="func_Layer_drawQRCode.html">drawQRCode</a> (レイヤーのサイズを調整して、指定の値(文字列又は整数値)に準じたQRコードを書き込みます )<br />
+<a class="jump" href="func_Layer_drawRectangle.html">drawRectangle</a> (矩形の描画 )<br />
+<a class="jump" href="func_Layer_drawRectangles.html">drawRectangles</a> (複数矩形の描画 )<br />
+<a class="jump" href="func_Layer_drawString.html">drawString</a> (文字列の描画。描画のクオリティは textRenderingHint に従います。 )<br />
+<a class="jump" href="func_Layer_fillAlpha.html">fillAlpha</a> (レイヤの Alpha CHANNEL を0xffで埋める )<br />
+<a class="jump" href="func_Layer_fillByProvince.html">fillByProvince</a> (領域画像が指定した値の場所を指定した色で塗りつぶす )<br />
+<a class="jump" href="func_Layer_generateWhiteNoise.html">generateWhiteNoise</a> (ノイズ生成（元の画像を無視してグレースケールのホワイトノイズを描画／α情報は維持） )<br />
+<a class="jump" href="func_Layer_getCropRect.html">getCropRect</a> (レイヤイメージをクロップ（上下左右の余白透明部分を切り取る）したときの サイズを取得します。 )<br />
+<a class="jump" href="func_Layer_getCropRectZero.html">getCropRectZero</a> (レイヤイメージをクロップ（上下左右の完全透明部分(0x00000000)を切り取る）したときの サイズを取得します。 )<br />
+<a class="jump" href="func_Layer_getDiffPixel.html">getDiffPixel</a> (レイヤのピクセル比較を行います。 )<br />
+<a class="jump" href="func_Layer_getDiffRect.html">getDiffRect</a> (レイヤの差分領域を取得します。 )<br />
+<a class="jump" href="func_Layer_getRecordImage.html">getRecordImage</a> (記録内容を Image として返す return Image オブジェクト )<br />
+<a class="jump" href="func_Layer_initExposure.html">initExposure</a> (初期化 現在のレイヤサイズで総和バッファを初期化 )<br />
+<a class="jump" href="func_Layer_isBlank.html">isBlank</a> (レイヤの指定領域がブランクデータかどうか確認します )<br />
+<a class="jump" href="func_Layer_isPlayingMovie.html">isPlayingMovie</a> (ムービー再生中かどうか )<br />
+<a class="jump" href="func_Layer_light.html">light</a> (明度とコントラスト )<br />
+<a class="jump" href="func_Layer_loadRecord.html">loadRecord</a> (記録内容の読み込み )<br />
+<a class="jump" href="func_Layer_measureString.html">measureString</a> (文字列の描画領域情報の取得。描画のクオリティは textRenderingHint に従います )<br />
+<a class="jump" href="func_Layer_measureStringInternal.html">measureStringInternal</a> (文字列の描画領域情報の取得。measureString()で取得した領域に対して、マージンを除いて実際に文字列が存在する領域の矩形を返します。 )<br />
+<a class="jump" href="func_Layer_modulate.html">modulate</a> (色相と彩度と輝度の変更 )<br />
+<a class="jump" href="func_Layer_noise.html">noise</a> (ノイズ追加 )<br />
+<a class="jump" href="func_Layer_onStartMovie.html">onStartMovie</a> (ムービーが再生開始したときに呼ばれるメソッド )<br />
+<a class="jump" href="func_Layer_onStopMovie.html">onStopMovie</a> (ムービーが再生終了したときに呼ばれるメソッド )<br />
+<a class="jump" href="func_Layer_onUpdateMovie.html">onUpdateMovie</a> (レイヤの内容が更新されたときに呼ばれるメソッド )<br />
+<a class="jump" href="func_Layer_oozeColor.html">oozeColor</a> (レイヤの淵の色を透明部分まで引き伸ばします（縮小時に偽色が出るのを防ぐ） )<br />
+<a class="jump" href="func_Layer_openAVI.html">openAVI</a> (AVI ファイルを準備する )<br />
+<a class="jump" href="func_Layer_openMovie.html">openMovie</a> (再生用のムービーファイルを開く )<br />
+<a class="jump" href="func_Layer_openWAV.html">openWAV</a> (WAV録音準備 )<br />
+<a class="jump" href="func_Layer_perspectiveCopy.html">perspectiveCopy</a> (透視変形コピー )<br />
+<a class="jump" href="func_Layer_recordAVI.html">recordAVI</a> (AVIファイルに1フレーム記録する )<br />
+<a class="jump" href="func_Layer_resetTransform.html">resetTransform</a> ( )<br />
+<a class="jump" href="func_Layer_resetViewTransform.html">resetViewTransform</a> ( )<br />
+<a class="jump" href="func_Layer_rotateTransform.html">rotateTransform</a> ( )<br />
+<a class="jump" href="func_Layer_rotateViewTransform.html">rotateViewTransform</a> ( )<br />
+<a class="jump" href="func_Layer_saveImage.html">saveImage</a> (画像の保存 )<br />
+<a class="jump" href="func_Layer_saveLayerImagePng.html">saveLayerImagePng</a> (PNG 形式での画像の保存。注意点:データの保存が終わるまで処理が帰りません。 )<br />
+<a class="jump" href="func_Layer_saveLayerImagePngOctet.html">saveLayerImagePngOctet</a> (PNG 形式画像をoctetで返す。注意点:データの保存が終わるまで処理が帰りません。 )<br />
+<a class="jump" href="func_Layer_saveLayerImageTlg5.html">saveLayerImageTlg5</a> (TLG5 形式での画像の保存。注意点:データの保存が終わるまで処理が帰りません。 )<br />
+<a class="jump" href="func_Layer_saveRecord.html">saveRecord</a> (記録内容の保存 )<br />
+<a class="jump" href="func_Layer_scaleTransform.html">scaleTransform</a> ( )<br />
+<a class="jump" href="func_Layer_scaleViewTransform.html">scaleViewTransform</a> ( )<br />
+<a class="jump" href="func_Layer_setGlyphInfo.html">setGlyphInfo</a> (グリフ情報を設定する )<br />
+<a class="jump" href="func_Layer_setResolution.html">setResolution</a> (解像度指定 )<br />
+<a class="jump" href="func_Layer_setTransform.html">setTransform</a> (描画時のトランスフォームを指定 )<br />
+<a class="jump" href="func_Layer_setViewTransform.html">setViewTransform</a> (記録内容の表示時のトランスフォームを指定 )<br />
+<a class="jump" href="func_Layer_shrinkCopy.html">shrinkCopy</a> (縮小コピー )<br />
+<a class="jump" href="func_Layer_shrinkCopyFast.html">shrinkCopyFast</a> (限定縮小コピー（整数分の一の縮小＆α成分無視で処理） )<br />
+<a class="jump" href="func_Layer_snapExposure.html">snapExposure</a> (現在の画像を総和バッファに加算 init時と同じ画像サイズである必要があります（違う場合は例外） )<br />
+<a class="jump" href="func_Layer_startMovie.html">startMovie</a> (ムービーの再生を開始する )<br />
+<a class="jump" href="func_Layer_startWAV.html">startWAV</a> (WAV録音開始 )<br />
+<a class="jump" href="func_Layer_statExposure.html">statExposure</a> (総和バッファの最大値／最小値を取得 )<br />
+<a class="jump" href="func_Layer_stopMovie.html">stopMovie</a> (ムービーの再生を停止する )<br />
+<a class="jump" href="func_Layer_stopWAV.html">stopWAV</a> (WAV録音停止 )<br />
+<a class="jump" href="func_Layer_termExposure.html">termExposure</a> (総和バッファ破棄 確保したバッファを破棄する invalidate時でも自動で破棄される )<br />
+<a class="jump" href="func_Layer_translateTransform.html">translateTransform</a> ( )<br />
+<a class="jump" href="func_Layer_translateViewTransform.html">translateViewTransform</a> ( )<br />
+</dd>
+<dt>プロパティ</dt>
+<dd>
+<a class="jump" href="prop_Layer_record.html">record</a> (このプラグインによる描画内容を記録するかどうか record = true の状態の場合、viewTransform を指定すると 描画内容そのままで再描画されます。 )<br />
+<a class="jump" href="prop_Layer_smoothingMode.html">smoothingMode</a> (デフォルト SmoothingModeAntiAlias )<br />
+<a class="jump" href="prop_Layer_textRenderingHint.html">textRenderingHint</a> (デフォルト TextRenderingHintAntiAlias )<br />
+<a class="jump" href="prop_Layer_updateWhenDraw.html">updateWhenDraw</a> (描画時にその領域に対する update() 呼び出しを行うかどうか )<br />
+</dd>
+</dl>
+</div>
+</body>
+</html>

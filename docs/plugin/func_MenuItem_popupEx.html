@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>popupEx - ポップアップ表示</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">MenuItem.popupEx</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>ポップアップ表示</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_MenuItem.html">MenuItemクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">popupEx(<span class="arg">flags</span>, <span class="arg">x</span>, <span class="arg">y</span>, <span class="arg">hwnd</span>, <span class="arg">rect</span>, <span class="arg">menulist</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="popupExの引数">
+<tr><td valign="top"><span class="argname"></span></td>
+<td>flags</td></tr>
+<tr><td valign="top"><span class="argname">x,</span></td>
+<td>y  表示位置（スクリーン座標，省略時マウスカーソル位置）</td></tr>
+<tr><td valign="top"><span class="argname">hwnd</span></td>
+<td>オーナウィンドウ（省略時インスタンス所属ウィンドウ）</td></tr>
+<tr><td valign="top"><span class="argname">rect</span></td>
+<td>オーバーラップ禁止範囲（%[ x, y, w, h ]，省略時禁止範囲無し）</td></tr>
+<tr><td valign="top"><span class="argname">menulist</span></td>
+<td>メニュー一覧配列（MenuItemのインスタンスである必要はなく，辞書を並べても良い）</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>選択されたオブジェクト\n\nMenuItem.popupのようにウィンドウメニュー所属である必要はなく，また一覧も辞書の配列を渡すなどができる\nこの関数によるポップアップでのbmp*プロパティによるアイコン表示はされないので注意</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

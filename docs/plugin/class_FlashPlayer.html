@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>FlashPlayer - 擬似記述マニュアル  FlashPlayerクラス FlashPlayerをレイヤ上で再生制御するオブジェクトです。  <h2>ExternalInterface機能</h2> 　 <h3>◇TJSメソッドのActionScriptからの呼び出し</h3>  オブジェクトの任意のメソッドが、再生中の swfの ActionScriptから ExternalInterface で呼び出し可能です <pre> ----------------------------------------------------------- import flash.external.ExternalInterface; trace(ExternalInterface.call("tjsFunction", 10, "test")); ----------------------------------------------------------- </pre> 吉里吉里側で例外が発生して呼び出しに失敗しても ActionScript 側では 例外になりませんので注意してください。 例外情報は getLastTJSError() で取得可能です。  <h3>◇ActionScriptメソッドのTJSからの呼び出し</h3>  callFunction() で､ExternalInterface で公開されている ActionScript メソッドを呼び出しできます。 <pre> ActionScriptでの関数の準備 ----------------------------------------------------------- import flash.external.ExternalInterface; // 呼び出しメソッド function flashFunction(a:Number, b:String):String { return StringUtil.substitute("{0}:{1}", a, b); } // 登録 ExternalInterface.addCallback("flashFunction", flashFunction); -----------------------------------------------------------  TJSからの呼び出し ----------------------------------------------------------- var flash = new FlashPlayer(100,100); flash.initMovie("sample.swf"); Debug.message(flash.callFunction("flashFunction", 1, "test")); ----------------------------------------------------------- </pre> 呼び出しに失敗すると例外になります。 </title>
+</head>
+<body>
+<h1><a name="top" id="top">FlashPlayer</a></h1>
+<div class="para"></div>
+<h1>メンバ</h1><div class="para">
+<dl>
+<dt>コンストラクタ</dt>
+<dd><a class="jump" href="func_FlashPlayer_FlashPlayer.html">FlashPlayer</a></dd>
+<dt>メソッド</dt>
+<dd>
+<a class="jump" href="func_FlashPlayer_back.html">back</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_callFunction.html">callFunction</a> (Flash の ExternalInterface 登録されたメソッドを呼び出します。 )<br />
+<a class="jump" href="func_FlashPlayer_clearMovie.html">clearMovie</a> (動画情報を完全にクリアする )<br />
+<a class="jump" href="func_FlashPlayer_disableLocalSecurity.html">disableLocalSecurity</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_doKeyDown.html">doKeyDown</a> (キーダウンの通知 )<br />
+<a class="jump" href="func_FlashPlayer_doKeyUp.html">doKeyUp</a> (キーアップの通知 )<br />
+<a class="jump" href="func_FlashPlayer_doMouseDown.html">doMouseDown</a> (マウスキーおしさげ通知 )<br />
+<a class="jump" href="func_FlashPlayer_doMouseEnter.html">doMouseEnter</a> (マウスが領域に入った通知 )<br />
+<a class="jump" href="func_FlashPlayer_doMouseLeave.html">doMouseLeave</a> (マウスが領域から出た通知 )<br />
+<a class="jump" href="func_FlashPlayer_doMouseMove.html">doMouseMove</a> (マウス移動通知 )<br />
+<a class="jump" href="func_FlashPlayer_doMouseUp.html">doMouseUp</a> (マウスキーおしあげ通知 )<br />
+<a class="jump" href="func_FlashPlayer_doMouseWheel.html">doMouseWheel</a> (マウスホイール通知 )<br />
+<a class="jump" href="func_FlashPlayer_draw.html">draw</a> (レイヤに対して現在の描画内容を出力する。レイヤのサイズが小さい場合はトリミングされます )<br />
+<a class="jump" href="func_FlashPlayer_enforceLocalSecurity.html">enforceLocalSecurity</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_forward.html">forward</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_getFrameLoaded.html">getFrameLoaded</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_getLastTJSError.html">getLastTJSError</a> (TJS呼び出しエラーの取得。 )<br />
+<a class="jump" href="func_FlashPlayer_getVariable.html">getVariable</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_gotoFrame.html">gotoFrame</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_hitTest.html">hitTest</a> (指定された座標の位置に対する入力をうけつけるかどうかを返します )<br />
+<a class="jump" href="func_FlashPlayer_initMovie.html">initMovie</a> (指定した吉里吉里のファイルを動画として初期化する )<br />
+<a class="jump" href="func_FlashPlayer_isPlaying.html">isPlaying</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_loadMovie.html">loadMovie</a> (ムービーをロードする )<br />
+<a class="jump" href="func_FlashPlayer_onFrameUpdate.html">onFrameUpdate</a> (描画内容が更新された場合に呼び出されるイベント 通常はこのイベントがきた場合に draw() で描画内容を取得します )<br />
+<a class="jump" href="func_FlashPlayer_onFSCommand.html">onFSCommand</a> (FSCommandイベントの通知 )<br />
+<a class="jump" href="func_FlashPlayer_onProgress.html">onProgress</a> (Progressイベントの通知 )<br />
+<a class="jump" href="func_FlashPlayer_onReadyStateChange.html">onReadyStateChange</a> (ReadyStateChangeイベントの通知 )<br />
+<a class="jump" href="func_FlashPlayer_pan.html">pan</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_play.html">play</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_rewind.html">rewind</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_setSize.html">setSize</a> (プレイヤーサイズの変更 )<br />
+<a class="jump" href="func_FlashPlayer_setVariable.html">setVariable</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_setZoomRect.html">setZoomRect</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_stop.html">stop</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_stopPlay.html">stopPlay</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tCallFrame.html">tCallFrame</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tCallLabel.html">tCallLabel</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tCurrentFrame.html">tCurrentFrame</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tCurrentLabel.html">tCurrentLabel</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tGetProperty.html">tGetProperty</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tGetPropertyNum.html">tGetPropertyNum</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tGotoFrame.html">tGotoFrame</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tGotoLabel.html">tGotoLabel</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tPlay.html">tPlay</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tSetProperty.html">tSetProperty</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tSetPropertyNum.html">tSetPropertyNum</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_tStopPlay.html">tStopPlay</a> ( )<br />
+<a class="jump" href="func_FlashPlayer_zoom.html">zoom</a> ( )<br />
+</dd>
+<dt>プロパティ</dt>
+<dd>
+<a class="jump" href="prop_FlashPlayer_alighMode.html">alighMode</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_allowScriptAccess.html">allowScriptAccess</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_backgroundColor.html">backgroundColor</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_base.html">base</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_bgColor.html">bgColor</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_currentFrame.html">currentFrame</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_deviceFont.html">deviceFont</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_embedMovie.html">embedMovie</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_flashVars.html">flashVars</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_flashVersion.html">flashVersion</a> (RO )<br />
+<a class="jump" href="prop_FlashPlayer_frameNum.html">frameNum</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_loop.html">loop</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_menu.html">menu</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_movie.html">movie</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_movieData.html">movieData</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_percentLoaded.html">percentLoaded</a> (RO )<br />
+<a class="jump" href="prop_FlashPlayer_playing.html">playing</a> (RO )<br />
+<a class="jump" href="prop_FlashPlayer_profile.html">profile</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_profileAddress.html">profileAddress</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_profilePort.html">profilePort</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_quality.html">quality</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_quality2.html">quality2</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_readyState.html">readyState</a> (------------------------------------------------- )<br />
+<a class="jump" href="prop_FlashPlayer_sAlign.html">sAlign</a> (RO )<br />
+<a class="jump" href="prop_FlashPlayer_scale.html">scale</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_scaleMode.html">scaleMode</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_seamlessTabbing.html">seamlessTabbing</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_swRemote.html">swRemote</a> ( )<br />
+<a class="jump" href="prop_FlashPlayer_totalFrames.html">totalFrames</a> (RO )<br />
+</dd>
+</dl>
+</div>
+</body>
+</html>

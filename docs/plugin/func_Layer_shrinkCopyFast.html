@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>shrinkCopyFast - 限定縮小コピー（整数分の一の縮小＆α成分無視で処理）</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">Layer.shrinkCopyFast</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>限定縮小コピー（整数分の一の縮小＆α成分無視で処理）</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_Layer.html">Layerクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">shrinkCopyFast(<span class="arg">src</span>, <span class="arg">shrink_x</span>, <span class="arg">shrink_y</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="shrinkCopyFastの引数">
+<tr><td valign="top"><span class="argname">shrink_x</span></td>
+<td>横方向の縮小係数(1 以上）</td></tr>
+<tr><td valign="top"><span class="argname">shrink_y</span></td>
+<td>縦方向の縮小係数(1 以上）省略時または 0 の場合は shrink_x の値を使用<br /><br />透明部分は無視されて常に不透明になる<br />右端，下端の 1dot の部分で割り切れない場合の端数分で伸びたように見える場合がある<br /><br />※自分自身のサイズが強制で変更されるので注意<br />⇒ setImageSize(Math.ceil(src.imageWidth / shrink_x), Math.ceil(src.imageHeight / shrink_y)) 相当</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

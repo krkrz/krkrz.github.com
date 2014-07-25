@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>DrawDeviceD3D - コンストラクタ</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">DrawDeviceD3D.DrawDeviceD3D</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>コンストラクタ</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_DrawDeviceD3D.html">DrawDeviceD3Dクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">DrawDeviceD3D(<span class="arg">width</span>, <span class="arg">height</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="DrawDeviceD3Dの引数">
+<tr><td valign="top"><span class="argname">width</span></td>
+<td>描画領域横幅</td></tr>
+<tr><td valign="top"><span class="argname">width</span></td>
+<td>描画領域縦幅<br />縦幅と横幅は従来的機構での primaryLayer の width/height に相当するものです。<br />作成されたプライマリレイヤ(複数)はすべてここで指定した領域に対して<br />引き延ばし表示されます。<br />例:<br />drawDevice = new DrawDeviceD3D(800,400);<br />base1 = new Layer(this, null); base1.setSize(800,400); // 画面と同じ解像度<br />base2 = new Layer(this, null); base1.setSize(400,200); // 画面の半分の解像度<br />base3 = new Layer(this, null); base1.setSize(800,200); // 縦だけ解像度半分</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

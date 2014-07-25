@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>commandExecute - コンソール出力取得つきコマンドラインプログラムの実行</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">Process.commandExecute</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>コンソール出力取得つきコマンドラインプログラムの実行</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_Process.html">Processクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">commandExecute(<span class="arg">target</span>, <span class="arg">param</span>, <span class="arg">folder</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="commandExecuteの引数">
+<tr><td valign="top"><span class="argname">target</span></td>
+<td>プログラム</td></tr>
+<tr><td valign="top"><span class="argname">param</span></td>
+<td>引数</td></tr>
+<tr><td valign="top"><span class="argname">folder</span></td>
+<td>実行時フォルダ(未指定時はカレントフォルダ)</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>起動成功時は true\nコンソールの行単位出力で onOutput イベントが発生します。\n処理がおわったら onExecuted イベントが発生します。</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>savePreRenderedFont - レンダリング済みフォントデータをファイルに保存する</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">System.savePreRenderedFont</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>レンダリング済みフォントデータをファイルに保存する</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_System.html">Systemクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">savePreRenderedFont(<span class="arg">storage</span>, <span class="arg">characters</span>, <span class="arg">callback</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="savePreRenderedFontの引数">
+<tr><td valign="top"><span class="argname">storage</span></td>
+<td>保存するファイル名</td></tr>
+<tr><td valign="top"><span class="argname">characters</span></td>
+<td>保存する文字（キャラクタコード）の入った配列</td></tr>
+<tr><td valign="top"><span class="argname">callback</span></td>
+<td>情報とイメージを取得するコールバック<br />キャラクタコードを引数に取り，レイヤ(PreRenderedFontImage)を返す関数であること<br />function(ch) { return layer; }</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

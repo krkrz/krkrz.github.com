@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>SqliteThread - sqliteのスレッド実行サポート</title>
+</head>
+<body>
+<h1><a name="top" id="top">SqliteThread</a></h1>
+<div class="para"></div>
+<h1>メンバ</h1><div class="para">
+<dl>
+<dt>コンストラクタ</dt>
+<dd><a class="jump" href="func_SqliteThread_SqliteThread.html">SqliteThread</a></dd>
+<dt>メソッド</dt>
+<dd>
+<a class="jump" href="func_SqliteThread_abort.html">abort</a> (実行処理を中止させます。 また記録されてる処理結果を破棄します。 )<br />
+<a class="jump" href="func_SqliteThread_onProgress.html">onProgress</a> (更新処理経過 )<br />
+<a class="jump" href="func_SqliteThread_onStateChange.html">onStateChange</a> (状態変更 )<br />
+<a class="jump" href="func_SqliteThread_select.html">select</a> (検索処理をバックグランドで実行する。 結果は内部に蓄積されて完了後に引き渡されます。 )<br />
+<a class="jump" href="func_SqliteThread_update.html">update</a> (更新処理をバックグランドでトランザクション実行する。 )<br />
+</dd>
+<dt>プロパティ</dt>
+<dd>
+<a class="jump" href="prop_SqliteThread_errorCode.html">errorCode</a> (エラーコード 処理中での最後のエラーコードを返します )<br />
+<a class="jump" href="prop_SqliteThread_progressUpdateCount.html">progressUpdateCount</a> (onProgress で呼び出す頻度指定 指定されてる数を取得するたびに呼び出しが行われる )<br />
+<a class="jump" href="prop_SqliteThread_selectResult.html">selectResult</a> (select取得データ(配列) )<br />
+<a class="jump" href="prop_SqliteThread_state.html">state</a> (実行ステート )<br />
+</dd>
+</dl>
+</div>
+</body>
+</html>
