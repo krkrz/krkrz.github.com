@@ -16,12 +16,12 @@
 <dt>引数</dt>
 <dd><table rules="all" frame="box" cellpadding="3" summary="setOverlayBitmapの引数">
 <tr><td valign="top"><span class="argname">layer</span></td>
-<td>ビットマップ画像にコピーするレイヤ（void or省略時はオーバーレイ消去）<br /><br />指定画像でクライアント領域に子ウィンドウ（吉里吉里のではなくWindowsのそれ）をかぶせる<br />・拡張イベントが有効でないと例外が発生する<br />・オーバーレイ表示中は吉里吉里のレイヤ側にマウス系のメッセージが一切行かない<br />・実質的に System.eventDisabled=true の時専用<br />・TVP_WM_DETACH で自動消去される<br /></td></tr>
+<td>ビットマップ画像にコピーするレイヤ（void or省略時はオーバーレイ消去）</td></tr>
 </table></dd>
 <dt>戻り値</dt>
 <dd>なし (void)</dd>
 <dt>説明</dt>
-<dd></dd>
+<dd>指定画像でクライアント領域に子ウィンドウ（吉里吉里のではなくWindowsのそれ）をかぶせる<br />・拡張イベントが有効でないと例外が発生する<br />・オーバーレイ表示中は吉里吉里のレイヤ側にマウス系のメッセージが一切行かない<br />・実質的に System.eventDisabled=true の時専用<br />・TVP_WM_DETACH で自動消去される<br /></dd>
 </dl>
 </div>
 </body>

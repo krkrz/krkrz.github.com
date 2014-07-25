@@ -2,18 +2,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
-<title>Scripts - Scripts クラスへの Javascript 機能拡張</title>
+<title>Scripts - </title>
 </head>
 <body>
 <h1><a name="top" id="top">Scripts</a></h1>
-<div class="para"></div>
+<div class="para">Scripts クラスへの Javascript 機能拡張</div>
 <h1>メンバ</h1><div class="para">
 <dl>
 <dt>メソッド</dt>
 <dd>
-<a class="jump" href="func_Scripts_callSQ.html">callSQ</a> (Squirrel グローバルメソッドの呼び出し。 このメソッドによる実行中では Object/Thread 拡張による wait は利用できません )<br />
+<a class="jump" href="func_Scripts_callSQ.html">callSQ</a> (Squirrel グローバルメソッドの呼び出し。 )<br />
 <a class="jump" href="func_Scripts_clone.html">clone</a> (値のクローンを返す。 )<br />
-<a class="jump" href="func_Scripts_compareSQ.html">compareSQ</a> (Squirrel用比較 2つのオブジェクトを squirrel 的に比較します )<br />
+<a class="jump" href="func_Scripts_compareSQ.html">compareSQ</a> (Squirrel用比較 )<br />
 <a class="jump" href="func_Scripts_compileSQ.html">compileSQ</a> (Squirrel スクリプトのコンパイル処理 )<br />
 <a class="jump" href="func_Scripts_compileStorageSQ.html">compileStorageSQ</a> (Squirrel スクリプトのファイルからのコンパイル処理 )<br />
 <a class="jump" href="func_Scripts_driveSQ.html">driveSQ</a> (Squirrel疑似スレッド処理の稼働 )<br />
@@ -23,9 +23,9 @@
 <a class="jump" href="func_Scripts_evalJSON.html">evalJSON</a> (JSON の文字列を解析して Array または Dictionary を返す )<br />
 <a class="jump" href="func_Scripts_evalJSONStorage.html">evalJSONStorage</a> (JSON のファイルを解析して Array または Dictionary を返す )<br />
 <a class="jump" href="func_Scripts_execJS.html">execJS</a> (Javascript スクリプトの実行。 )<br />
-<a class="jump" href="func_Scripts_execSQ.html">execSQ</a> (Squirrel スクリプトの実行。 このメソッドによる実行中では Object/Thread 拡張による wait は利用できません )<br />
+<a class="jump" href="func_Scripts_execSQ.html">execSQ</a> (Squirrel スクリプトの実行。 )<br />
 <a class="jump" href="func_Scripts_execStorageJS.html">execStorageJS</a> (Javascript スクリプトのファイルからの実行。 )<br />
-<a class="jump" href="func_Scripts_execStorageSQ.html">execStorageSQ</a> (Squirrel スクリプトのファイルからの実行。 このメソッドによる実行中では Object/Thread 拡張による wait は利用できません )<br />
+<a class="jump" href="func_Scripts_execStorageSQ.html">execStorageSQ</a> (Squirrel スクリプトのファイルからの実行。 )<br />
 <a class="jump" href="func_Scripts_execStorageWSH.html">execStorageWSH</a> (WSH スクリプトのファイルからの実行 )<br />
 <a class="jump" href="func_Scripts_execWSH.html">execWSH</a> (WSH スクリプトの実行 )<br />
 <a class="jump" href="func_Scripts_foreach.html">foreach</a> (オブジェクトのメンバの全参照 )<br />
@@ -38,9 +38,9 @@
 <a class="jump" href="func_Scripts_isNullContext.html">isNullContext</a> (オブジェクトのコンテキスト判定 )<br />
 <a class="jump" href="func_Scripts_loadSQ.html">loadSQ</a> (Squirrel スクリプトの読み込み )<br />
 <a class="jump" href="func_Scripts_loadStorageSQ.html">loadStorageSQ</a> (Squirrel スクリプトの読み込み )<br />
-<a class="jump" href="func_Scripts_processDebugJS.html">processDebugJS</a> (デバッガ処理駆動 javascript実行時以外にもデバッガからの処理を受け付ける場合は タイマもしくは continuous ハンドラからメソッドを定期的に呼び出してください。 )<br />
+<a class="jump" href="func_Scripts_processDebugJS.html">processDebugJS</a> (デバッガ処理駆動 )<br />
 <a class="jump" href="func_Scripts_registerSQ.html">registerSQ</a> (Squirrel のグローバル空間に TJS2 のオブジェクト/関数を登録する )<br />
-<a class="jump" href="func_Scripts_rehash.html">rehash</a> (TJSDoRehash()を呼ぶ TJSCustomObjectベースのオブジェクトのハッシュテーブルサイズの再構築フラグを立てます。 （辞書やほとんどのクラスおよびインスタンスのオブジェクトが対象になります）  解説： ハッシュテーブルサイズはそのオブジェクトの持つ要素数により決定されます。 フラグが立った後，オブジェクトに何か書き込んだタイミングで再計算を行い， テーブルサイズが変わった場合にのみ再構築が行われます。（サイズ＝2^(要素数のビット数+2)程度？） 普段，吉里吉里は定期的（アイドル時かつ前回から1.5秒以上経過している時）に TJSDoRehash()が呼ばれているので特に気にする必要はありませんが， アイドルを挟まずに大量に要素を追加する場合において カウンタで何千～万回に1回等の間隔で呼び出すようにすると効果的かと思われます。 )<br />
+<a class="jump" href="func_Scripts_rehash.html">rehash</a> (TJSDoRehash()を呼ぶ )<br />
 <a class="jump" href="func_Scripts_saveJSON.html">saveJSON</a> (データを JSON 形式で保存する )<br />
 <a class="jump" href="func_Scripts_saveSQ.html">saveSQ</a> (データを Squirrel 形式で保存する。このファイルは "return" を先頭にもつので dofile() で読みだすことができます )<br />
 <a class="jump" href="func_Scripts_setEvalErrorLog.html">setEvalErrorLog</a> (Scripts.evalのエラーログ出力抑制 )<br />

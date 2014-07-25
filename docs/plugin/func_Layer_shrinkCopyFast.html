@@ -18,12 +18,12 @@
 <tr><td valign="top"><span class="argname">shrink_x</span></td>
 <td>横方向の縮小係数(1 以上）</td></tr>
 <tr><td valign="top"><span class="argname">shrink_y</span></td>
-<td>縦方向の縮小係数(1 以上）省略時または 0 の場合は shrink_x の値を使用<br /><br />透明部分は無視されて常に不透明になる<br />右端，下端の 1dot の部分で割り切れない場合の端数分で伸びたように見える場合がある<br /><br />※自分自身のサイズが強制で変更されるので注意<br />⇒ setImageSize(Math.ceil(src.imageWidth / shrink_x), Math.ceil(src.imageHeight / shrink_y)) 相当</td></tr>
+<td>縦方向の縮小係数(1 以上）省略時または 0 の場合は shrink_x の値を使用</td></tr>
 </table></dd>
 <dt>戻り値</dt>
 <dd>なし (void)</dd>
 <dt>説明</dt>
-<dd></dd>
+<dd>透明部分は無視されて常に不透明になる<br />右端，下端の 1dot の部分で割り切れない場合の端数分で伸びたように見える場合がある<br /><br />※自分自身のサイズが強制で変更されるので注意<br />⇒ setImageSize(Math.ceil(src.imageWidth / shrink_x), Math.ceil(src.imageHeight / shrink_y)) 相当</dd>
 </dl>
 </div>
 </body>

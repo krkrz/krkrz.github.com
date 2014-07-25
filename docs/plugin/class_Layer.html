@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
-<title>Layer - レイヤへの AGG プリミティブ描画機能の拡張</title>
+<title>Layer - レイヤに対する機能拡張</title>
 </head>
 <body>
 <h1><a name="top" id="top">Layer</a></h1>
@@ -23,10 +23,12 @@
 <a class="jump" href="func_Layer_colorize.html">colorize</a> (色相と彩度 )<br />
 <a class="jump" href="func_Layer_copyAlphaToProvince.html">copyAlphaToProvince</a> (レイヤの Alpha CHANNEL を Province Image（領域画像）にコピーする )<br />
 <a class="jump" href="func_Layer_copyBlueToAlpha.html">copyBlueToAlpha</a> (レイヤの Blue CHANNEL を Alpha 領域に複製する )<br />
-<a class="jump" href="func_Layer_copyBottomBlueToTopAlpha.html">copyBottomBlueToTopAlpha</a> (レイヤ下半分の Blue CHANNEL を上半分の Alpha CHANNELに複製する ※クリップ非対応 )<br />
+<a class="jump" href="func_Layer_copyBottomBlueToTopAlpha.html">copyBottomBlueToTopAlpha</a> (レイヤ下半分の Blue CHANNEL を上半分の Alpha CHANNELに複製する )<br />
 <a class="jump" href="func_Layer_copyExposure.html">copyExposure</a> (総和バッファから画像作成 )<br />
+<a class="jump" href="func_Layer_copyIImage.html">copyIImage</a> (Irrlicht.IImage から画像をコピー。レイヤのサイズは元のIImageのサイズになります )<br />
+<a class="jump" href="func_Layer_copyITexture.html">copyITexture</a> (Irrlicht.ITexture から画像をコピー。レイヤのサイズは元のITextureのサイズになります ※テクスチャが ARGB32 でない場合はコピーできません )<br />
 <a class="jump" href="func_Layer_copyRaster.html">copyRaster</a> (ラスターコピー処理 )<br />
-<a class="jump" href="func_Layer_copyRightBlueToLeftAlpha.html">copyRightBlueToLeftAlpha</a> (レイヤ右半分の Blue CHANNEL を左半分の Alpha CHANNELに複製する ※クリップ非対応 )<br />
+<a class="jump" href="func_Layer_copyRightBlueToLeftAlpha.html">copyRightBlueToLeftAlpha</a> (レイヤ右半分の Blue CHANNEL を左半分の Alpha CHANNELに複製する )<br />
 <a class="jump" href="func_Layer_drawArc.html">drawArc</a> (円弧の描画 )<br />
 <a class="jump" href="func_Layer_drawBezier.html">drawBezier</a> (ベジェ曲線の描画 )<br />
 <a class="jump" href="func_Layer_drawBeziers.html">drawBeziers</a> (連続ベジェ曲線の描画 )<br />
@@ -100,16 +102,35 @@
 <a class="jump" href="func_Layer_statExposure.html">statExposure</a> (総和バッファの最大値／最小値を取得 )<br />
 <a class="jump" href="func_Layer_stopMovie.html">stopMovie</a> (ムービーの再生を停止する )<br />
 <a class="jump" href="func_Layer_stopWAV.html">stopWAV</a> (WAV録音停止 )<br />
-<a class="jump" href="func_Layer_termExposure.html">termExposure</a> (総和バッファ破棄 確保したバッファを破棄する invalidate時でも自動で破棄される )<br />
+<a class="jump" href="func_Layer_termExposure.html">termExposure</a> (総和バッファ破棄 )<br />
 <a class="jump" href="func_Layer_translateTransform.html">translateTransform</a> ( )<br />
 <a class="jump" href="func_Layer_translateViewTransform.html">translateViewTransform</a> ( )<br />
 </dd>
 <dt>プロパティ</dt>
 <dd>
-<a class="jump" href="prop_Layer_record.html">record</a> (このプラグインによる描画内容を記録するかどうか record = true の状態の場合、viewTransform を指定すると 描画内容そのままで再描画されます。 )<br />
-<a class="jump" href="prop_Layer_smoothingMode.html">smoothingMode</a> (デフォルト SmoothingModeAntiAlias )<br />
-<a class="jump" href="prop_Layer_textRenderingHint.html">textRenderingHint</a> (デフォルト TextRenderingHintAntiAlias )<br />
+<a class="jump" href="prop_Layer_record.html">record</a> (このプラグインによる描画内容を記録するかどうか )<br />
+<a class="jump" href="prop_Layer_smoothingMode.html">smoothingMode</a> ( )<br />
+<a class="jump" href="prop_Layer_textRenderingHint.html">textRenderingHint</a> ( )<br />
 <a class="jump" href="prop_Layer_updateWhenDraw.html">updateWhenDraw</a> (描画時にその領域に対する update() 呼び出しを行うかどうか )<br />
+</dd>
+<dt>定数</dt>
+<dd>
+EncoderValueCompressionCCITT3 ( )<br />
+EncoderValueCompressionCCITT4 ( )<br />
+EncoderValueCompressionLZW (compression用 )<br />
+EncoderValueCompressionNone ( )<br />
+EncoderValueCompressionRle ( )<br />
+EncoderValueRenderNonProgressive ( )<br />
+EncoderValueRenderProgressive (render用 )<br />
+EncoderValueScanMethodInterlaced (scanmethod用 )<br />
+EncoderValueScanMethodNonInterlaced ( )<br />
+EncoderValueTransformFlipHorizontal ( )<br />
+EncoderValueTransformFlipVertical ( )<br />
+EncoderValueTransformRotate180 ( )<br />
+EncoderValueTransformRotate270 ( )<br />
+EncoderValueTransformRotate90 (transform用 )<br />
+EncoderValueVersionGif87 (version用 )<br />
+EncoderValueVersionGif89 ( )<br />
 </dd>
 </dl>
 </div>

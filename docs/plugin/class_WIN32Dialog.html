@@ -2,11 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
-<title>WIN32Dialog - Windows ネイティブダイアログを操作するためのクラスです。 APIのラッパ程度の機能しかないので非常に使いにくいですが， 後述のtjsで記述された WIN32DialogEX を使うと幸せになれます。</title>
+<title>WIN32Dialog - </title>
 </head>
 <body>
 <h1><a name="top" id="top">WIN32Dialog</a></h1>
-<div class="para"></div>
+<div class="para">Windows ネイティブダイアログを操作するためのクラスです。<br />APIのラッパ程度の機能しかないので非常に使いにくいですが，<br />後述のtjsで記述された WIN32DialogEX を使うと幸せになれます。</div>
 <h1>メンバ</h1><div class="para">
 <dl>
 <dt>コンストラクタ</dt>
@@ -15,7 +15,7 @@
 <dd>
 <a class="jump" href="func_WIN32Dialog_chooseColor.html">chooseColor</a> (static )<br />
 <a class="jump" href="func_WIN32Dialog_close.html">close</a> (ダイアログを閉じる )<br />
-<a class="jump" href="func_WIN32Dialog_closeProgress.html">closeProgress</a> ( )<br />
+<a class="jump" href="func_WIN32Dialog_closeProgress.html">closeProgress</a> (プログレスダイアログを閉じる )<br />
 <a class="jump" href="func_WIN32Dialog_deleteAllTab.html">deleteAllTab</a> ( )<br />
 <a class="jump" href="func_WIN32Dialog_deleteTab.html">deleteTab</a> ( )<br />
 <a class="jump" href="func_WIN32Dialog_getBaseUnits.html">getBaseUnits</a> (GetDialogBaseUnit のラッパー )<br />
@@ -33,7 +33,7 @@
 <a class="jump" href="func_WIN32Dialog_getScrollInfo.html">getScrollInfo</a> (ScrollInfo の取得 )<br />
 <a class="jump" href="func_WIN32Dialog_InitCommonControls.html">InitCommonControls</a> (InitCommonControls, InitCommonControlsEx のラッパー )<br />
 <a class="jump" href="func_WIN32Dialog_InitCommonControlsEx.html">InitCommonControlsEx</a> ( )<br />
-<a class="jump" href="func_WIN32Dialog_insertTab.html">insertTab</a> (タブコントロールを利用する.  //	利用手順を検討中 insertTab(IDC_TAB, 0, "基本"); // タブを追加 // deleteTab(IDC_TAB, 0); // タブを削除 // deleteAllTab(IDC_TAB); // タブをすべて削除 var dlg = new WIN32Dialog(); dlg.loadResource("resource.dll", "INNER"); // Border=None, Style=Child にしたダイアログ selectTab(IDC_TAB, dlg); // 表示 insertTab(IDC_TAB, 1, "拡張"); var dlg2 = new WIN32Dialog(); dlg2.loadResource("resource.dll", "INNER2"); dlg.show(SW_HIDE); selectTab(IDC_TAB, dlg2); // 切り替え // onNotify で notify->code == TCN_SELCHANGE かつ notify->idFrom == IDC_TAB の場合にユーザーによるタブの切り替え // getCurSel(tab_id) でタブの番号を取得し、対応するダイアログを SW_SHOW、それ以外を SW_HIDE する // タブ番号と対応するダイアログは自分で管理すること ※ dlg,dlg2 の open は selectTab されたときに行われるので、show(SW_HIDE) するときは isValid で open されているか確認のこと  )<br />
+<a class="jump" href="func_WIN32Dialog_insertTab.html">insertTab</a> (タブコントロールを利用する. )<br />
 <a class="jump" href="func_WIN32Dialog_invalidateRect.html">invalidateRect</a> (InvalidateRect のラッパー )<br />
 <a class="jump" href="func_WIN32Dialog_loadResource.html">loadResource</a> (ダイアログリソースを読み込む )<br />
 <a class="jump" href="func_WIN32Dialog_makeTemplate.html">makeTemplate</a> (ダイアログテンプレートを生成する )<br />
@@ -49,7 +49,7 @@
 <a class="jump" href="func_WIN32Dialog_open.html">open</a> (ダイアログを開く )<br />
 <a class="jump" href="func_WIN32Dialog_openProgress.html">openProgress</a> (プログレスダイアログを表示する )<br />
 <a class="jump" href="func_WIN32Dialog_openPropertySheet.html">openPropertySheet</a> (static )<br />
-<a class="jump" href="func_WIN32Dialog_propSheetMessage.html">propSheetMessage</a> ( )<br />
+<a class="jump" href="func_WIN32Dialog_propSheetMessage.html">propSheetMessage</a> (PSM_* メッセージをプロパティシートウィンドウに送信する )<br />
 <a class="jump" href="func_WIN32Dialog_selectTab.html">selectTab</a> ( )<br />
 <a class="jump" href="func_WIN32Dialog_sendItemMessage.html">sendItemMessage</a> (SendDlgItemMessage のラッパー )<br />
 <a class="jump" href="func_WIN32Dialog_setItemBitmap.html">setItemBitmap</a> (アイテムにBitmapを設定する )<br />
@@ -59,7 +59,7 @@
 <a class="jump" href="func_WIN32Dialog_setItemPos.html">setItemPos</a> (アイテムの位置・大きさを変更・取得する )<br />
 <a class="jump" href="func_WIN32Dialog_setItemSize.html">setItemSize</a> ( )<br />
 <a class="jump" href="func_WIN32Dialog_setItemText.html">setItemText</a> ( )<br />
-<a class="jump" href="func_WIN32Dialog_setMessageResult.html">setMessageResult</a> (< PSM_* メッセージをプロパティシートウィンドウに送信する )<br />
+<a class="jump" href="func_WIN32Dialog_setMessageResult.html">setMessageResult</a> (DWL_MSGRESULTの値を設定する )<br />
 <a class="jump" href="func_WIN32Dialog_setPos.html">setPos</a> (ダイアログ座標を設定 )<br />
 <a class="jump" href="func_WIN32Dialog_setScrollInfo.html">setScrollInfo</a> (ScrollInfo の設定 )<br />
 <a class="jump" href="func_WIN32Dialog_setSize.html">setSize</a> (ダイアログの大きさを設定 )<br />
@@ -69,16 +69,53 @@
 <dd>
 <a class="jump" href="prop_WIN32Dialog_height.html">height</a> ( )<br />
 <a class="jump" href="prop_WIN32Dialog_HWND.html">HWND</a> (ダイアログのウィンドウハンドル )<br />
-<a class="jump" href="prop_WIN32Dialog_icon.html">icon</a> (ダイアログのアイコン画像 WIN32Dialog.Bitmapクラスのインスタンス:その画像 null:実行ファイルのアイコン void:アイコンなし )<br />
+<a class="jump" href="prop_WIN32Dialog_icon.html">icon</a> (ダイアログのアイコン画像 )<br />
 <a class="jump" href="prop_WIN32Dialog_isValid.html">isValid</a> (ダイアログを open しているかどうか )<br />
-<a class="jump" href="prop_WIN32Dialog_left.html">left</a> (ダイアログサイズの取得 読み取り専用。サイズの変更はできないので注意 )<br />
-<a class="jump" href="prop_WIN32Dialog_modeless.html">modeless</a> (モードレスダイアログ用のフラグ trueならばモードレス状態でダイアログを開きます。 モードレスではダイアログのstyleにWS_VISIBLEを指定しない場合は open()時に自動で表示されないので注意してください。 )<br />
-<a class="jump" href="prop_WIN32Dialog_progress.html">progress</a> (< プログレスダイアログを閉じる )<br />
-<a class="jump" href="prop_WIN32Dialog_progressCanceled.html">progressCanceled</a> (< プログレスバーを更新する（0-100の数値 or 負数の場合マーキー状態の速度） )<br />
-<a class="jump" href="prop_WIN32Dialog_progressValue.html">progressValue</a> (< プログレス状態かどうか )<br />
-<a class="jump" href="prop_WIN32Dialog_propsheet.html">propsheet</a> (< DWL_MSGRESULTの値を設定する )<br />
+<a class="jump" href="prop_WIN32Dialog_left.html">left</a> (ダイアログサイズの取得 )<br />
+<a class="jump" href="prop_WIN32Dialog_modeless.html">modeless</a> (モードレスダイアログ用のフラグ )<br />
+<a class="jump" href="prop_WIN32Dialog_progress.html">progress</a> (プログレス状態かどうか )<br />
+<a class="jump" href="prop_WIN32Dialog_progressCanceled.html">progressCanceled</a> (プログレスがキャンセルされたかどうか（※対象ボタンはIDCANCEL固定） )<br />
+<a class="jump" href="prop_WIN32Dialog_progressValue.html">progressValue</a> (プログレスバーを更新する（0-100の数値 or 負数の場合マーキー状態の速度） )<br />
+<a class="jump" href="prop_WIN32Dialog_propsheet.html">propsheet</a> (プロパティシートとして表示中かどうか )<br />
 <a class="jump" href="prop_WIN32Dialog_top.html">top</a> ( )<br />
 <a class="jump" href="prop_WIN32Dialog_width.html">width</a> ( )<br />
+</dd>
+<dt>定数</dt>
+<dd>
+BM_ (Button Control Messages )<br />
+BN_ (User Button Notification Codes )<br />
+BS_ (Button Control Styles )<br />
+CB_ (Combo Box messages )<br />
+CB_ (Combo Box return Values )<br />
+CBN_ (Combo Box Notification Codes )<br />
+CBS_ (Combo Box styles )<br />
+DLG_ (Dialog Codes )<br />
+DM_ (Dialog Control Messages )<br />
+DS_ (Dialog Styles )<br />
+EC_ (Edit control EM_SETMARGIN parameters )<br />
+EM_ (Edit Control Messages )<br />
+EN_ (Edit Control Notification Codes )<br />
+ES_ (Edit Control Styles )<br />
+FW_ (Font Weights )<br />
+ICC_ (InitCommonControlsEx parameters )<br />
+ID (Dialog Box Command IDs )<br />
+LB_ (Listbox Return Values )<br />
+LBN_ (Listbox Notification Codes )<br />
+LBS_ (Listbox Styles )<br />
+MB_ (MessageBox arguments )<br />
+PSM_ ( )<br />
+PSN_ (PropertySheet notifications/messages )<br />
+SB_ (Scroll bar option )<br />
+SBM_ (Scroll bar messages )<br />
+SBS_ (Scroll Bar Styles )<br />
+SIF_ ( )<br />
+SS_ (Static Control Constants )<br />
+STM_ (Static Control Mesages )<br />
+SW_ (ShowWindow options )<br />
+TCN_ (TabControl messages )<br />
+WB_ (EDITWORDBREAKPROC code values )<br />
+WS_ (Window Styles )<br />
+WS_EX_ ( )<br />
 </dd>
 </dl>
 </div>

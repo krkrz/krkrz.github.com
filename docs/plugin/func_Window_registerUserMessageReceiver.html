@@ -25,9 +25,9 @@
 <td>ユーザデータパラメータ</td></tr>
 </table></dd>
 <dt>戻り値</dt>
-<dd>登録されたメッセージ番号を返す\n\n※TJS2 から関数を登録した場合（typeof proc == Object の場合)\nfunction receiver(userdata, wparam, lparam)\nの形式のファンクションであるとみなされます。\nこの時、userdata は渡した値そのままを、\nwparam, lparam は元メッセージのデータから整数にキャストした値を渡します。\n\n※TJS2 から文字列を登録した場合 (typeof proc == String の場合)\n該当オブジェクトの指定された文字列の関数を function name(userdata, wparam, lparam)\nの引数で呼びだします\n\n※プラグイン側から関数を登録する場合 (typeof proc == Integer の場合)\nstatic bool __stdcall receiver(iTJSDispatch2 *winobj, void *userdata, tTVPWindowMessage *Message)\nであるとみなされます。設定時は整数にキャストしてください。\nwinobj は該当するウインドウのオブジェクトです\nuserdata は整数にキャストした値でひきわたされます。</dd>
+<dd>登録されたメッセージ番号を返す</dd>
 <dt>説明</dt>
-<dd></dd>
+<dd>※TJS2 から関数を登録した場合（typeof proc == Object の場合)<br />function receiver(userdata, wparam, lparam)<br />の形式のファンクションであるとみなされます。<br />この時、userdata は渡した値そのままを、<br />wparam, lparam は元メッセージのデータから整数にキャストした値を渡します。<br /><br />※TJS2 から文字列を登録した場合 (typeof proc == String の場合)<br />該当オブジェクトの指定された文字列の関数を function name(userdata, wparam, lparam)<br />の引数で呼びだします<br /><br />※プラグイン側から関数を登録する場合 (typeof proc == Integer の場合)<br />static bool __stdcall receiver(iTJSDispatch2 *winobj, void *userdata, tTVPWindowMessage *Message)<br />であるとみなされます。設定時は整数にキャストしてください。<br />winobj は該当するウインドウのオブジェクトです<br />userdata は整数にキャストした値でひきわたされます。</dd>
 </dl>
 </div>
 </body>

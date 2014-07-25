@@ -2,11 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
-<title>HttpRequest - HttpRequestクラス HTTP/HTTPS による非同期通信機能を提供します。 ファイルの送受信処理はバックグラウンド実行されます。</title>
+<title>HttpRequest - HttpRequestクラス</title>
 </head>
 <body>
 <h1><a name="top" id="top">HttpRequest</a></h1>
-<div class="para"></div>
+<div class="para">HTTP/HTTPS による非同期通信機能を提供します。<br />ファイルの送受信処理はバックグラウンド実行されます。</div>
 <h1>メンバ</h1><div class="para">
 <dl>
 <dt>コンストラクタ</dt>
@@ -19,21 +19,29 @@
 <a class="jump" href="func_HttpRequest_getResponseText.html">getResponseText</a> (レスポンスをテキストの形で取得 )<br />
 <a class="jump" href="func_HttpRequest_onProgress.html">onProgress</a> (データ送受信イベント )<br />
 <a class="jump" href="func_HttpRequest_onReadyStateChange.html">onReadyStateChange</a> (readyState が変化した場合のイベント )<br />
-<a class="jump" href="func_HttpRequest_open.html">open</a> (指定したメソッドで指定URLにリクエストする ※常に非同期での呼び出しになります )<br />
-<a class="jump" href="func_HttpRequest_send.html">send</a> (リクエストの送信。送信処理は非同期実行されます。 エラー時も例外は発生しませんので、readyState と status で判定してください。 )<br />
-<a class="jump" href="func_HttpRequest_sendStorage.html">sendStorage</a> (リクエストの送信。送受信は非同期実行されます。 エラー時も例外は発生しませんので、readyState と status で判定してください。 )<br />
+<a class="jump" href="func_HttpRequest_open.html">open</a> (指定したメソッドで指定URLにリクエストする )<br />
+<a class="jump" href="func_HttpRequest_send.html">send</a> (リクエストの送信。送信処理は非同期実行されます。 )<br />
+<a class="jump" href="func_HttpRequest_sendStorage.html">sendStorage</a> (リクエストの送信。送受信は非同期実行されます。 )<br />
 <a class="jump" href="func_HttpRequest_setRequestHeader.html">setRequestHeader</a> (送信時に送られるヘッダーを追加する )<br />
 </dd>
 <dt>プロパティ</dt>
 <dd>
-<a class="jump" href="prop_HttpRequest_contentLength.html">contentLength</a> (レスポンスの Content-Length ヘッダに無い場合はファイルダウンロード完了後にサイズ確定します。 )<br />
+<a class="jump" href="prop_HttpRequest_contentLength.html">contentLength</a> (レスポンスの Content-Length )<br />
 <a class="jump" href="prop_HttpRequest_contentType.html">contentType</a> (レスポンスの Content-Type (エンコーディング指定は含まない) )<br />
-<a class="jump" href="prop_HttpRequest_contentTypeEncoding.html">contentTypeEncoding</a> (レスポンスの Content-Type のエンコード指定 ヘッダの指定が優先されますが、未指定、かつ受信データが text/html の場合は ファイル冒頭にある META 指定も参照します。 )<br />
+<a class="jump" href="prop_HttpRequest_contentTypeEncoding.html">contentTypeEncoding</a> (レスポンスの Content-Type のエンコード指定 )<br />
 <a class="jump" href="prop_HttpRequest_readyState.html">readyState</a> (通信状態。読み込み専用 )<br />
 <a class="jump" href="prop_HttpRequest_response.html">response</a> (レスポンス。読み込み専用。 )<br />
 <a class="jump" href="prop_HttpRequest_responseData.html">responseData</a> (レスポンス｡読み込み専用 )<br />
 <a class="jump" href="prop_HttpRequest_status.html">status</a> (レスポンスの HTTPステータスコード。読み込み専用 )<br />
 <a class="jump" href="prop_HttpRequest_statusText.html">statusText</a> (レスポンスの HTTPステータスの文字列 )<br />
+</dd>
+<dt>定数</dt>
+<dd>
+LOADED (readyState 読み込み完了 )<br />
+OPEN (readyState 処理開始 )<br />
+RECEIVING (readyState 受信中 )<br />
+SENT (readyState リクエスト送信 )<br />
+UNINITIALIZED (readyState 初期状態 )<br />
 </dd>
 </dl>
 </div>

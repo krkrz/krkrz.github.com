@@ -32,12 +32,12 @@
 <tr><td valign="top"><span class="argname">swidth</span></td>
 <td>コピー元の矩形の横幅。ピクセル単位。小数点指定不可。</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>コピー元の矩形の縦幅。ピクセル単位。小数点指定不可。<br /><br />拡大される（dwidth > swidth || dheight > sheight）場合はエラー。<br />縮小アルゴリズムは面積平均法。1/2以下の縮小で affineCopyより高品質。<br />stretchCopyと違い Layer.face, holdAlpha は無視。<br /><br />※透明と不透明の境目の部分で偽色（完全透明部分の裏にある色）が出ることがあるので<br />あらかじめ layerExSave.dll の Layer.oozeColor() などを使っておくことを推奨</td></tr>
+<td>コピー元の矩形の縦幅。ピクセル単位。小数点指定不可。</td></tr>
 </table></dd>
 <dt>戻り値</dt>
 <dd>なし (void)</dd>
 <dt>説明</dt>
-<dd></dd>
+<dd>拡大される（dwidth > swidth || dheight > sheight）場合はエラー。<br />縮小アルゴリズムは面積平均法。1/2以下の縮小で affineCopyより高品質。<br />stretchCopyと違い Layer.face, holdAlpha は無視。<br /><br />※透明と不透明の境目の部分で偽色（完全透明部分の裏にある色）が出ることがあるので<br />あらかじめ layerExSave.dll の Layer.oozeColor() などを使っておくことを推奨</dd>
 </dl>
 </div>
 </body>

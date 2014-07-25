@@ -18,12 +18,12 @@
 <tr><td valign="top"><span class="argname">active</span></td>
 <td>0:非アクティブ化 1:マウスクリック以外でアクティブ化 2:マウスクリックでアクティブ化</td></tr>
 <tr><td valign="top"><span class="argname">minimize</span></td>
-<td>0:ウィンドウは最小化されていない それ以外:最小化されている<br /><br />※Window.onActivate や Window.onDeactivate と違うのは、（これは拡張イベント全般に言えることだが）<br />System.eventDisabled == true でもイベントコールバックが飛んでくるという点<br /><br />例えば System.onDeactivate 時に System.eventDisabled=true（こうすると System.onActivateは<br />飛んでこない）にして，このイベント通知で復帰させると「非アクティブ時に動作停止」といった機能を<br />追加できるかもしれない（ただしこれはイベントを配信停止するだけなので，前との時間差を見るような<br />タイマーを使ったアプリではあまり意味が無い）<br />なお，System.eventDisabled=true 時は画面更新すら走らないので，他のウィンドウを上にするなどして<br />WM_PAINT が発生すると画面が崩れる問題がある（後述の OverlayBitmap を使うなどする）</td></tr>
+<td>0:ウィンドウは最小化されていない それ以外:最小化されている</td></tr>
 </table></dd>
 <dt>戻り値</dt>
 <dd>なし (void)</dd>
 <dt>説明</dt>
-<dd></dd>
+<dd>※Window.onActivate や Window.onDeactivate と違うのは、（これは拡張イベント全般に言えることだが）<br />System.eventDisabled == true でもイベントコールバックが飛んでくるという点<br /><br />例えば System.onDeactivate 時に System.eventDisabled=true（こうすると System.onActivateは<br />飛んでこない）にして，このイベント通知で復帰させると「非アクティブ時に動作停止」といった機能を<br />追加できるかもしれない（ただしこれはイベントを配信停止するだけなので，前との時間差を見るような<br />タイマーを使ったアプリではあまり意味が無い）<br />なお，System.eventDisabled=true 時は画面更新すら走らないので，他のウィンドウを上にするなどして<br />WM_PAINT が発生すると画面が崩れる問題がある（後述の OverlayBitmap を使うなどする）</dd>
 </dl>
 </div>
 </body>
