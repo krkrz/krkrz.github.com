@@ -13,6 +13,7 @@
 <div class="content">
 <div class="title_bar"><a name="download">ダウンロード</a></div>
 <ul>
+	<li><a href="./download/krkrz_20140803.zip">krkrz_20140803.zip (1.1.0.2)</a></li>
 	<li><a href="./download/krkrz_20131231.zip">krkrz_20131231.zip (1.0.0.1)</a></li>
 	<li><a href="./download/krkrz_20131224.zip">krkrz_20131224.zip (β9)</a></li>
 	<li><a href="./download/krkrz_20131216.zip">krkrz_20131216.zip (β8)</a></li>
@@ -33,6 +34,44 @@
 <br />
 <div class="title_bar"><a name="revision">更新履歴</a></div>
 <dl>
+	<dt>2014/08/03 1.1.0.2 リリース</dt>
+	<dd>
+		UTF-8 BOM付きに対応。<br />
+		正規表現の*などで空文字にマッチしてreplaceで無限ループなってしまう問題を修正。<br />
+		System.savedGamesPath の追加と-datapathの$(savedgamespath)に対応。<br />
+		Window に親がある場合のウィンドウスタイルの調整。<br />
+		-aboutのダイアログを表示するTJS側のインターフェースSystem.showVersion()を追加。<br />
+		setZoomされたウィンドウのレイヤタッチ座標がおかしいのを修正。<br />
+		JPEG XR 読み込みのサポート。<br />
+		ヒントを表示しているレイヤーでヒントメッセージを変更してもイベントが発生しないのを修正。<br />
+		XP 非サポート化。<br />
+		PreMonitor DPI有効としたマニフェストを追加。<br />
+		フリック等のためにマウスとタッチの速度計測機能追加。<br />
+		例外発生ファイルのパスをStorages.addAutoPathしてあるフォルダであれば%filepath%で正しく取得できるように修正。<br />
+		TJS2 で型指定文法を許容するように対応。<br />
+		Bitmap クラスを内部で生成しやすいよう対応、BitmapLayerTreeOwner クラスの追加。<br />
+		LayerTreeOwner (Window抽象化)対応。<br />
+		タッチ座標がスクリーン座標になっていたのをクライアント座標に修正。<br />
+		画面の回転に対応。<br />
+		TVPGetFunctionExporter を公開関数から削除。 <br />
+		System.dumpHeap() 追加。 <br />
+		鬼車関連で公開関数となっていたものを非公開に修正。 <br />
+		LFHサポート追加。 <br />
+		非同期読込み時のキャッシュ処理が期待通り機能していなかったので修正。<br />
+		非同期読込み時のメモリコピーを減らして高速化(このために排他処理追加)。
+		ビットマップメモリ確保方式を指定可能に。 <br />
+		タグ情報のない画像を非同期で読み込んだ時にアクセス違反が発生していたのを修正。<br />
+		マウスカーソル変更チェック処理で、内部カーソル番号と配列インデックスの変換が正しく行われていなかったので修正。 <br />
+		Layerの各種コピーメソッドのsrcにBitmapオブジェクトも指定可能に。<br />
+		menu.dll Window.menu.visible の更新処理を修正。<br />
+		menu.dll MenuItem.shortcutが設定されたアイテムにショートカット名が表示されない問題を修正。<br />
+		menu.dll MenuItem.onClick のイベント配信優先順位変更。<br />
+		menu.dll 親のないradioなMenuItemでcheckedが正しく機能しないのを修正。<br />
+		menu.dll MenuItem.index の変更で AccessViolation が発生するのを修正。<br />
+		menu.dll セパレートライン("-")の　MenuItem の caption プロパティの値が空文字になる問題を修正。<br />
+		<br />
+	</dd>
+
 	<dt>2013/12/31 1.0.0.1 リリース</dt>
 	<dd>
 		MouseLeave以外のマウスメッセージでMouseEnterが発生するように修正。<br />
