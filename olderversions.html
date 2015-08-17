@@ -13,6 +13,7 @@
 <div class="content">
 <div class="title_bar"><a name="download">ダウンロード</a></div>
 <ul>
+	<li><a href="./download/krkrz_20150817.zip">krkrz_20150817.zip (1.2.0.3)</a></li>
 	<li><a href="./download/krkrz_20140803.zip">krkrz_20140803.zip (1.1.0.2)</a></li>
 	<li><a href="./download/krkrz_20131231.zip">krkrz_20131231.zip (1.0.0.1)</a></li>
 	<li><a href="./download/krkrz_20131224.zip">krkrz_20131224.zip (β9)</a></li>
@@ -34,6 +35,26 @@
 <br />
 <div class="title_bar"><a name="revision">更新履歴</a></div>
 <dl>
+	<dt>2015/08/17 1.2.0.3 リリース</dt>
+	<dd>
+		動画再生に vomMFEVR モード追加、H.264 の再生に対応。<br />
+		Theora の再生に対応。<br />
+		xp3 のシーク不具合修正。<br />
+		デフォルトフォント名がストックフォント名の場合、システムからフォントを取得して、そのフォント名をデフォルトとするように変更。<br />
+		コマンドラインで-deffont指定がある場合、そのフォント名をデフォルトとするように変更。<br />
+		バイナリDic/Array読み込みメモリリーク修正。<br />
+		同一レイヤーでディレイ期間内に同じヒントメッセージを設定するとUpdateHintが呼ばれなくなるのを修正。<br />
+		タッチイベント無効時のイベント処理(デグレ)修正。<br />
+		-printdatapathが正しく出力されるように修正。<br />
+		Math.random()の範囲が[0,1]になっていたのを[0,1)に修正。<br />
+		Math.random()でXorshiftを使うように変更。<br />
+		アプリケーションのActivate/Deactivate判定処理を修正。<br />
+		RegExpのmatches, lastMatch, lastParenの値が正しく更新されるように修正。<br />
+		非クライアント領域や別のウィンドウ上でWindow.hideMouseCursor()が機能してしまう不具合修正。<br />
+		Window.enableTouch=true時にペンデバイスでイベントが来ない問題を修正。<br />
+		スクリプトデバッガで表示出来ない文字を〓で表示し、UTF-8 で表示出来ない問題を修正。<br />
+		<br />
+	</dd>
 	<dt>2014/08/03 1.1.0.2 リリース</dt>
 	<dd>
 		UTF-8 BOM付きに対応。<br />
