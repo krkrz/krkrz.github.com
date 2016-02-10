@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>KListItem - リストアイテム</title>
+</head>
+<body>
+<h1><a name="top" id="top">KListItem</a></h1>
+<div class="para"></div>
+<h1>メンバ</h1><div class="para">
+<dl>
+<dt>コンストラクタ</dt>
+<dd><a class="jump" href="func_KListItem_KListItem.html">KListItem</a></dd>
+<dt>メソッド</dt>
+<dd>
+<a class="jump" href="func_KListItem_add.html">add</a> (子アイテムを追加する )<br />
+<a class="jump" href="func_KListItem_beginDragPacket.html">beginDragPacket</a> (パケットのドラッグ開始 )<br />
+<a class="jump" href="func_KListItem_bindPersistentDictionary.html">bindPersistentDictionary</a> (永続化辞書をバインドする )<br />
+<a class="jump" href="func_KListItem_calcLabelSize.html">calcLabelSize</a> ( )<br />
+<a class="jump" href="func_KListItem_childAt.html">childAt</a> (子アイテムを参照する )<br />
+<a class="jump" href="func_KListItem_clearAllSelection.html">clearAllSelection</a> (全選択状態をリセット )<br />
+<a class="jump" href="func_KListItem_defaultKeyDownFunc.html">defaultKeyDownFunc</a> (各種ウィジェットイベントフック関数。 引数の詳細は KWidgetを参照されたし )<br />
+<a class="jump" href="func_KListItem_finalize.html">finalize</a> (ファイナライザ )<br />
+<a class="jump" href="func_KListItem_find.html">find</a> (子孫アイテムから特定の名前を持った子ウィジェットを捜す )<br />
+<a class="jump" href="func_KListItem_focus.html">focus</a> (アイテムを「フォーカス」状態にする )<br />
+<a class="jump" href="func_KListItem_getChildInsertionX.html">getChildInsertionX</a> ( )<br />
+<a class="jump" href="func_KListItem_getChildInsertionY.html">getChildInsertionY</a> ( )<br />
+<a class="jump" href="func_KListItem_getChildPacketInsertionHierarchyList.html">getChildPacketInsertionHierarchyList</a> (自分の次の位置にD&Dで挿入可能な階層のリスト )<br />
+<a class="jump" href="func_KListItem_iconIndexAt.html">iconIndexAt</a> (アイコンインデックスを特定 )<br />
+<a class="jump" href="func_KListItem_iconLayerAt.html">iconLayerAt</a> (アイコンレイヤ )<br />
+<a class="jump" href="func_KListItem_inIcon.html">inIcon</a> ( )<br />
+<a class="jump" href="func_KListItem_inLabel.html">inLabel</a> ( )<br />
+<a class="jump" href="func_KListItem_inMarking.html">inMarking</a> ( )<br />
+<a class="jump" href="func_KListItem_insert.html">insert</a> (子アイテムを挿入する )<br />
+<a class="jump" href="func_KListItem_inToggle.html">inToggle</a> ( )<br />
+<a class="jump" href="func_KListItem_invalidateNodeEnability.html">invalidateNodeEnability</a> ( )<br />
+<a class="jump" href="func_KListItem_isAcceptRename.html">isAcceptRename</a> (ラベルにリネーム許可を与えるか判定する  renameAsUserInput を使ったリネーム時に、 指定された名前を受け入れていいかどうかを判定する ユーザー定義関数。 デフォルトの実装では常にtrueを返す )<br />
+<a class="jump" href="func_KListItem_isAncestorOf.html">isAncestorOf</a> (祖先であるかどうか判定 )<br />
+<a class="jump" href="func_KListItem_isChildPacketAcceptable.html">isChildPacketAcceptable</a> (子パケット受け入れ可能 )<br />
+<a class="jump" href="func_KListItem_isDescendantOf.html">isDescendantOf</a> (子孫であるかどうか判定 )<br />
+<a class="jump" href="func_KListItem_isPacketAcceptable.html">isPacketAcceptable</a> (パケットの受け入れ判定 )<br />
+<a class="jump" href="func_KListItem_locate.html">locate</a> (位置設定 )<br />
+<a class="jump" href="func_KListItem_missing.html">missing</a> (子孫アイテムから特定の名前を持った子ウィジェットを捜します  find関数を経由せずに、オブジェクトのプロパティ扱いで名前を指定して 子孫アイテム中のウィジェットを参照することが出来ます。  パフォーマンスの都合で、グローバルに同名のシンボルが存在する場合は 優先的にそちらを見に行くという挙動をするので注意。 )<br />
+<a class="jump" href="func_KListItem_onBlur.html">onBlur</a> (アイテムが非フォーカス状態になった時に呼ばれるフック関数 デフォルト動作では、旧仕様互換のため、onDeselect() を呼ぶ。 )<br />
+<a class="jump" href="func_KListItem_onChildPacketDrop.html">onChildPacketDrop</a> (子パケットドロップ )<br />
+<a class="jump" href="func_KListItem_onChildPacketEnter.html">onChildPacketEnter</a> ( )<br />
+<a class="jump" href="func_KListItem_onChildPacketLeave.html">onChildPacketLeave</a> ( )<br />
+<a class="jump" href="func_KListItem_onChildPacketMove.html">onChildPacketMove</a> ( )<br />
+<a class="jump" href="func_KListItem_onChildValueModified.html">onChildValueModified</a> (子ウィジェットの「値」が変わった時に呼ばれるフック関数  子ウィジェットの「値」値が変更された時に呼ばれます。 デフォルトでは、さらに parent の onChildValueModifiedを呼ぶように設定されています。 どこかのウィジェットが関数をオーバーライドして処理を行わない限り、 値変更の通知は KWindow まで届きます。 )<br />
+<a class="jump" href="func_KListItem_onClick.html">onClick</a> (左クリック )<br />
+<a class="jump" href="func_KListItem_onDescendantBlur.html">onDescendantBlur</a> ((自分を含む)子孫アイテムがフォーカス状態になった時に呼ばれるフック関数 デフォルト動作では、旧仕様互換のため、onDesecndantDeselect() を呼ぶ。 )<br />
+<a class="jump" href="func_KListItem_onDescendantDeselect.html">onDescendantDeselect</a> ( )<br />
+<a class="jump" href="func_KListItem_onDescendantFocus.html">onDescendantFocus</a> ((自分を含む)子孫アイテムがフォーカス状態になった時に呼ばれるフック関数 デフォルト動作では、旧仕様互換のため、onDesecndantSelect() を呼ぶ。 )<br />
+<a class="jump" href="func_KListItem_onDescendantSelect.html">onDescendantSelect</a> ( )<br />
+<a class="jump" href="func_KListItem_onDeselect.html">onDeselect</a> ( )<br />
+<a class="jump" href="func_KListItem_onDoubleClick.html">onDoubleClick</a> ( )<br />
+<a class="jump" href="func_KListItem_onDragEnter.html">onDragEnter</a> (ドラッグエンター )<br />
+<a class="jump" href="func_KListItem_onDragLeave.html">onDragLeave</a> (ドラッグリーブ )<br />
+<a class="jump" href="func_KListItem_onDragMove.html">onDragMove</a> (ドラッグムーブ )<br />
+<a class="jump" href="func_KListItem_onDraw.html">onDraw</a> ( )<br />
+<a class="jump" href="func_KListItem_onFocus.html">onFocus</a> (アイテムがフォーカス状態になった時に呼ばれるフック関数 デフォルト動作では、旧仕様互換のため、onSelect() を呼ぶ。 )<br />
+<a class="jump" href="func_KListItem_onIconClick.html">onIconClick</a> (アイコンが押された時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KListItem_onKeyDown.html">onKeyDown</a> (キーダウン )<br />
+<a class="jump" href="func_KListItem_onKeyPress.html">onKeyPress</a> (キー反応 )<br />
+<a class="jump" href="func_KListItem_onMouseDown.html">onMouseDown</a> (マウスダウン )<br />
+<a class="jump" href="func_KListItem_onMouseEnter.html">onMouseEnter</a> (マウスエンター )<br />
+<a class="jump" href="func_KListItem_onMouseLeave.html">onMouseLeave</a> (マウスリーブ )<br />
+<a class="jump" href="func_KListItem_onMouseMove.html">onMouseMove</a> (マウスムーブ )<br />
+<a class="jump" href="func_KListItem_onMouseUp.html">onMouseUp</a> (マウスアップ )<br />
+<a class="jump" href="func_KListItem_onNodeDisabled.html">onNodeDisabled</a> ( )<br />
+<a class="jump" href="func_KListItem_onNodeEnabled.html">onNodeEnabled</a> ( )<br />
+<a class="jump" href="func_KListItem_onPacketCancel.html">onPacketCancel</a> (パケットキャンセル )<br />
+<a class="jump" href="func_KListItem_onPacketDrop.html">onPacketDrop</a> (パケットドロップ )<br />
+<a class="jump" href="func_KListItem_onPacketEnter.html">onPacketEnter</a> (パケット侵入 )<br />
+<a class="jump" href="func_KListItem_onPacketLeave.html">onPacketLeave</a> (パケット離脱 )<br />
+<a class="jump" href="func_KListItem_onPacketMove.html">onPacketMove</a> (パケットムーブ )<br />
+<a class="jump" href="func_KListItem_onRename.html">onRename</a> (リネーム時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KListItem_onRightClick.html">onRightClick</a> (右クリック )<br />
+<a class="jump" href="func_KListItem_onSelect.html">onSelect</a> ( )<br />
+<a class="jump" href="func_KListItem_onValueModified.html">onValueModified</a> (「値」が変わった時に呼ばれるフック関数  「値」を持つウィジェットで、値が変更された時に呼ばれます。 デフォルトでは、parent の onChildValueModifiedを呼ぶように設定されています。 )<br />
+<a class="jump" href="func_KListItem_openDescendants.html">openDescendants</a> (子孫アイテムをまとめて開く )<br />
+<a class="jump" href="func_KListItem_redraw.html">redraw</a> ( )<br />
+<a class="jump" href="func_KListItem_remove.html">remove</a> (子アイテムを削除する )<br />
+<a class="jump" href="func_KListItem_removeAll.html">removeAll</a> (子アイテムを全て削除する )<br />
+<a class="jump" href="func_KListItem_removeSelf.html">removeSelf</a> (自分自身を削除する )<br />
+<a class="jump" href="func_KListItem_rename.html">rename</a> (ラベルをリネームする  引数 labelを指定すると、ラベル変更後に onRename 関数が呼ばれる。 (ラベル変更後にフックをかける仕組) )<br />
+<a class="jump" href="func_KListItem_renameAsUserInput.html">renameAsUserInput</a> (ユーザーに値を入力させてラベルをリネームする (F2を押した時と同様の動作) )<br />
+<a class="jump" href="func_KListItem_requireOpenNotice.html">requireOpenNotice</a> ( )<br />
+<a class="jump" href="func_KListItem_requireReconstruct.html">requireReconstruct</a> (再構築を要求 )<br />
+<a class="jump" href="func_KListItem_requireRelocate.html">requireRelocate</a> (再配置を要求 )<br />
+<a class="jump" href="func_KListItem_select.html">select</a> (旧仕様との互換性のためのダミー関数群 )<br />
+<a class="jump" href="func_KListItem_updateIconLayerList.html">updateIconLayerList</a> ( )<br />
+<a class="jump" href="func_KListItem_updateSize.html">updateSize</a> ( )<br />
+</dd>
+<dt>プロパティ</dt>
+<dd>
+<a class="jump" href="prop_KListItem_ancestors.html">ancestors</a> (祖先アイテム一覧 )<br />
+<a class="jump" href="prop_KListItem_backgroundColor.html">backgroundColor</a> (背景カラー )<br />
+<a class="jump" href="prop_KListItem_childCount.html">childCount</a> (子アイテムをカウントする )<br />
+<a class="jump" href="prop_KListItem_className.html">className</a> (クラス名 )<br />
+<a class="jump" href="prop_KListItem_classTrees.html">classTrees</a> (クラスツリー )<br />
+<a class="jump" href="prop_KListItem_depth.html">depth</a> (depth )<br />
+<a class="jump" href="prop_KListItem_descendants.html">descendants</a> (子孫アイテム一覧 )<br />
+<a class="jump" href="prop_KListItem_draggable.html">draggable</a> (ドラッグ可能？ )<br />
+<a class="jump" href="prop_KListItem_droppable.html">droppable</a> (ドロップ可能？ )<br />
+<a class="jump" href="prop_KListItem_droppable.html">droppable</a> (ドロップ可能？ )<br />
+<a class="jump" href="prop_KListItem_enabled.html">enabled</a> (ノードの有効、無効の切り替え )<br />
+<a class="jump" href="prop_KListItem_focusable.html">focusable</a> (フォーカス可能？ )<br />
+<a class="jump" href="prop_KListItem_focused.html">focused</a> (フォーカスされているか？ )<br />
+<a class="jump" href="prop_KListItem_fontBold.html">fontBold</a> (フォントボールド )<br />
+<a class="jump" href="prop_KListItem_fontColor.html">fontColor</a> (フォントカラー )<br />
+<a class="jump" href="prop_KListItem_hasChild.html">hasChild</a> (子持ちかどうか判定する )<br />
+<a class="jump" href="prop_KListItem_hasIcon.html">hasIcon</a> ( )<br />
+<a class="jump" href="prop_KListItem_hint.html">hint</a> (ヒント )<br />
+<a class="jump" href="prop_KListItem_icon.html">icon</a> (アイコン  ラベルの前方に描画されるアイコンを設定する。 voidを設定するとアイコンは消去される。 アイコンがクリックされると onIconClick() が呼ばれる。 )<br />
+<a class="jump" href="prop_KListItem_iconClickable.html">iconClickable</a> (アイコンクリック可能？ )<br />
+<a class="jump" href="prop_KListItem_icons.html">icons</a> (アイコンリスト  ラベルの前方に描画されるアイコンを複数設定する。 設定したアイコンは左から順番に並んで表示される。 アイコンがクリックされると onIconClick() が呼ばれる。 onIconClickの引数でどのアイコンが押されたかを判別できる。 )<br />
+<a class="jump" href="prop_KListItem_index.html">index</a> (自分自身のインデックス  リストの何番目にいるか。 )<br />
+<a class="jump" href="prop_KListItem_isRecordOpenedToDictionary.html">isRecordOpenedToDictionary</a> (open状態を辞書に記録する？ )<br />
+<a class="jump" href="prop_KListItem_keyDownAvailable.html">keyDownAvailable</a> (キーダウン可能？ )<br />
+<a class="jump" href="prop_KListItem_label.html">label</a> (ラベル )<br />
+<a class="jump" href="prop_KListItem_labelEditable.html">labelEditable</a> (ラベルがリネーム可能かどうか )<br />
+<a class="jump" href="prop_KListItem_labelRect.html">labelRect</a> (ラベル矩形 )<br />
+<a class="jump" href="prop_KListItem_labelTextType.html">labelTextType</a> (ラベルのテキストタイプ  リネーム時に設定可能な テキストのタイプを TEXT_ANY, TEXT_DIGIT, TEXT_SYMBOL のいずれかより設定する )<br />
+<a class="jump" href="prop_KListItem_layer.html">layer</a> (旧仕様と互換性を保つためだけのダミープロパティ )<br />
+<a class="jump" href="prop_KListItem_lineSpacing.html">lineSpacing</a> (改行入りテキストを設定した場合の行間 )<br />
+<a class="jump" href="prop_KListItem_minLabelWidth.html">minLabelWidth</a> (ラベルの最小文字数  リネーム時に設定可能なラベルの最小文字数を設定する )<br />
+<a class="jump" href="prop_KListItem_multipleSelection.html">multipleSelection</a> (マルチセレンクション？ )<br />
+<a class="jump" href="prop_KListItem_nextDrawItem.html">nextDrawItem</a> (ひとつ後の描画アイテム )<br />
+<a class="jump" href="prop_KListItem_nextFocusableDrawItem.html">nextFocusableDrawItem</a> (ひとつ後のフォーカス可能な描画アイテム )<br />
+<a class="jump" href="prop_KListItem_nextSibling.html">nextSibling</a> (ひとつ後のアイテム )<br />
+<a class="jump" href="prop_KListItem_nodeEnabled.html">nodeEnabled</a> ( )<br />
+<a class="jump" href="prop_KListItem_opened.html">opened</a> (子持ちの時のトグル状態を変更する )<br />
+<a class="jump" href="prop_KListItem_prevDrawItem.html">prevDrawItem</a> (ひとつ前の描画アイテム )<br />
+<a class="jump" href="prop_KListItem_prevFocusableDrawItem.html">prevFocusableDrawItem</a> (ひとつ前のフォーカス可能な描画アイテム )<br />
+<a class="jump" href="prop_KListItem_prevSibling.html">prevSibling</a> (ひとつ前のアイテム )<br />
+<a class="jump" href="prop_KListItem_rightClickable.html">rightClickable</a> (ライトクリック可能？ )<br />
+<a class="jump" href="prop_KListItem_root.html">root</a> (ルートアイテムを参照する )<br />
+<a class="jump" href="prop_KListItem_selected.html">selected</a> (そうでない場合は focused プロパティの値が反映される。 )<br />
+<a class="jump" href="prop_KListItem_size.html">size</a> (アイテムの縦幅  指定しないと、MList の fontHeight と spaceVertical から自動設定される )<br />
+<a class="jump" href="prop_KListItem_status.html">status</a> (ステータス )<br />
+<a class="jump" href="prop_KListItem_visible.html">visible</a> (アイテムの可視 )<br />
+<a class="jump" href="prop_KListItem_window.html">window</a> (windowを参照する )<br />
+</dd>
+</dl>
+</div>
+</body>
+</html>

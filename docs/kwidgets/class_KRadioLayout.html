@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>KRadioLayout - ラジオレイアウト  この中に含まれる「値」を持つ全ての子ウィジェットは、常に1つだけが 「選択」状態になる。子ウィジェットの持つ「名前」がラジオレイアウト の「値」に対応し、外からはラジオレイアウトが複数の「値」の状態を 持つ単一のウィジェットに見えるようになる。  なお、ラジオレイアウトは KGridLayout 継承クラスなので、普通にグリッド調に ウィジェットを配置してよい  @code var radioLayout = new KRadioLayout(window, "radio"); radioLayout.add(0, 0, new KCheckBox("Test1", 1)); radioLayout.add(0, 1, new KCheckBox("Test2", 2)); radioLayout.add(0, 2, new KCheckBox("Test3", 3)); @endcode</title>
+</head>
+<body>
+<h1><a name="top" id="top">KRadioLayout</a></h1>
+<div class="para"></div>
+<h1>メンバ</h1><div class="para">
+<dl>
+<dt>コンストラクタ</dt>
+<dd><a class="jump" href="func_KRadioLayout_KRadioLayout.html">KRadioLayout</a></dd>
+<dt>メソッド</dt>
+<dd>
+<a class="jump" href="func_KRadioLayout_bindPersistentDictionary.html">bindPersistentDictionary</a> (永続化辞書をバインドする )<br />
+<a class="jump" href="func_KRadioLayout_finalize.html">finalize</a> (ファイナライザ )<br />
+<a class="jump" href="func_KRadioLayout_invalidateValue.html">invalidateValue</a> (イベントを発生させ強制的に現在の値を通知する。  現在の値で onValueModifiedを呼びます。 )<br />
+<a class="jump" href="func_KRadioLayout_onChildValueModified.html">onChildValueModified</a> (子の値の更新通知をトラップする )<br />
+</dd>
+<dt>プロパティ</dt>
+<dd>
+<a class="jump" href="prop_KRadioLayout_value.html">value</a> (値 )<br />
+</dd>
+</dl>
+</div>
+</body>
+</html>

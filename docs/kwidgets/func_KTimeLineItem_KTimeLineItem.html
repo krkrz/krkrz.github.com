@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>KTimeLineItem - コンストラクタ</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">KTimeLineItem.KTimeLineItem</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>コンストラクタ</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_KTimeLineItem.html">KTimeLineItemクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">KTimeLineItem(<span class="arg">label</span>, <span class="arg">name</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="KTimeLineItemの引数">
+<tr><td valign="top"><span class="argname">label</span></td>
+<td>ラベル</td></tr>
+<tr><td valign="top"><span class="argname">name</span></td>
+<td>名前<br /><br />タイムラインアイテムを作成する。<br /><br />KTimeLineItem は KListItem を拡張したクラスで、<br />リストアイテムの全ての動作に加え、タイムラインごとのフレーム情報を<br />管理する機能を持っている。<br /><br />フレームは time, type, content の4つのフィールドを持つ<br />オブジェクトとして定義される。timeはフレームの開始時間、<br />content はユーザー定義のフレーム情報となる。<br />type はフレームの種別。以下の4種類のどれかとなる<br />- TIMELINE_FRAME_TYPE_NULL ヌルフレーム。フレームが存在しない領域として扱われる<br />- TIMELINE_FRAME_TYPE_SINGLE シングルフレーム。1単位だけ占有する連続しないフレーム<br />- TIMELINE_FRAME_TYPE_CONTINUOUS  連続フレーム。次のフレームまで連続する領域を占有するフレーム。<br />- TIMELINE_FRAME_TYPE_TWEEN 連続補完フレーム。次のフレームまで連続する領域を補完しながらつなぐフレーム。<br /><br />既存のフレームを参照するには以下の関数群を使う。<br />参照したフレームの内容を直接書き換えることでフレーム情報を上書き出来るが、<br />フレームオブジェクトはフレーム操作によって頻繁に更新されるので、<br />参照したフレームを長時間に渡って参照し続ける事は推奨しない。<br />編集する都度、参照するべきである。<br /><br />- frameCount フレーム数を参照する<br />- frameAt(index) フレームを参照する<br />- frameLengthAt(index) フレームの長さを参照する<br />- findFrame(time) 時間に対応したフレームのインデックスを得る。<br />- lastTime 末尾のフレームの時間を得る<br />- getCompleteFrameContent(time) 時間に対応したフレーム情報を計算する<br /><br />フレームを操作するには以下のフレーム操作関数群を使う。<br /><br />- insertKeyFrame(time, type) キーフレームを挿入する。<br />- deleteKeyFrame(time)       キーフレームを削除する。<br />- splitFrame(time)           フレームを分割する。<br />- deleteAllFrame()           全てのフレームを削除する。<br /><br />特定区間のフレームをコピ、ペーストするには以下の関数群を使う<br /><br />- copyFrameRange(beginTime, endTime) フレームをコピーする<br />- cutFrameRange(beginTime, endTime)  フレームをカットする<br />- pasteFrame(time, frameList)        フレームをペーストする<br /><br />フレーム操作関数を呼ぶと、必要に応じて以下の関数群が内部的に<br />呼び出される。ユーザーは、適切にこれらの関数を実装しておく必要がある。<br /><br />- tweenFrameContent(fromContent, toContent, ratio) フレーム間の補完を行う。<br /><br />フレームの補完計算を行うために以下の補完関数が用意されている。<br /><br />- tweenIntValue(fromValue, toValue, ratio) 整数をリニアに補完する<br /><br />また、フレームの見た目や挙動を設定する以下のプロパティ群が存在する。<br /><br />- singleFrameColor シングルフレームのBGカラーを設定する<br />- continuousFrameColor 連続フレームのBGカラーを設定する<br />- tweenFrameColor     補完フレームのBGカラーを設定する<br /><br />フレーム情報を変更したなどの理由でフレームの再描画が必要な時は以下の関数群を使う。<br /><br />- redrawFrameRange(fromTime, toTime) 指定範囲のフレームを再描画する。<br />- redrawAllFrame() 全てのフレームを再描画する。<br /><br />標準で、以下のシリアライズ関数を持つ。<br /><br />- serialize() アイテムの内容をオブジェクトにシリアライズする。<br />- unserialize(data) オブジェクトの内容をアンシリアライズする。<br /><br />また、特定のタイミングで以下のイベント関数が呼び出される<br /><br />- onTimeLineRightClick(time) タイムラインが右クリックされると呼び出される。<br />- onTimeLineKeyDown(key, shift) タイムライン上でキーが押されると呼び出される。<br />- onFrameDragged() フレームがドラッグされた</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

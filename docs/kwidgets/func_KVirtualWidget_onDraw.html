@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>onDraw - 描画要求  スクロール領域の大きさが変更される、画面がスクロールするなどの 理由で画面の再描画が必要になった時に呼ばれるコールバック関数です。  派生クラスで実装し、指定された矩形内の要素の再描画を行って下さい。 矩形は仮想座標系で表現されているので、 virtual のプレフィクスを持つ 仮想座標系描画関数を使って描画処理を行うことを推奨します。  この関数が呼び出される時点で、矩形の領域はクリッピングされているので 領域外へはみ出すような描画命令を発行しても問題ありません。</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">KVirtualWidget.onDraw</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>描画要求  スクロール領域の大きさが変更される、画面がスクロールするなどの 理由で画面の再描画が必要になった時に呼ばれるコールバック関数です。  派生クラスで実装し、指定された矩形内の要素の再描画を行って下さい。 矩形は仮想座標系で表現されているので、 virtual のプレフィクスを持つ 仮想座標系描画関数を使って描画処理を行うことを推奨します。  この関数が呼び出される時点で、矩形の領域はクリッピングされているので 領域外へはみ出すような描画命令を発行しても問題ありません。</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_KVirtualWidget.html">KVirtualWidgetクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">onDraw(<span class="arg">vleft</span>, <span class="arg">vtop</span>, <span class="arg">vwidth</span>, <span class="arg">vheight</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="onDrawの引数">
+<tr><td valign="top"><span class="argname">vleft</span></td>
+<td>左端座標(仮想座標系)</td></tr>
+<tr><td valign="top"><span class="argname">vtop</span></td>
+<td>上端座標(仮想座標系)</td></tr>
+<tr><td valign="top"><span class="argname">vwidth</span></td>
+<td>幅(仮想座標系)</td></tr>
+<tr><td valign="top"><span class="argname">vheight</span></td>
+<td>高さ((仮想座標系)</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

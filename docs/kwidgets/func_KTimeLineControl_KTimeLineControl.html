@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>KTimeLineControl - コンストラクタ</title>
+</head>
+<body>
+<h1><span class="fheader"><a name="top" id="top">KTimeLineControl.KTimeLineControl</a></span></h1><div class="para">
+<dl>
+<dt>機能/意味</dt>
+<dd>コンストラクタ</dd>
+<dt>タイプ</dt>
+<dd><a class="jump" href="class_KTimeLineControl.html">KTimeLineControlクラス</a>のメソッド</dd>
+<dt>構文</dt>
+<dd><span class="funcdecl">KTimeLineControl(<span class="arg">window</span>, <span class="arg">name</span>)</span></dd>
+<dt>引数</dt>
+<dd><table rules="all" frame="box" cellpadding="3" summary="KTimeLineControlの引数">
+<tr><td valign="top"><span class="argname">window</span></td>
+<td>ウィンドウ</td></tr>
+<tr><td valign="top"><span class="argname">name</span></td>
+<td>名前<br /><br />タイムラインコントロールを作成する。<br /><br />以下の関数群を使い、KTimeLineItem 派生クラスのオブジェクトを登録できる。<br />KTimeLineItemはKListItemの派生クラスであり、通常のリストアイテム同様に入れ子の<br />リストを形成できる。<br /><br />- childCount 子アイテムをカウントする<br />- childAt(index) 子アイテムを参照する<br />- add(item) 子アイテムを追加する<br />- insert(index, item) 子アイテムを挿入する<br />- remove(item) 子アイテムを削除する<br />- removeAll(doInvalidate) 子アイテムを全て削除する<br /><br />コントロールの挙動を制御するために、以下の関数群が使用できる。<br /><br />- label ラベル<br />- resize リサイズハンドルを表示するかどうか<br /><br />タイムラインのパラメータは以下の関数で取得、設定できる。<br /><br />- selectedTime 現在ポイントされている時間<br />- selectedLayer 現在ポイントされているレイヤ<br />- loopBeginTime ループの開始時間を設定、取得する<br />- loopEndTime ループの終了時間を設定、取得する<br />- setLoopTime(beginTime, endTime) ループの始点と終点を同時に設定する<br /><br />タイムラインコントロールはタイムラインの再生機能を持っている。<br />以下の関数群でその制御を行う。<br /><br />- framePerSecond fpsを設定する<br />- playing 再生中かどうか。<br />- play() 再生を開始する<br />- stop() 再生を停止する<br /><br />特定のタイミングで以下のイベント関数が呼ばれる<br /><br />- onTimeLocatorRightClick(time) タイムロケーターが右クリックされた時に呼ばれる<br />- onTimeLineSelectionRightClick() タイムラインが選択状態で右クリックされた時に呼ばれる<br />- onTimeLineSelectionKeyDown(key, shift) タイムラインが選択状態でキーが押された時に呼ばれる<br />- onMultipleFrameDragged() 複数フレームがまとめてドラッグされた<br />- onRenderFrame() フレームのレンダリングが必要な時に呼ばれる<br />- onTimeSelect(time) ポイントされている時間が変更された時に呼ばれる<br />- onLayerSelect(layer) ポイントされているレイヤが変更された時に呼ばれる<br />- onPlay() 再生開始時に呼ばれる<br />- onStop(playOverLastFrame) 再生停止時に呼ばれる</td></tr>
+</table></dd>
+<dt>戻り値</dt>
+<dd>なし (void)</dd>
+<dt>説明</dt>
+<dd></dd>
+</dl>
+</div>
+</body>
+</html>

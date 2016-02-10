@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="api.css" type="text/css" rel="stylesheet" title="APIリファレンス用標準スタイル" />
+<title>KWidget - ウィジェット基底クラス</title>
+</head>
+<body>
+<h1><a name="top" id="top">KWidget</a></h1>
+<div class="para"></div>
+<h1>メンバ</h1><div class="para">
+<dl>
+<dt>コンストラクタ</dt>
+<dd><a class="jump" href="func_KWidget_KWidget.html">KWidget</a></dd>
+<dt>メソッド</dt>
+<dd>
+<a class="jump" href="func_KWidget_beginDragPacket.html">beginDragPacket</a> (パケットのドラッグ開始  他のウィジェットへのパケットのドラッグを開始する )<br />
+<a class="jump" href="func_KWidget_bindPersistentDictionary.html">bindPersistentDictionary</a> (永続化辞書をバインドする  ウィジェットを KPersistentDictionary クラスのオブジェクトにバインドします。 デフォルトでは、全ての子ウィジェットを探索し、それらの ウィジェットの bindPersistentDictionary を再帰的に呼び出すという動作をします。 )<br />
+<a class="jump" href="func_KWidget_drawChecker.html">drawChecker</a> (チェッカー模様を描く )<br />
+<a class="jump" href="func_KWidget_drawFlattenFrame.html">drawFlattenFrame</a> (平坦なフレームを描く )<br />
+<a class="jump" href="func_KWidget_drawFrame.html">drawFrame</a> (フレームを描く )<br />
+<a class="jump" href="func_KWidget_drawRaisedFrame.html">drawRaisedFrame</a> (出っぱったフレームを描く )<br />
+<a class="jump" href="func_KWidget_drawSunkenFrame.html">drawSunkenFrame</a> (へっこんだフレームを描く )<br />
+<a class="jump" href="func_KWidget_fillChecker.html">fillChecker</a> (チェッカー模様で全体を塗り潰す )<br />
+<a class="jump" href="func_KWidget_fillFlattenFrame.html">fillFlattenFrame</a> (平坦なフレームでレイヤ全体を塗り潰す )<br />
+<a class="jump" href="func_KWidget_fillFrame.html">fillFrame</a> (フレームでレイヤ全体を塗り潰す )<br />
+<a class="jump" href="func_KWidget_fillRaisedFrame.html">fillRaisedFrame</a> (出っぱったフレームでレイヤ全体を塗り潰す )<br />
+<a class="jump" href="func_KWidget_fillSunkenFrame.html">fillSunkenFrame</a> (へっこんだフレームでレイヤ全体を塗り潰す )<br />
+<a class="jump" href="func_KWidget_finalize.html">finalize</a> (デストラクタ  自動的に、自分が保持している子レイヤーを全てinvalidateする。 )<br />
+<a class="jump" href="func_KWidget_find.html">find</a> (子孫ウィジェットから特定の名前を持った子ウィジェットを捜す )<br />
+<a class="jump" href="func_KWidget_getWidgetAt.html">getWidgetAt</a> (指定位置のウィジェットを取得 )<br />
+<a class="jump" href="func_KWidget_invalidateAlign.html">invalidateAlign</a> (ウィジェットのアライメントが変更された時に呼ばれる関数。  親の onChildMarginModified() が呼ばれる )<br />
+<a class="jump" href="func_KWidget_invalidateMargin.html">invalidateMargin</a> (ウィジェットのマージンが変更された時に呼ばれる関数。  親の onChildMarginModified() が呼ばれる )<br />
+<a class="jump" href="func_KWidget_invalidateSize.html">invalidateSize</a> (ウィジェットの最大/最小サイズが変更された時に呼ばれ、 実際のサイズが変更されたかどうかを判定する関数。  実際のサイズが変更されていた場合、onSizeModified() が呼ばれる )<br />
+<a class="jump" href="func_KWidget_isPacketAcceptable.html">isPacketAcceptable</a> (自分自身が特定のパケットを受け入れられるかどうか判定する )<br />
+<a class="jump" href="func_KWidget_isPacketConfirmed.html">isPacketConfirmed</a> (最終的にパケットを受け入れるかどうか判定する )<br />
+<a class="jump" href="func_KWidget_locateChild.html">locateChild</a> (ウィジェットを配置する )<br />
+<a class="jump" href="func_KWidget_missing.html">missing</a> (ウィジェットツリーから特定の名前を持った子ウィジェットを捜します  find関数を経由せずに、オブジェクトのプロパティ扱いで名前を指定して ウィジェットツリー中のウィジェットを参照することが出来ます。  パフォーマンスの都合で、グローバルに同名のシンボルが存在する場合は 優先的にそちらを見に行くという挙動をするので注意。 )<br />
+<a class="jump" href="func_KWidget_noticeRect.html">noticeRect</a> (視野に注目する  ウィジェットの全体像を表示しないレイアウトにおいて、 子ウィジェットの任意の範囲を表示させるために呼び出す。 ただちに parent の onChildNoticeRect が呼び出される。 )<br />
+<a class="jump" href="func_KWidget_onChildAlignModified.html">onChildAlignModified</a> (子ウィジェットのアライメントが変更された時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KWidget_onChildMarginModified.html">onChildMarginModified</a> (子ウィジェットのマージンが変更された時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KWidget_onChildMinMaxSizeModified.html">onChildMinMaxSizeModified</a> (子ウィジェットの最小サイズ、最大サイズの更新に伴って呼ばれるフック関数 )<br />
+<a class="jump" href="func_KWidget_onChildNoticeRect.html">onChildNoticeRect</a> (子ウィジェットの視野に注目するよう通知  @child 子ウィジェット )<br />
+<a class="jump" href="func_KWidget_onChildValueModified.html">onChildValueModified</a> (子ウィジェットの「値」が変わった時に呼ばれるフック関数  子ウィジェットの「値」値が変更された時に呼ばれます。 デフォルトでは、さらに parent の onChildValueModifiedを呼ぶように設定されています。 どこかのウィジェットが関数をオーバーライドして処理を行わない限り、 値変更の通知は KWindow まで届きます。 )<br />
+<a class="jump" href="func_KWidget_onDragEnter.html">onDragEnter</a> (ウィジェット内でのドラッグの開始の通知 )<br />
+<a class="jump" href="func_KWidget_onDragLeave.html">onDragLeave</a> (ウィジェット内でのドラッグの終了の通知 )<br />
+<a class="jump" href="func_KWidget_onDragMove.html">onDragMove</a> (ウィジェット内でのドラッグ中のマウス移動の通知 )<br />
+<a class="jump" href="func_KWidget_onFileDrop.html">onFileDrop</a> (外部からファイルがドロップされた  デフォルト動作では、親のonFileDropを呼ぶ。 順ぐりに、子から親へメッセージがチェーンされ、 どこかのウィジェットが関数をオーバーライドして 処理を行うまでチェーンが続く )<br />
+<a class="jump" href="func_KWidget_onFontColorModified.html">onFontColorModified</a> (フォントカラーが変更された時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KWidget_onFontFaceModified.html">onFontFaceModified</a> (フォントフェイスが変更された時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KWidget_onFontHeightModified.html">onFontHeightModified</a> (フォントヘイトが変更された時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KWidget_onMouseDown.html">onMouseDown</a> (マウス関連イベント。  Ｄ＆Ｄ関連の制御を行う )<br />
+<a class="jump" href="func_KWidget_onMouseEnter.html">onMouseEnter</a> ( )<br />
+<a class="jump" href="func_KWidget_onMouseLeave.html">onMouseLeave</a> ( )<br />
+<a class="jump" href="func_KWidget_onMouseMove.html">onMouseMove</a> ( )<br />
+<a class="jump" href="func_KWidget_onMouseUp.html">onMouseUp</a> ( )<br />
+<a class="jump" href="func_KWidget_onMouseWheel.html">onMouseWheel</a> (マウスホイールイベント  自分自身でホイールをトラップしない時は、 ホイールイベントは親へ通知される )<br />
+<a class="jump" href="func_KWidget_onPacketCancel.html">onPacketCancel</a> (パケットがドロップされなかった事を通知  @packet パケット )<br />
+<a class="jump" href="func_KWidget_onPacketDrop.html">onPacketDrop</a> (パケットのドロップを通知 )<br />
+<a class="jump" href="func_KWidget_onPacketEnter.html">onPacketEnter</a> (パケットの侵入を通知 )<br />
+<a class="jump" href="func_KWidget_onPacketLeave.html">onPacketLeave</a> (パケットの離脱を通知 )<br />
+<a class="jump" href="func_KWidget_onPacketMove.html">onPacketMove</a> (パケットの移動を通知 )<br />
+<a class="jump" href="func_KWidget_onParentModified.html">onParentModified</a> (parentが更新された時に呼ばれる関数 )<br />
+<a class="jump" href="func_KWidget_onRightClick.html">onRightClick</a> (マウスが右クリックされた時に呼ばれる )<br />
+<a class="jump" href="func_KWidget_onSizeModified.html">onSizeModified</a> (ウィジェットの最小サイズ、最大サイズの更新に伴って ウィジェット自身のサイズが変更された時に呼ばれるフック関数。 )<br />
+<a class="jump" href="func_KWidget_onSpaceModified.html">onSpaceModified</a> (スペースが変更された時に呼ばれるフック関数 )<br />
+<a class="jump" href="func_KWidget_onValueModified.html">onValueModified</a> (「値」が変わった時に呼ばれるフック関数  「値」を持つウィジェットで、値が変更された時に呼ばれます。 デフォルトでは、parent の onChildValueModifiedを呼ぶように設定されています。 )<br />
+<a class="jump" href="func_KWidget_onViewModified.html">onViewModified</a> (視矩形が更新された時に呼ばれるコールバック )<br />
+<a class="jump" href="func_KWidget_onWindowActivate.html">onWindowActivate</a> ( )<br />
+<a class="jump" href="func_KWidget_onWindowDeactivate.html">onWindowDeactivate</a> ( )<br />
+<a class="jump" href="func_KWidget_setAlign.html">setAlign</a> (アライメントの設定  アライメントをまとめて設定します。 )<br />
+<a class="jump" href="func_KWidget_setFixedSize.html">setFixedSize</a> (最大サイズと最小サイズを、同時に同じ値に設定 )<br />
+<a class="jump" href="func_KWidget_setFixedSizeToImageSize.html">setFixedSizeToImageSize</a> (最大サイズと最小サイズを、イメージサイズに設定 )<br />
+<a class="jump" href="func_KWidget_setMargin.html">setMargin</a> (マージンの設定  マージンをまとめて設定します。  引数を1つだけ指定した場合、上下左右全てのマージンを同じ値に設定します。  引数を2つだけ指定した場合、第一引数を左右マージン、第二引数を上下マージンに設定します。  引数を4つ全て指定した場合、それぞれのマージンを個別に設定します。 )<br />
+<a class="jump" href="func_KWidget_setMaxSize.html">setMaxSize</a> (最大サイズ設定 )<br />
+<a class="jump" href="func_KWidget_setMinMaxSize.html">setMinMaxSize</a> (最大サイズと最小サイズを同時設定 )<br />
+<a class="jump" href="func_KWidget_setMinSize.html">setMinSize</a> (最小サイズ設定 )<br />
+<a class="jump" href="func_KWidget_setSize.html">setSize</a> ( )<br />
+</dd>
+<dt>プロパティ</dt>
+<dd>
+<a class="jump" href="prop_KWidget_alignHorizontal.html">alignHorizontal</a> (水平アライメント  レイアウトの関係でウィジェットが本来のサイズより大きい領域に配置されることに なった時に、ウィジェットを左右のどちらに寄せるかを設定します。  ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT のいずれかの値を設定できます。 )<br />
+<a class="jump" href="prop_KWidget_alignVertical.html">alignVertical</a> (垂直アライメント  レイアウトの関係でウィジェットが本来のサイズより大きい領域に配置されることに なった時に、ウィジェットを上下のどちらに寄せるかを設定します。  ALIGN_TOP, ALIGN_CENTER, ALIGN_BOTTOM のいずれかの値を設定できます。 )<br />
+<a class="jump" href="prop_KWidget_ancestors.html">ancestors</a> (祖先ウィジェットの一覧 )<br />
+<a class="jump" href="prop_KWidget_className.html">className</a> (クラス名 )<br />
+<a class="jump" href="prop_KWidget_classTrees.html">classTrees</a> (クラスツリー )<br />
+<a class="jump" href="prop_KWidget_descendants.html">descendants</a> (子孫ウィジェットの一覧 )<br />
+<a class="jump" href="prop_KWidget_fontColor.html">fontColor</a> (フォントカラー  フォントカラーが更新されると onFontColorModified 関数が呼ばれます。 )<br />
+<a class="jump" href="prop_KWidget_fontFace.html">fontFace</a> (フォントフェイス  フォントフェイスが更新されると onFontFaceModified 関数が呼ばれます。 )<br />
+<a class="jump" href="prop_KWidget_fontHeight.html">fontHeight</a> (フォントヘイト  フォントヘイトが更新されると onFontHeightModified 関数が呼ばれます。 )<br />
+<a class="jump" href="prop_KWidget_globalViewingRect.html">globalViewingRect</a> (ウィジェットの視矩形(ウィンドウ座標系) )<br />
+<a class="jump" href="prop_KWidget_indeterminate.html">indeterminate</a> (不定値  valueの値が不定であるかどうかを設定する )<br />
+<a class="jump" href="prop_KWidget_isAvoidDictionaryRegistration.html">isAvoidDictionaryRegistration</a> (永続化辞書のバインドを避けるかどうか )<br />
+<a class="jump" href="prop_KWidget_isInWidgetTree.html">isInWidgetTree</a> (ウィジェットツリーの中に存在するかどうか )<br />
+<a class="jump" href="prop_KWidget_margin.html">margin</a> (マージンの設定  上下左右全てのマージンをまとめて設定します。 )<br />
+<a class="jump" href="prop_KWidget_marginBottom.html">marginBottom</a> (下マージン  レイアウト時に、ウィジェットの下側にどれだけのマージンを空けるか設定します。 )<br />
+<a class="jump" href="prop_KWidget_marginHorizontal.html">marginHorizontal</a> (横方向マージンの合計(読み出し専用) )<br />
+<a class="jump" href="prop_KWidget_marginIncludeHeight.html">marginIncludeHeight</a> (マージンを含めた高さ(読み出し専用) )<br />
+<a class="jump" href="prop_KWidget_marginIncludeWidth.html">marginIncludeWidth</a> (マージンを含めた幅(読み出し専用) )<br />
+<a class="jump" href="prop_KWidget_marginLeft.html">marginLeft</a> (左マージン  レイアウト時に、ウィジェットの左側にどれだけのマージンを空けるか設定します。 )<br />
+<a class="jump" href="prop_KWidget_marginRight.html">marginRight</a> (右マージン  レイアウト時に、ウィジェットの右側にどれだけのマージンを空けるか設定します。 )<br />
+<a class="jump" href="prop_KWidget_marginTop.html">marginTop</a> (上マージン  レイアウト時に、ウィジェットの上側にどれだけのマージンを空けるか設定します。 )<br />
+<a class="jump" href="prop_KWidget_marginVertical.html">marginVertical</a> (縦方向マージンの合計(読み出し専用) )<br />
+<a class="jump" href="prop_KWidget_maxHeight.html">maxHeight</a> (最大高さ )<br />
+<a class="jump" href="prop_KWidget_maxWidth.html">maxWidth</a> (最大幅 )<br />
+<a class="jump" href="prop_KWidget_minHeight.html">minHeight</a> (最小高さ )<br />
+<a class="jump" href="prop_KWidget_minWidth.html">minWidth</a> (最小幅 )<br />
+<a class="jump" href="prop_KWidget_name.html">name</a> (nameプロパティを文字列以外も受け取るように変更 )<br />
+<a class="jump" href="prop_KWidget_parent.html">parent</a> (parentプロパティの拡張  parentが更新された時に、onParentModifiedが呼ばれるようにする )<br />
+<a class="jump" href="prop_KWidget_parentWidget.html">parentWidget</a> (親ウィジェット。 )<br />
+<a class="jump" href="prop_KWidget_space.html">space</a> (水平と垂直方向の区切スペースの大きさをまとえて指定します )<br />
+<a class="jump" href="prop_KWidget_spaceHorizontal.html">spaceHorizontal</a> (水平方向の区切スペースの大きさを指定します )<br />
+<a class="jump" href="prop_KWidget_spaceVertical.html">spaceVertical</a> (垂直方向の区切スペースの大きさを指定します )<br />
+<a class="jump" href="prop_KWidget_status.html">status</a> (ステータス  ステータスバーに表示するステータス文字列を設定します。 ウィンドウにKStatusBarが登録されていれば、ウィジェットに マウスが侵入した時に、自動的にステータス文字列が表示されます。 )<br />
+<a class="jump" href="prop_KWidget_viewingRect.html">viewingRect</a> (ウィジェットの視矩形 )<br />
+<a class="jump" href="prop_KWidget_widgetDepot.html">widgetDepot</a> (ウィジェットデポット  addする前のウィジェットを格納する親レイヤ。ウィジェットの一時保管所 )<br />
+</dd>
+</dl>
+</div>
+</body>
+</html>
