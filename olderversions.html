@@ -13,6 +13,7 @@
 <div class="content">
 <div class="title_bar"><a name="download">ダウンロード</a></div>
 <ul>
+	<li><a href="./download/krkrz_20160531.7z">krkrz_20160531.7z (1.3.0.4)</a></li>
 	<li><a href="./download/krkrz_20150817.zip">krkrz_20150817.zip (1.2.0.3)</a></li>
 	<li><a href="./download/krkrz_20140803.zip">krkrz_20140803.zip (1.1.0.2)</a></li>
 	<li><a href="./download/krkrz_20131231.zip">krkrz_20131231.zip (1.0.0.1)</a></li>
@@ -35,6 +36,44 @@
 <br />
 <div class="title_bar"><a name="revision">更新履歴</a></div>
 <dl>
+	<dt>2016/05/31 1.3.0.4 リリース</dt>
+	<dd>
+		64bit版を追加<br />
+		アセンブリで記述されていたグラフィック部分をMMXからSSE2にしたイントリンシックで書き換え<br />
+		グラフィック処理の一部にAVX2を使うものを追加<br />
+		拡大縮小フィルタを追加<br />
+		JPEG XRをWindows Imaging Componentを使用して読み込むように変更<br />
+		JPEG XRの書き出しを追加<br />
+		krmovie.dllを本体に統合<br />
+		theoraをプラグインに分離<br />
+		動画プラグインに対応<br />
+		画像プラグインに対応<br />
+		画像ヘッダー読み込み機能を追加<br />
+		savedataフォルダを必要な時に作られるように修正<br />
+		フルスクリーン時の画面回転・解像度変更で描画位置がずれる問題を修正<br />
+		メインループの条件からWindow数を削除<br />
+		レイヤーのタッチキャプチャー追加<br />
+		BasicDrawDeviceでDestRect指定された時にBackBufferサイズより大きい時一度破棄して作り直すように修正<br />
+		バックバッファのサイズをウィンドウのあるディスプレイの最大サイズかクライアント領域の大きい方を使うように修正<br />
+		ウィンドウ最大サイズが0(初期値)の時、INT_MAXまで拡大可能なように修正<br />
+		タッチ機能のデフォルト動作指定に対応<br />
+		FreeTypeを2.6.3に変更<br />
+		SIMD libjpegからlibjpeg-turboに変更<br />
+		Window.showModalでフォーカスが得られてないことになる一連の不具合修正<br />
+		FreeTypeでブラーが機能していなかったので修正<br />
+		アスペクト比の異なる画面でのフルスクリーン時Layer.cursorX/cursorYが間違った値を返していたのを修正<br />
+		テンポラリファイル生成にDELETE_ON_CLOSEをつけるようにして強制終了してもファイルが削除れるように修正<br />
+		TVPGetPlatformNameで返す文字列を定数ではなく、Win32上かWin64上か判定して返すように修正<br />
+		sprintfで大きい整数が正しく処理されていなかったのを修正<br />
+		Array/Dictionary.loadStructを追加<br />
+		ライセンス文取得時にバッファオーバランが発生することがあったのを修正<br />
+		adjustGamma の処理結果が吉里吉里2と異なっていたのを修正<br />
+		pを使った指数指定の動作を修正<br />
+		Shift_JIS/Unicode変換を自前の処理に変更<br />
+		TouchUpイベント終了まで移動速度を保持するよう修正<br />
+		Layer.copy9Patch を追加<br />
+		<br />
+	</dd>
 	<dt>2015/08/17 1.2.0.3 リリース</dt>
 	<dd>
 		動画再生に vomMFEVR モード追加、H.264 の再生に対応。<br />
