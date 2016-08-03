@@ -1,0 +1,3 @@
+[submodule "docs/kirikiriz"]
+	path = docs/kirikiriz
+	url = https://github.com/krkrz/krkrz-documents.git
