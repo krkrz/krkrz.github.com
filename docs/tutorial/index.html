@@ -1,7 +1,7 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-<title>�g���g��Z / �`���[�g���A�� / STG �����</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>吉里吉里Z / チュートリアル / STG を作る</title>
 <link rel="stylesheet" href="styles-site.css" type="text/css" />
 
 <script type="text/javascript" src="shCore.js"></script>
@@ -15,17 +15,17 @@
 <body>
 <a name="top"></a>
 <div id="container">
-<div id="title-banner"><h1>�g���g��Z / �`���[�g���A�� / STG �����</h1></div>
+<div id="title-banner"><h1>吉里吉里Z / チュートリアル / STG を作る</h1></div>
 
 <div class="content">
-<div class="title_bar"><a name="download">Window�̕\��</a></div>
+<div class="title_bar"><a name="download">Windowの表示</a></div>
 <p>
-�E�B���h�E��\�����Ĕw�i�摜��ǂݍ��݂܂��B<br />
-�����ł͓��ɏڂ��������͂��܂���B<br />
-���X�ɐ������Ă����܂��B<br />
-�Ƃ肠�����́A�����ł͈ȉ��̃X�N���v�g�����̂܂�startup.tjs�ɕۑ����Ă��������B<br />
-���̍s�ԍ��̕����͕s�v�ł��B<br />
-�Ȍケ�̃t�@�C�����C�����āA����Ă����܂��B<br />
+ウィンドウを表示して背景画像を読み込みます。<br />
+ここでは特に詳しい説明はしません。<br />
+徐々に説明していきます。<br />
+とりあえずは、ここでは以下のスクリプトをそのままstartup.tjsに保存してください。<br />
+左の行番号の部分は不要です。<br />
+以後このファイルを修正して、作っていきます。<br />
 </p>
 <pre class="brush: as3; tab-size: 4; toolbar: false; class-name: 'script_border'">
 class MainWindow extends Window {
@@ -46,13 +46,13 @@ mainwin.visible = true;
 </pre>
 
 <br />
-<div class="title_bar"><a name="onlinehelp">�}�E�X�ʒu�ɉ摜�\��</a></div>
+<div class="title_bar"><a name="onlinehelp">マウス位置に画像表示</a></div>
 <p>
-���@�Ƃ��ă}�E�X�̈ʒu�ɉ摜��\�����Ă݂܂��B<br />
-�܂��A�摜��\�����郌�C���[���K�v�ł��B<br />
-3�s�ڂŃ��C���[��\�������o�ϐ���ǉ����Ă��܂��B<br />
-14�s�ځ`18�s�ڂŃ��C���[�𐶐����āA�摜��ǂݍ���ł��܂��B<br />
-20�s�ڂ���22�s�ڂŃ}�E�X�̈ʒu�ɍ��킹�ĉ摜�𓮂����Ă��܂��B<br />
+自機としてマウスの位置に画像を表示してみます。<br />
+まず、画像を表示するレイヤーが必要です。<br />
+3行目でレイヤーを表すメンバ変数を追加しています。<br />
+14行目～18行目でレイヤーを生成して、画像を読み込んでいます。<br />
+20行目から22行目でマウスの位置に合わせて画像を動かしています。<br />
 </p>
 <pre class="brush: as3; tab-size: 4; toolbar: false; highlight: [3,13,14,15,16,17,18,20,21,22]; class-name: 'script_border'">
 class MainWindow extends Window {
@@ -83,15 +83,15 @@ mainwin.visible = true;
 </pre>
 
 <br />
-<div class="title_bar"><a name="onlinehelp">�}�E�X���S�ɍ��킹�ĕ\��</a></div>
+<div class="title_bar"><a name="onlinehelp">マウス中心に合わせて表示</a></div>
 <p>
-�O�q�̃X�N���v�g�ł́A�}�E�X�̈ʒu��������Ƃ��ĉ摜���\������A���@���J�[�\���ʒu�̉E���ɕ\������Ă��܂��s�i�D�ł��B<br />
-�����ŁA�}�E�X�̈ʒu�ɍ����悤�Ɉʒu�𒲐����܂��B<br />
-���C���[�͕��̔������}�E�X�̈ʒu��������Ă��Β��S�ʒu�ɍ����悤�ɕ\������܂��B<br />
+前述のスクリプトでは、マウスの位置を左上隅として画像が表示され、自機がカーソル位置の右下に表示されてしまい不格好です。<br />
+そこで、マウスの位置に合うように位置を調整します。<br />
+レイヤーは幅の半分をマウスの位置から引いてやれば中心位置に合うように表示されます。<br />
 </p>
 <pre class="brush: as3; tab-size: 4; toolbar: false; highlight: [4]; class-name: 'script_border'">
 class MainWindow extends Window {
-	// �ȗ�
+	// 省略
 	function onMouseMove(x, y, shift) {
 		movelayer.setPos( x-movelayer.width/2, y-movelayer.height/2 );
 	}
@@ -99,16 +99,16 @@ class MainWindow extends Window {
 </pre>
 
 <br />
-<div class="title_bar"><a name="onlinehelp">�N���b�N�Œe�𔭎˂���</a></div>
+<div class="title_bar"><a name="onlinehelp">クリックで弾を発射する</a></div>
 <p>
-���@�Ɠ����悤�ɂ��Ēe�̃��C���[��ǉ����܂��B<br />
-4�s�ڂ�22�s�ځ`26�s�ڂł��B<br />
-�e�͔��˂����܂ŕ\���������Ȃ��̂ŁAvisible = false �ɂ��āA�\�����Ȃ��悤�ɂ��܂��B<br />
-28�s�ڂŐ��������҂���L���ɂ��܂��B<br />
-29�s�ڂ�ContinuousHandler�Ƀn���h����ǉ����܂��B<br />
-31�s�ځ`33�s�ڂ�ContinuousHandler����n���h�����O���܂��B<br />
-37�s�ځ`40�s�ڂŃN���b�N���ꂽ��A�N���b�N���ꂽ�ʒu�ɒe��\�����܂��B<br />
-41�s�ڂ���47�s�ڂŒe�̈ړ����s���܂��B<br />
+自機と同じようにして弾のレイヤーを追加します。<br />
+4行目と22行目～26行目です。<br />
+弾は発射されるまで表示したくないので、visible = false にして、表示しないようにします。<br />
+28行目で垂直同期待ちを有効にします。<br />
+29行目でContinuousHandlerにハンドラを追加します。<br />
+31行目～33行目でContinuousHandlerからハンドラを外します。<br />
+37行目～40行目でクリックされたら、クリックされた位置に弾を表示します。<br />
+41行目から47行目で弾の移動を行います。<br />
 </p>
 <pre class="brush: as3; tab-size: 4; toolbar: false; highlight: [4,21,22,23,24,25,26,27,28,29,31,32,33,37,38,39,40,41,42,43,44,45,46,47]; class-name: 'script_border'">
 class MainWindow extends Window {
